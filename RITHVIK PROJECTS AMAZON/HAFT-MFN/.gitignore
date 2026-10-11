@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pt
+*.pth
+*.ckpt
+checkpoints/*
+!checkpoints/.gitkeep
+results/*
+!results/.gitkeep
+figures/*
+!figures/.gitkeep
+.venv/
+.env
+.ipynb_checkpoints/

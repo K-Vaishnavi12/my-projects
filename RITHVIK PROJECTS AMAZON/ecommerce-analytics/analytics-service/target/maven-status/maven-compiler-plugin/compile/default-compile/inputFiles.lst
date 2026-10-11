@@ -1,0 +1,5 @@
+/app/src/main/java/com/amazon/clone/analytics/controller/AnalyticsController.java
+/app/src/main/java/com/amazon/clone/analytics/AnalyticsServiceApplication.java
+/app/src/main/java/com/amazon/clone/analytics/event/OrderCreatedEvent.java
+/app/src/main/java/com/amazon/clone/analytics/service/AnalyticsService.java
+/app/src/main/java/com/amazon/clone/analytics/consumer/OrderEventConsumer.java

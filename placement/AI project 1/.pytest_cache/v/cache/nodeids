@@ -1,0 +1,8 @@
+[
+  "tests/test_simulator.py::test_ball_score_is_monotonic_within_innings",
+  "tests/test_simulator.py::test_full_match_reaches_result",
+  "tests/test_simulator.py::test_innings_two_has_target",
+  "tests/test_simulator.py::test_wickets_never_exceed_ten",
+  "tests/test_warehouse.py::test_schema_creates_all_tables",
+  "tests/test_warehouse.py::test_transformations_run_on_empty_bronze"
+]

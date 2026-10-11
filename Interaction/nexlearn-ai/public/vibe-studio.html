@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Studio — NexLearn AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="space-bg"></div>
+  <div class="space-grid"></div>
+  <div class="particle-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+      NEXLEARN AI
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="classroom.html">Classroom</a>
+      <a href="code-arena.html">Code Arena</a>
+      <a href="vibe-studio.html" class="active">Vibe Studio</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="header-controls">
+      <div class="xp-badge">
+        XP: <span id="header-xp">0</span>
+      </div>
+      <div class="xp-badge" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4);">
+        Lvl: <span id="header-level" style="color: var(--neon-green);">1</span>
+      </div>
+      <button id="speech-toggle" class="toggle-btn" title="Toggle Voice Speech">🔊</button>
+    </div>
+  </header>
+
+  <!-- Vibe Studio Layout -->
+  <main class="container">
+    <div class="vibe-layout">
+      
+      <!-- Left side: Coding Editor & Live Visualization Canvas -->
+      <section class="vibe-visualizer-panel">
+        
+        <!-- Editor Box -->
+        <div class="glass-card" style="flex-grow: 1; display:flex; flex-direction:column; padding:1rem;">
+          <div style="font-family:var(--font-tech); font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.5rem; display:flex; justify-content:space-between; align-items:center;">
+            <span>📝 VIBE EDITOR (WORKSPACE.JS)</span>
+            <span id="editor-status" style="color:var(--neon-green);">● Auto-Saving</span>
+          </div>
+          <div class="editor-wrapper" style="flex-grow:1;">
+            <textarea id="vibe-editor" class="editor-textarea" spellcheck="false" autocomplete="off">// Drag sorting, algorithms or linked list details here
+// Select AI Copilot prompts on the right to auto-refactor or visualize!
+
+function bubbleSort(arr) {
+  let len = arr.length;
+  for (let i = 0; i < len; i++) {
+    for (let j = 0; j < len - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+</textarea>
+          </div>
+        </div>
+
+        <!-- Visualizer Area -->
+        <div class="glass-card visualizer-canvas-box" style="height:280px; padding:1.2rem;">
+          <div style="position:absolute; top:10px; left:12px; font-family:var(--font-tech); font-size:0.75rem; color:var(--neon-blue); z-index:10;">
+            📊 ALGORITHM REAL-TIME VISUALIZER
+          </div>
+          
+          <div id="visualizer-content" style="width:100%; height:100%; display:flex; justify-content:center; align-items:flex-end; padding-bottom:1rem;">
+            <!-- Render bars or nodes here -->
+            <div style="color:var(--text-muted); font-size:0.9rem; font-family:var(--font-mono); text-align:center; width:100%; padding-top:4rem;">
+              Select "Visualize Sorting" or "Visualize Linked List"<br>
+              in the Copilot panel to trigger animation frames.
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Right side: AI Copilot Assistant -->
+      <section class="glass-card ai-assistant-card">
+        <h3 class="cyber-title" style="font-size:1.1rem; border-bottom:1px solid var(--border-glow); padding-bottom:0.5rem; margin-bottom:1rem;">
+          ✨ AI COPILOT ASSISTANT
+        </h3>
+
+        <!-- AI Chat board -->
+        <div class="ai-chat-box" id="vibe-chat-box">
+          <div class="ai-message assistant">
+            Hi! I'm your Vibe Code Copilot. Write your algorithms in the editor, and click any of the action keys below to refactor, explain, or run visual simulations!
+          </div>
+        </div>
+
+        <!-- Quick actions buttons -->
+        <div class="vibe-controls" style="border-top:1px solid var(--border-glow); padding-top:1rem; margin-top:auto;">
+          <button id="prompt-refactor" class="btn btn-blue" style="font-size:0.75rem; padding:0.5rem 0.8rem;">
+            ⚡ Refactor Code
+          </button>
+          <button id="prompt-complexity" class="btn btn-secondary" style="font-size:0.75rem; padding:0.5rem 0.8rem;">
+            🧐 Explain Complexity
+          </button>
+          <button id="prompt-sort-vis" class="btn btn-green" style="font-size:0.75rem; padding:0.5rem 0.8rem;">
+            📊 Visualize Sorting
+          </button>
+          <button id="prompt-list-vis" class="btn btn-pink" style="font-size:0.75rem; padding:0.5rem 0.8rem;">
+            ⛓ Visualize Linked List
+          </button>
+        </div>
+
+        <!-- Prompt input -->
+        <div style="display:flex; gap:0.5rem; margin-top:1rem;">
+          <input type="text" id="vibe-chat-input" class="doubt-input" placeholder="Type instructions (e.g. 'Write quicksort', 'Optimize this')..." style="padding:0.6rem 0.8rem;">
+          <button id="vibe-send-btn" class="btn btn-blue" style="padding:0.6rem 1rem;">Send</button>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <script src="progress.js"></script>
+  <script src="vibe.js"></script>
+</body>
+</html>

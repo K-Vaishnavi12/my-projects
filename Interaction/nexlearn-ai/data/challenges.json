@@ -1,0 +1,1264 @@
+[
+  {
+    "id": "dsa_easy_1",
+    "title": "Reverse a Linked List",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Linked List",
+      "Pointers"
+    ],
+    "description": "Given the head of a singly linked list, reverse the list and return its new head. A linked list node is represented as an object with `val` and `next` properties.",
+    "starterCode": {
+      "javascript": "function reverseList(head) {\n  // Write JavaScript code here\n  let prev = null;\n  let curr = head;\n  while (curr) {\n    let nextTemp = curr.next;\n    curr.next = prev;\n    prev = curr;\n    curr = nextTemp;\n  }\n  return prev;\n}",
+      "python": "def reverse_list(head):\n    # Write Python code here\n    prev = None\n    curr = head\n    while curr:\n        next_temp = curr.next\n        curr.next = prev\n        prev = curr\n        curr = next_temp\n    return prev",
+      "java": "public ListNode reverseList(ListNode head) {\n    // Write Java code here\n    ListNode prev = null;\n    ListNode curr = head;\n    while (curr != null) {\n        ListNode nextTemp = curr.next;\n        curr.next = prev;\n        prev = curr;\n        curr = nextTemp;\n    }\n    return prev;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 2, 3, 4, 5]]",
+        "expected": "[5, 4, 3, 2, 1]"
+      },
+      {
+        "input": "[[1, 2]]",
+        "expected": "[2, 1]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[[7]]",
+        "expected": "[7]"
+      },
+      {
+        "input": "[[9, 8, 7]]",
+        "expected": "[7, 8, 9]"
+      }
+    ],
+    "hint": "Use three pointers: prev, curr, and nextTemp to reverse links as you traverse.",
+    "solution": "let prev = null;\nlet curr = head;\nwhile (curr) {\n  let nextTemp = curr.next;\n  curr.next = prev;\n  prev = curr;\n  curr = nextTemp;\n}\nreturn prev;",
+    "approach": "To reverse a linked list, we iterate through the list and change each node's next pointer to point to its predecessor. We need to save the next node before overwriting the pointer so we don't lose the remaining nodes."
+  },
+  {
+    "id": "dsa_easy_2",
+    "title": "Check Balanced Parentheses",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Stack",
+      "String"
+    ],
+    "description": "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. The brackets must close in correct order.",
+    "starterCode": {
+      "javascript": "function isValid(s) {\n  // Write JavaScript code here\n  return false;\n}",
+      "python": "def is_valid(s):\n    # Write Python code here\n    return False",
+      "java": "public boolean isValid(String s) {\n    // Write Java code here\n    return false;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[\"()\"]",
+        "expected": "true"
+      },
+      {
+        "input": "[\"()[]{}\"]",
+        "expected": "true"
+      },
+      {
+        "input": "[\"(]\"]",
+        "expected": "false"
+      },
+      {
+        "input": "[\"([)]\"]",
+        "expected": "false"
+      },
+      {
+        "input": "[\"{[]}\"]",
+        "expected": "true"
+      }
+    ],
+    "hint": "Push opening brackets onto a stack. When you see a closing bracket, pop from the stack and check if it matches.",
+    "solution": "const stack = [];\nconst map = { ')': '(', '}': '{', ']': '[' };\nfor (let char of s) {\n  if (char in map) {\n    if (stack.pop() !== map[char]) return false;\n  } else {\n    stack.push(char);\n  }\n}\nreturn stack.length === 0;",
+    "approach": "We use a Stack. When encountering an opening bracket, push it. For a closing bracket, pop the top of the stack and ensure they match. If the stack is empty at the end, the string is balanced."
+  },
+  {
+    "id": "dsa_easy_3",
+    "title": "Find Duplicates in Array",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Array",
+      "Hashing"
+    ],
+    "description": "Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct.",
+    "starterCode": {
+      "javascript": "function containsDuplicate(nums) {\n  // Write JavaScript code here\n  return false;\n}",
+      "python": "def contains_duplicate(nums):\n    # Write Python code here\n    return False",
+      "java": "public boolean containsDuplicate(int[] nums) {\n    // Write Java code here\n    return false;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 2, 3, 1]]",
+        "expected": "true"
+      },
+      {
+        "input": "[[1, 2, 3, 4]]",
+        "expected": "false"
+      },
+      {
+        "input": "[[1, 1, 1, 3, 3, 4]]",
+        "expected": "true"
+      },
+      {
+        "input": "[[5]]",
+        "expected": "false"
+      },
+      {
+        "input": "[[2, 5, 2]]",
+        "expected": "true"
+      }
+    ],
+    "hint": "You can use a Hash Set to store visited numbers and check if the current number has already been seen in O(N) time.",
+    "solution": "const set = new Set(nums);\nreturn set.size !== nums.length;",
+    "approach": "Use a HashSet to keep track of numbers we have already seen. If we add a number that is already in the set, we immediately return true. Otherwise, return false after checking all."
+  },
+  {
+    "id": "dsa_easy_4",
+    "title": "BFS Traversal",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Graph",
+      "BFS"
+    ],
+    "description": "Perform a Breadth-First Search traversal on an adjacency list graph starting from node `start` and return the array of traversed nodes in order.",
+    "starterCode": {
+      "javascript": "function bfs(graph, start) {\n  // graph is an object: { 0: [1, 2], 1: [2], 2: [0, 3], 3: [3] }\n  // Write JavaScript code here\n  return [];\n}",
+      "python": "def bfs(graph, start):\n    # Write Python code here\n    return []",
+      "java": "public List<Integer> bfs(Map<Integer, List<Integer>> graph, int start) {\n    // Write Java code here\n    return new ArrayList<>();\n}"
+    },
+    "testCases": [
+      {
+        "input": "[{\"0\": [1, 2], \"1\": [2], \"2\": [0, 3], \"3\": [3]}, 2]",
+        "expected": "[2, 0, 3, 1]"
+      },
+      {
+        "input": "[{\"0\": [1], \"1\": [0]}, 0]",
+        "expected": "[0, 1]"
+      },
+      {
+        "input": "[{\"0\": []}, 0]",
+        "expected": "[0]"
+      },
+      {
+        "input": "[{\"1\": [2, 3], \"2\": [], \"3\": [2]}, 1]",
+        "expected": "[1, 2, 3]"
+      },
+      {
+        "input": "[{\"0\": [2], \"2\": [0, 1], \"1\": []}, 0]",
+        "expected": "[0, 2, 1]"
+      }
+    ],
+    "hint": "Use a Queue and a visited Set. Enqueue the starting node. While the queue is not empty, dequeue a node, record it, and enqueue all its unvisited neighbors.",
+    "solution": "const queue = [start];\nconst visited = new Set([start]);\nconst result = [];\nwhile (queue.length > 0) {\n  const curr = queue.shift();\n  result.push(curr);\n  const neighbors = graph[curr] || [];\n  for (let n of neighbors) {\n    if (!visited.has(n)) {\n      visited.add(n);\n      queue.push(n);\n    }\n  }\n}\nreturn result;",
+    "approach": "BFS uses a Queue to visit nodes level-by-level. Starting from the source, we explore all immediate neighbors first, tracking visited nodes in a set to prevent infinite cycles."
+  },
+  {
+    "id": "dsa_easy_5",
+    "title": "Binary Search Implementation",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Binary Search",
+      "Algorithm"
+    ],
+    "description": "Write a function `binarySearch(arr, target)` that takes a sorted array `arr` and a `target` number, and returns the index of the target. Return `-1` if it is not found.",
+    "starterCode": {
+      "javascript": "function binarySearch(arr, target) {\n  // Write JavaScript code here\n  return -1;\n}",
+      "python": "def binary_search(arr, target):\n    # Write Python code here\n    return -1",
+      "java": "public int binarySearch(int[] arr, int target) {\n    // Write Java code here\n    return -1;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 3, 5, 7, 9, 11], 7]",
+        "expected": "3"
+      },
+      {
+        "input": "[[2, 4, 6, 8, 10], 5]",
+        "expected": "-1"
+      },
+      {
+        "input": "[[1, 5, 9, 12, 15], 15]",
+        "expected": "4"
+      },
+      {
+        "input": "[[1, 2, 3], 2]",
+        "expected": "1"
+      },
+      {
+        "input": "[[], 10]",
+        "expected": "-1"
+      }
+    ],
+    "hint": "Keep left and right pointers. Find the middle element. Shrink the search range by comparing the middle element to the target.",
+    "solution": "let left = 0, right = arr.length - 1;\nwhile(left <= right) {\n  let mid = Math.floor((left+right)/2);\n  if(arr[mid] === target) return mid;\n  if(arr[mid] < target) left = mid + 1;\n  else right = mid - 1;\n}\nreturn -1;",
+    "approach": "Binary Search halves the search space at each step. By checking the element at index mid = (left + right) / 2, we decide whether to search left or right, running in logarithmic time."
+  },
+  {
+    "id": "dsa_easy_6",
+    "title": "Stack using Queue",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Stack",
+      "Queue"
+    ],
+    "description": "Implement a Last-In-First-Out (LIFO) stack using only standard queue operations. Implement push, pop, and top.",
+    "starterCode": {
+      "javascript": "class MyStack {\n  constructor() { this.q = []; }\n  push(x) { this.q.push(x); for(let i=0; i<this.q.length-1; i++) this.q.push(this.q.shift()); }\n  pop() { return this.q.shift(); }\n  top() { return this.q[0]; }\n}",
+      "python": "class MyStack:\n    def __init__(self):\n        self.q = []\n    def push(self, x):\n        self.q.append(x)\n        for _ in range(len(self.q) - 1):\n            self.q.append(self.q.pop(0))\n    def pop(self):\n        return self.q.pop(0)\n    def top(self):\n        return self.q[0]",
+      "java": "class MyStack {\n    Queue<Integer> q = new LinkedList<>();\n    public void push(int x) {\n        q.add(x);\n        for(int i=0; i<q.size()-1; i++) q.add(q.poll());\n    }\n    public int pop() { return q.poll(); }\n    public int top() { return q.peek(); }\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[\"push\", \"push\", \"top\", \"pop\"], [[1], [2], [], []]]",
+        "expected": "[null, null, 2, 2]"
+      },
+      {
+        "input": "[[\"push\", \"top\"], [[5], []]]",
+        "expected": "[null, 5]"
+      },
+      {
+        "input": "[[\"push\", \"push\", \"pop\"], [[10], [20], []]]",
+        "expected": "[null, null, 20]"
+      },
+      {
+        "input": "[[\"push\", \"push\", \"push\", \"top\"], [[1, 2, 3], []]]",
+        "expected": "[null, null, null, 3]"
+      },
+      {
+        "input": "[[\"push\", \"pop\"], [[7], []]]",
+        "expected": "[null, 7]"
+      }
+    ],
+    "hint": "When you push an element, rotate the queue so that the newly added element becomes the front of the queue.",
+    "solution": "push(x) { this.q.push(x); for(let i=0; i<this.q.length-1; i++) this.q.push(this.q.shift()); }",
+    "approach": "To make a queue behave like a stack, when pushing a new element, we enqueue it, and then shift all other elements behind it, placing the newest element at the front."
+  },
+  {
+    "id": "dsa_easy_7",
+    "title": "Detect Cycle in Linked List",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Linked List",
+      "Fast and Slow Pointers"
+    ],
+    "description": "Given the head of a linked list, check if the list has a cycle. Return `true` if there is a cycle, and `false` otherwise.",
+    "starterCode": {
+      "javascript": "function hasCycle(head) {\n  // Write JavaScript code here\n  return false;\n}",
+      "python": "def has_cycle(head):\n    # Write Python code here\n    return False",
+      "java": "public boolean hasCycle(ListNode head) {\n    // Write Java code here\n    return false;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[3, 2, 0, -4], 1]",
+        "expected": "true"
+      },
+      {
+        "input": "[[1, 2], 0]",
+        "expected": "true"
+      },
+      {
+        "input": "[[1], -1]",
+        "expected": "false"
+      },
+      {
+        "input": "[[], -1]",
+        "expected": "false"
+      },
+      {
+        "input": "[[4, 5, 6, 7], -1]",
+        "expected": "false"
+      }
+    ],
+    "hint": "Use Floyd's Cycle-Finding Algorithm: two pointers moving at different speeds (fast and slow). If they meet, there is a cycle.",
+    "solution": "let slow = head, fast = head;\nwhile (fast && fast.next) {\n  slow = slow.next;\n  fast = fast.next.next;\n  if (slow === fast) return true;\n}\nreturn false;",
+    "approach": "Floyd's Tortoise and Hare algorithm uses two pointers. The fast pointer moves twice as fast as the slow one. If there is a cycle, the fast pointer will eventually loop and catch up to the slow one."
+  },
+  {
+    "id": "dsa_easy_8",
+    "title": "Merge Sorted Arrays",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Array",
+      "Two Pointers"
+    ],
+    "description": "Given two sorted integer arrays `arr1` and `arr2`, merge them into a single sorted array. Keep linear O(N + M) complexity.",
+    "starterCode": {
+      "javascript": "function mergeSorted(arr1, arr2) {\n  // Write JavaScript code here\n  return [];\n}",
+      "python": "def merge_sorted(arr1, arr2):\n    # Write Python code here\n    return []",
+      "java": "public int[] mergeSorted(int[] arr1, int[] arr2) {\n    // Write Java code here\n    return new int[0];\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 3, 5], [2, 4, 6]]",
+        "expected": "[1, 2, 3, 4, 5, 6]"
+      },
+      {
+        "input": "[[10, 20], [1, 2]]",
+        "expected": "[1, 2, 10, 20]"
+      },
+      {
+        "input": "[[], [1, 2, 3]]",
+        "expected": "[1, 2, 3]"
+      },
+      {
+        "input": "[[5], []]",
+        "expected": "[5]"
+      },
+      {
+        "input": "[[2, 8], [3, 9, 10]]",
+        "expected": "[2, 3, 8, 9, 10]"
+      }
+    ],
+    "hint": "Use two pointers, one for each array. Compare elements and push the smaller one to the output array.",
+    "solution": "const merged = []; let i = 0, j = 0;\nwhile(i < arr1.length && j < arr2.length) {\n  if(arr1[i] < arr2[j]) merged.push(arr1[i++]);\n  else merged.push(arr2[j++]);\n}\nreturn merged.concat(arr1.slice(i)).concat(arr2.slice(j));",
+    "approach": "With two pointers, we compare the current element of both sorted arrays. We append the smaller value and advance its pointer, merging the remaining values at the end."
+  },
+  {
+    "id": "dsa_easy_9",
+    "title": "Find Height of Binary Tree",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Tree",
+      "DFS"
+    ],
+    "description": "Given the root of a binary tree, find its maximum height (depth). An empty tree has height 0.",
+    "starterCode": {
+      "javascript": "function maxDepth(root) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def max_depth(root):\n    # Write Python code here\n    return 0",
+      "java": "public int maxDepth(TreeNode root) {\n    // Write Java code here\n    return 0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[3, 9, 20, null, null, 15, 7]]",
+        "expected": "3"
+      },
+      {
+        "input": "[[1, null, 2]]",
+        "expected": "2"
+      },
+      {
+        "input": "[]",
+        "expected": "0"
+      },
+      {
+        "input": "[[5]]",
+        "expected": "1"
+      },
+      {
+        "input": "[[1, 2, 3, 4, 5]]",
+        "expected": "3"
+      }
+    ],
+    "hint": "The maximum depth of a binary tree is 1 + the max depth of its left and right subtrees. Solve recursively.",
+    "solution": "if (!root) return 0;\nreturn 1 + Math.max(maxDepth(root.left), maxDepth(root.right));",
+    "approach": "The depth of a tree is calculated recursively. For any node, the height is 1 plus the maximum height of its left and right children. Base case is a null node returning 0."
+  },
+  {
+    "id": "dsa_easy_10",
+    "title": "Count Islands in Grid",
+    "category": "dsa_easy",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Grid",
+      "DFS"
+    ],
+    "description": "Given a 2D grid of 1s (land) and 0s (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands vertically or horizontally.",
+    "starterCode": {
+      "javascript": "function numIslands(grid) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def num_islands(grid):\n    # Write Python code here\n    return 0",
+      "java": "public int numIslands(char[][] grid) {\n    // Write Java code here\n    return 0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"0\",\"0\",\"1\",\"0\",\"0\"],[\"0\",\"0\",\"0\",\"1\",\"1\"]]]",
+        "expected": "3"
+      },
+      {
+        "input": "[[[\"1\",\"1\",\"1\",\"1\",\"0\"],[\"1\",\"1\",\"0\",\"1\",\"0\"],[\"1\",\"1\",\"0\",\"0\",\"0\"],[\"0\",\"0\",\"0\",\"0\",\"0\"]]]",
+        "expected": "1"
+      },
+      {
+        "input": "[[[\"0\",\"0\"],[\"0\",\"0\"]]]",
+        "expected": "0"
+      },
+      {
+        "input": "[[[\"1\"]]]",
+        "expected": "1"
+      },
+      {
+        "input": "[[[\"1\",\"0\"],[\"0\",\"1\"]]]",
+        "expected": "2"
+      }
+    ],
+    "hint": "Traverse the grid. When you hit a '1', trigger DFS or BFS to sink the entire island (turn connected 1s into 0s) and increment your island count.",
+    "solution": "let count = 0; if(!grid || grid.length===0) return 0;\nconst dfs = (r, c) => {\n  if(r<0||c<0||r>=grid.length||c>=grid[0].length||grid[r][c]==='0') return;\n  grid[r][c] = '0';\n  dfs(r+1,c); dfs(r-1,c); dfs(r,c+1); dfs(r,c-1);\n};\nfor(let r=0; r<grid.length; r++) {\n  for(let c=0; c<grid[0].length; c++) {\n    if(grid[r][c]==='1') { count++; dfs(r, c); }\n  }\n}\nreturn count;",
+    "approach": "We perform a scan of the 2D grid. Whenever we find land ('1'), we start a depth-first search that recursively visits all neighboring land tiles, marking them as water ('0') to prevent recounting. Each initial land tile found represents one island."
+  },
+  {
+    "id": "dsa_medium_1",
+    "title": "Longest Common Subsequence",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Dynamic Programming",
+      "String"
+    ],
+    "description": "Given two strings `text1` and `text2`, return the length of their longest common subsequence. A subsequence of a string is a new string generated from the original string with some characters deleted without changing relative order.",
+    "starterCode": {
+      "javascript": "function longestCommonSubsequence(text1, text2) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def longest_common_subsequence(text1, text2):\n    # Write Python code here\n    return 0",
+      "java": "public int longestCommonSubsequence(String text1, String text2) {\n    // Write Java code here\n    return 0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[\"abcde\", \"ace\"]",
+        "expected": "3"
+      },
+      {
+        "input": "[\"abc\", \"abc\"]",
+        "expected": "3"
+      },
+      {
+        "input": "[\"abc\", \"def\"]",
+        "expected": "0"
+      },
+      {
+        "input": "[\"ezupkr\", \"ubmra\"]",
+        "expected": "2"
+      },
+      {
+        "input": "[\"bsbininm\", \"jmjkbsp\"]",
+        "expected": "3"
+      }
+    ],
+    "hint": "Use a 2D DP table. If characters match: dp[i][j] = 1 + dp[i-1][j-1]. If not: dp[i][j] = max(dp[i-1][j], dp[i][j-1]).",
+    "solution": "const m = text1.length, n = text2.length;\nconst dp = Array(m + 1).fill(0).map(() => Array(n + 1).fill(0));\nfor (let i = 1; i <= m; i++) {\n  for (let j = 1; j <= n; j++) {\n    if (text1[i - 1] === text2[j - 1]) dp[i][j] = dp[i - 1][j - 1] + 1;\n    else dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);\n  }\n}\nreturn dp[m][n];",
+    "approach": "LCS is solved using Dynamic Programming. We create a grid to compare character match states. If characters at indices match, we extend the subsequence length from the diagonal value. Otherwise, we carry over the maximum from the top or left cells."
+  },
+  {
+    "id": "dsa_medium_2",
+    "title": "0/1 Knapsack Problem",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Dynamic Programming",
+      "Knapsack"
+    ],
+    "description": "Given weights `wt` and values `val` of `n` items, and a knapsack capacity `W`, find the maximum value you can put in the knapsack. Each item can either be taken or left (0/1).",
+    "starterCode": {
+      "javascript": "function knapsack(val, wt, W) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def knapsack(val, wt, W):\n    # Write Python code here\n    return 0",
+      "java": "public int knapsack(int[] val, int[] wt, int W) {\n    // Write Java code here\n    return 0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[60, 100, 120], [10, 20, 30], 50]",
+        "expected": "220"
+      },
+      {
+        "input": "[[10, 40, 50, 70], [1, 3, 4, 5], 7]",
+        "expected": "90"
+      },
+      {
+        "input": "[[], [], 10]",
+        "expected": "0"
+      },
+      {
+        "input": "[[12, 10], [2, 1], 3]",
+        "expected": "22"
+      },
+      {
+        "input": "[[5, 10, 15], [1, 2, 3], 0]",
+        "expected": "0"
+      }
+    ],
+    "hint": "Use a DP array of size W + 1. For each item, update the array from right to left: dp[w] = max(dp[w], dp[w - wt[i]] + val[i]).",
+    "solution": "const n = val.length;\nconst dp = Array(W + 1).fill(0);\nfor (let i = 0; i < n; i++) {\n  for (let w = W; w >= wt[i]; w--) {\n    dp[w] = Math.max(dp[w], dp[w - wt[i]] + val[i]);\n  }\n}\nreturn dp[W];",
+    "approach": "This is the classic 0/1 Knapsack problem. Using dynamic programming, we track the maximum value achievable for all weight capacities from 0 up to W. Running iterations backwards helps us reuse a 1D state array without double-counting items."
+  },
+  {
+    "id": "dsa_medium_3",
+    "title": "Dijkstra Shortest Path",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Graph",
+      "Dijkstra",
+      "Shortest Path"
+    ],
+    "description": "Implement Dijkstra's shortest path algorithm. Given a weighted graph represented as an adjacency list and a starting node, return an object containing the shortest distances from start node to all other nodes.",
+    "starterCode": {
+      "javascript": "function dijkstra(graph, start) {\n  // graph is represented as: { 0: {1: 4, 2: 1}, 1: {2: 2, 3: 5}, 2: {3: 8}, 3: {} }\n  // Write JavaScript code here\n  return {};\n}",
+      "python": "def dijkstra(graph, start):\n    # Write Python code here\n    return {}",
+      "java": "public Map<Integer, Integer> dijkstra(Map<Integer, Map<Integer, Integer>> graph, int start) {\n    // Write Java code here\n    return new HashMap<>();\n}"
+    },
+    "testCases": [
+      {
+        "input": "[{\"0\": {\"1\": 4, \"2\": 1}, \"1\": {\"3\": 1}, \"2\": {\"1\": 2, \"3\": 5}, \"3\": {}}, 0]",
+        "expected": "{\"0\":0,\"1\":3,\"2\":1,\"3\":4}"
+      },
+      {
+        "input": "[{\"0\": {\"1\": 10}, \"1\": {}}, 0]",
+        "expected": "{\"0\":0,\"1\":10}"
+      },
+      {
+        "input": "[{\"0\": {}}, 0]",
+        "expected": "{\"0\":0}"
+      },
+      {
+        "input": "[{\"1\": {\"2\": 5}, \"2\": {\"3\": 2}, \"3\": {}}, 1]",
+        "expected": "{\"1\":0,\"2\":5,\"3\":7}"
+      },
+      {
+        "input": "[{\"0\": {\"1\": 1, \"2\": 4}, \"1\": {\"2\": 2}, \"2\": {}}, 0]",
+        "expected": "{\"0\":0,\"1\":1,\"2\":3}"
+      }
+    ],
+    "hint": "Initialize distances of all nodes as infinity and start node as 0. Repeatedly pick the unvisited node with minimum distance and update its neighbors' distances.",
+    "solution": "const dists = { [start]: 0 }; const visited = new Set();\nconst allNodes = Object.keys(graph);\nfor (let node of allNodes) {\n  if (node != start) dists[node] = Infinity;\n}\nwhile (visited.size < allNodes.length) {\n  let minNode = null, minDist = Infinity;\n  for (let node of allNodes) {\n    if (!visited.has(node) && dists[node] < minDist) {\n      minDist = dists[node]; minNode = node;\n    }\n  }\n  if (minNode === null) break;\n  visited.add(minNode);\n  const neighbors = graph[minNode] || {};\n  for (let n in neighbors) {\n    const newDist = dists[minNode] + neighbors[n];\n    if (newDist < dists[n]) dists[n] = newDist;\n  }\n}\nreturn dists;",
+    "approach": "Dijkstra's algorithm finds the shortest path in a weighted graph. We maintain a distance list initialized to Infinity. At each step, we pick the closest unvisited node, freeze its distance, and update neighbors by checking if routing through this node decreases their cumulative path cost."
+  },
+  {
+    "id": "dsa_medium_4",
+    "title": "Validate BST",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Tree",
+      "Validate"
+    ],
+    "description": "Given the root of a binary tree, determine if it is a valid binary search tree (BST). A node's left child value must be strictly smaller, and right child strictly larger.",
+    "starterCode": {
+      "javascript": "function isValidBST(root) {\n  // Write JavaScript code here\n  return false;\n}",
+      "python": "def is_valid_bst(root):\n    # Write Python code here\n    return False",
+      "java": "public boolean isValidBST(TreeNode root) {\n    // Write Java code here\n    return false;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[2, 1, 3]]",
+        "expected": "true"
+      },
+      {
+        "input": "[[5, 1, 4, null, null, 3, 6]]",
+        "expected": "false"
+      },
+      {
+        "input": "[[10, 5, 15, null, null, 6, 20]]",
+        "expected": "false"
+      },
+      {
+        "input": "[[1]]",
+        "expected": "true"
+      },
+      {
+        "input": "[[10, 5, 18, 2, 7]]",
+        "expected": "true"
+      }
+    ],
+    "hint": "Use recursion. Pass minimum and maximum allowable bounds down the tree: `validate(node, min, max)`. If node value violates bounds, return false.",
+    "solution": "const validate = (node, min, max) => {\n  if (!node) return true;\n  if ((min !== null && node.val <= min) || (max !== null && node.val >= max)) return false;\n  return validate(node.left, min, node.val) && validate(node.right, node.val, max);\n};\nreturn validate(root, null, null);",
+    "approach": "To validate a BST, it's not enough to check left < node < right for adjacent nodes. The left subtree must be entirely less than the node, and the right entirely greater. We propagate min/max boundary constraints recursively down the tree."
+  },
+  {
+    "id": "dsa_medium_5",
+    "title": "Coin Change Problem",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Dynamic Programming",
+      "Coin Change"
+    ],
+    "description": "You are given an integer array `coins` representing coins of different denominations and an integer `amount`. Return the fewest number of coins that you need to make up that amount. Return `-1` if impossible.",
+    "starterCode": {
+      "javascript": "function coinChange(coins, amount) {\n  // Write JavaScript code here\n  return -1;\n}",
+      "python": "def coin_change(coins, amount):\n    # Write Python code here\n    return -1",
+      "java": "public int coinChange(int[] coins, int amount) {\n    // Write Java code here\n    return -1;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 2, 5], 11]",
+        "expected": "3"
+      },
+      {
+        "input": "[[2], 3]",
+        "expected": "-1"
+      },
+      {
+        "input": "[[1], 0]",
+        "expected": "0"
+      },
+      {
+        "input": "[[1, 3, 4], 6]",
+        "expected": "2"
+      },
+      {
+        "input": "[[186, 419, 83, 408], 6249]",
+        "expected": "20"
+      }
+    ],
+    "hint": "Create a DP array of size amount + 1 filled with Infinity, except dp[0] = 0. For each coin, loop from coin value to amount: dp[i] = min(dp[i], dp[i - coin] + 1).",
+    "solution": "const dp = Array(amount + 1).fill(Infinity);\ndp[0] = 0;\nfor (let coin of coins) {\n  for (let i = coin; i <= amount; i++) {\n    dp[i] = Math.min(dp[i], dp[i - coin] + 1);\n  }\n}\nreturn dp[amount] === Infinity ? -1 : dp[amount];",
+    "approach": "Using Dynamic Programming, we compute the minimum number of coins needed for every value up to the target amount. For each currency denomination, we check if adding one coin to an already solved subproblem decreases the coin count."
+  },
+  {
+    "id": "dsa_medium_6",
+    "title": "Word Break Problem",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Dynamic Programming",
+      "Trie"
+    ],
+    "description": "Given a string `s` and a dictionary of strings `wordDict`, return `true` if `s` can be segmented into a space-separated sequence of one or more dictionary words.",
+    "starterCode": {
+      "javascript": "function wordBreak(s, wordDict) {\n  // Write JavaScript code here\n  return false;\n}",
+      "python": "def word_break(s, wordDict):\n    # Write Python code here\n    return False",
+      "java": "public boolean wordBreak(String s, List<String> wordDict) {\n    // Write Java code here\n    return false;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[\"leetcode\", [\"leet\", \"code\"]]",
+        "expected": "true"
+      },
+      {
+        "input": "[\"applepenapple\", [\"apple\", \"pen\"]]",
+        "expected": "true"
+      },
+      {
+        "input": "[\"catsandog\", [\"cats\", \"dog\", \"sand\", \"and\", \"cat\"]]",
+        "expected": "false"
+      },
+      {
+        "input": "[\"a\", [\"a\"]]",
+        "expected": "true"
+      },
+      {
+        "input": "[\"cars\", [\"car\", \"ca\"]]",
+        "expected": "false"
+      }
+    ],
+    "hint": "Use DP. Let dp[i] be true if s[0...i-1] can be segmented. Update dp[i] by checking if there is a j < i such that dp[j] is true and s[j...i-1] is in dictionary.",
+    "solution": "const wordSet = new Set(wordDict);\nconst dp = Array(s.length + 1).fill(false);\ndp[0] = true;\nfor (let i = 1; i <= s.length; i++) {\n  for (let j = 0; j < i; j++) {\n    if (dp[j] && wordSet.has(s.substring(j, i))) {\n      dp[i] = true; break;\n    }\n  }\n}\nreturn dp[s.length];",
+    "approach": "Word break determines if a sentence is buildable from words. We use a boolean DP array where dp[i] means text up to index i is segmentable. We scan backward for matching suffix words in the dictionary."
+  },
+  {
+    "id": "dsa_medium_7",
+    "title": "Merge Intervals",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Array",
+      "Sorting"
+    ],
+    "description": "Given an array of intervals where `intervals[i] = [start_i, end_i]`, merge all overlapping intervals, and return an array of the non-overlapping intervals.",
+    "starterCode": {
+      "javascript": "function mergeIntervals(intervals) {\n  // Write JavaScript code here\n  return [];\n}",
+      "python": "def merge_intervals(intervals):\n    # Write Python code here\n    return []",
+      "java": "public int[][] mergeIntervals(int[][] intervals) {\n    // Write Java code here\n    return new int[0][0];\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[[1,3],[2,6],[8,10],[15,18]]]",
+        "expected": "[[1,6],[8,10],[15,18]]"
+      },
+      {
+        "input": "[[[1,4],[4,5]]]",
+        "expected": "[[1,5]]"
+      },
+      {
+        "input": "[[[1,10]]]",
+        "expected": "[[1,10]]"
+      },
+      {
+        "input": "[[[1,5],[5,8],[8,12]]]",
+        "expected": "[[1,12]]"
+      },
+      {
+        "input": "[[[1,4],[2,3]]]",
+        "expected": "[[1,4]]"
+      }
+    ],
+    "hint": "Sort the intervals by their start time. Iterate through, merging the current interval with the last merged interval if they overlap.",
+    "solution": "if (intervals.length === 0) return [];\nintervals.sort((a, b) => a[0] - b[0]);\nconst merged = [intervals[0]];\nfor (let i = 1; i < intervals.length; i++) {\n  const current = intervals[i];\n  const last = merged[merged.length - 1];\n  if (current[0] <= last[1]) last[1] = Math.max(last[1], current[1]);\n  else merged.push(current);\n}\nreturn merged;",
+    "approach": "We sort intervals chronologically by start value. We push the first interval to a list. For subsequent entries, we check for overlaps. If overlapping, we stretch the boundary. Otherwise, we add it as a new interval."
+  },
+  {
+    "id": "dsa_medium_8",
+    "title": "Maximum Subarray (Kadane)",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Array",
+      "Kadane"
+    ],
+    "description": "Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
+    "starterCode": {
+      "javascript": "function maxSubArray(nums) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def max_sub_array(nums):\n    # Write Python code here\n    return 0",
+      "java": "public int maxSubArray(int[] nums) {\n    // Write Java code here\n    return 0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[-2,1,-3,4,-1,2,1,-5,4]]",
+        "expected": "6"
+      },
+      {
+        "input": "[[1]]",
+        "expected": "1"
+      },
+      {
+        "input": "[[5,4,-1,7,8]]",
+        "expected": "23"
+      },
+      {
+        "input": "[[-5]]",
+        "expected": "-5"
+      },
+      {
+        "input": "[[-1, -2, -3]]",
+        "expected": "-1"
+      }
+    ],
+    "hint": "Use Kadane's Algorithm. Iterate through the array. Keep track of current sum. Reset current sum to 0 if it goes below 0. Max sum is maximum current sum seen.",
+    "solution": "let maxSoFar = nums[0], maxEndingHere = nums[0];\nfor(let i=1; i<nums.length; i++) {\n  maxEndingHere = Math.max(nums[i], maxEndingHere + nums[i]);\n  maxSoFar = Math.max(maxSoFar, maxEndingHere);\n}\nreturn maxSoFar;",
+    "approach": "Kadane's algorithm evaluates contiguous subarrays. At each element, we decide whether to add it to our existing running sum, or throw away the historical sum and start fresh from the current index."
+  },
+  {
+    "id": "dsa_medium_9",
+    "title": "Serialize/Deserialize Binary Tree",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Tree",
+      "Design"
+    ],
+    "description": "Design an algorithm to serialize a binary tree into a string and deserialize that string back into a binary tree. The serialization format is up to you (e.g. comma-separated values).",
+    "starterCode": {
+      "javascript": "class Codec {\n  serialize(root) {\n    let res = [];\n    const dfs = (node) => {\n      if (!node) { res.push('N'); return; }\n      res.push(node.val);\n      dfs(node.left); dfs(node.right);\n    };\n    dfs(root);\n    return res.join(',');\n  }\n  deserialize(data) {\n    let nodes = data.split(',');\n    let i = 0;\n    const dfs = () => {\n      if (nodes[i] === 'N') { i++; return null; }\n      let node = { val: parseInt(nodes[i++]), left: null, right: null };\n      node.left = dfs(); node.right = dfs();\n      return node;\n    };\n    return dfs();\n  }\n}",
+      "python": "class Codec:\n    def serialize(self, root):\n        res = []\n        def dfs(node):\n            if not node: res.append('N'); return\n            res.append(str(node.val))\n            dfs(node.left); dfs(node.right)\n        dfs(root)\n        return ','.join(res)\n    def deserialize(self, data):\n        nodes = data.split(',')\n        self.i = 0\n        def dfs():\n            if nodes[self.i] == 'N': self.i += 1; return None\n            node = TreeNode(int(nodes[self.i]))\n            self.i += 1\n            node.left = dfs(); node.right = dfs()\n            return node\n        return dfs()",
+      "java": "public class Codec {\n    public String serialize(TreeNode root) {\n        StringBuilder sb = new StringBuilder();\n        serializeHelper(root, sb);\n        return sb.toString();\n    }\n    private void serializeHelper(TreeNode root, StringBuilder sb) {\n        if (root == null) { sb.append(\"N,\"); return; }\n        sb.append(root.val).append(\",\");\n        serializeHelper(root.left, sb);\n        serializeHelper(root.right, sb);\n    }\n    public TreeNode deserialize(String data) {\n        Queue<String> q = new LinkedList<>(Arrays.asList(data.split(\",\")));\n        return deserializeHelper(q);\n    }\n    private TreeNode deserializeHelper(Queue<String> q) {\n        String val = q.poll();\n        if (val.equals(\"N\")) return null;\n        TreeNode node = new TreeNode(Integer.parseInt(val));\n        node.left = deserializeHelper(q);\n        node.right = deserializeHelper(q);\n        return node;\n    }\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 2, 3, null, null, 4, 5]]",
+        "expected": "[[1, 2, 3, null, null, 4, 5]]"
+      },
+      {
+        "input": "[]",
+        "expected": "[]"
+      },
+      {
+        "input": "[[5]]",
+        "expected": "[[5]]"
+      },
+      {
+        "input": "[[1, 2]]",
+        "expected": "[[1, 2]]"
+      },
+      {
+        "input": "[[1, 2, 3]]",
+        "expected": "[[1, 2, 3]]"
+      }
+    ],
+    "hint": "Use pre-order traversal. For serialization, represent null nodes with a specific character like 'N'. For deserialization, use a queue to reconstruct node children recursively.",
+    "solution": "serialize(root); deserialize(data);",
+    "approach": "Tree serialization encodes 3D hierarchy into a flat string. We use pre-order traversal (Node-Left-Right) and mark empty leaf edges with 'N' to ensure the exact structure is reconstructible during parsing."
+  },
+  {
+    "id": "dsa_medium_10",
+    "title": "Top K Frequent Elements",
+    "category": "dsa_medium",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Array",
+      "Hashing",
+      "Heap"
+    ],
+    "description": "Given an integer array `nums` and an integer `k`, return the `k` most frequent elements. You may return the answer in any order.",
+    "starterCode": {
+      "javascript": "function topKFrequent(nums, k) {\n  // Write JavaScript code here\n  return [];\n}",
+      "python": "def top_k_frequent(nums, k):\n    # Write Python code here\n    return []",
+      "java": "public int[] topKFrequent(int[] nums, int k) {\n    // Write Java code here\n    return new int[0];\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 1, 1, 2, 2, 3], 2]",
+        "expected": "[1, 2]"
+      },
+      {
+        "input": "[[1], 1]",
+        "expected": "[1]"
+      },
+      {
+        "input": "[[1, 2], 2]",
+        "expected": "[1, 2]"
+      },
+      {
+        "input": "[[5, 5, 5, 8, 8, 9, 9, 9, 9], 2]",
+        "expected": "[9, 5]"
+      },
+      {
+        "input": "[[-1, -1], 1]",
+        "expected": "[-1]"
+      }
+    ],
+    "hint": "Build a frequency map. Sort the keys of the map based on frequency values, and return the top k keys.",
+    "solution": "const map = {};\nfor(let n of nums) map[n] = (map[n] || 0) + 1;\nreturn Object.keys(map).sort((a,b) => map[b] - map[a]).slice(0, k).map(Number);",
+    "approach": "We aggregate item occurrences into a key-frequency hashmap. We then sort the keys by frequency in descending order and extract the top k items."
+  },
+  {
+    "id": "ml_ai_1",
+    "title": "KNN Classifier",
+    "category": "ml_ai",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "KNN",
+      "Classification"
+    ],
+    "description": "Implement a simplified 1-Nearest Neighbor classifier. Given an array of training coordinates `trainX` (each an array of numbers), their labels `trainY` (array of integers), and a single query point `queryX`, find the label of the closest training point using Euclidean distance.",
+    "starterCode": {
+      "javascript": "function classifyKNN(trainX, trainY, queryX) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def classify_knn(train_x, train_y, query_x):\n    # Write Python code here\n    return 0",
+      "java": "public int classifyKNN(double[][] trainX, int[] trainY, double[] queryX) {\n    // Write Java code here\n    return 0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[[1, 1], [5, 5]], [0, 1], [2, 2]]",
+        "expected": "0"
+      },
+      {
+        "input": "[[[1, 1], [5, 5]], [0, 1], [4, 4]]",
+        "expected": "1"
+      },
+      {
+        "input": "[[[10, 20, 30], [1, 2, 3], [5, 5, 5]], [9, 2, 5], [2, 2, 2]]",
+        "expected": "2"
+      },
+      {
+        "input": "[[[0]], [7], [2]]",
+        "expected": "7"
+      },
+      {
+        "input": "[[[1,2,3],[4,5,6]], [0, 1], [3,4,4]]",
+        "expected": "1"
+      }
+    ],
+    "hint": "For each point in trainX, calculate its Euclidean distance to queryX. Find the index of the minimum distance, and return the label at that index in trainY.",
+    "solution": "let minDist = Infinity, bestLabel = -1;\nfor (let i = 0; i < trainX.length; i++) {\n  let sum = 0;\n  for (let j = 0; j < queryX.length; j++) {\n    sum += (trainX[i][j] - queryX[j]) ** 2;\n  }\n  let dist = Math.sqrt(sum);\n  if (dist < minDist) { minDist = dist; bestLabel = trainY[i]; }\n}\nreturn bestLabel;",
+    "approach": "KNN measures geometric distance. For a query point, we loop through all training samples, compute Euclidean distances, and return the category label of the sample with the smallest distance."
+  },
+  {
+    "id": "ml_ai_2",
+    "title": "Calculate Metrics",
+    "category": "ml_ai",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Evaluation",
+      "Metrics"
+    ],
+    "description": "Given the counts of True Positives (`tp`), False Positives (`fp`), False Negatives (`fn`), and True Negatives (`tn`), return an array containing `[accuracy, precision, recall, f1]` rounded to 2 decimal places.",
+    "starterCode": {
+      "javascript": "function getMetrics(tp, fp, fn, tn) {\n  // Write JavaScript code here\n  return [0, 0, 0, 0];\n}",
+      "python": "def get_metrics(tp, fp, fn, tn):\n    # Write Python code here\n    return [0.0, 0.0, 0.0, 0.0]",
+      "java": "public double[] getMetrics(int tp, int fp, int fn, int tn) {\n    // Write Java code here\n    return new double[]{0, 0, 0, 0};\n}"
+    },
+    "testCases": [
+      {
+        "input": "[80, 10, 10, 100]",
+        "expected": "[0.9, 0.89, 0.89, 0.89]"
+      },
+      {
+        "input": "[10, 0, 0, 90]",
+        "expected": "[1, 1, 1, 1]"
+      },
+      {
+        "input": "[50, 20, 30, 100]",
+        "expected": "[0.75, 0.71, 0.62, 0.67]"
+      },
+      {
+        "input": "[5, 5, 5, 5]",
+        "expected": "[0.5, 0.5, 0.5, 0.5]"
+      },
+      {
+        "input": "[90, 5, 15, 200]",
+        "expected": "[0.94, 0.95, 0.86, 0.9]"
+      }
+    ],
+    "hint": "Accuracy = (tp + tn) / total. Precision = tp / (tp + fp). Recall = tp / (tp + fn). F1 = 2 * (p * r) / (p + r). Handle division by zero carefully.",
+    "solution": "const total = tp + fp + fn + tn;\nconst acc = total ? (tp + tn) / total : 0;\nconst prec = (tp + fp) ? tp / (tp + fp) : 0;\nconst rec = (tp + fn) ? tp / (tp + fn) : 0;\nconst f1 = (prec + rec) ? 2 * (prec * rec) / (prec + rec) : 0;\nreturn [+acc.toFixed(2), +prec.toFixed(2), +rec.toFixed(2), +f1.toFixed(2)];",
+    "approach": "Evaluation metrics measure classifier quality. Accuracy checks total correct. Precision checks correctness of positive predictions. Recall checks fraction of positive cases found. F1 is their harmonic mean."
+  },
+  {
+    "id": "ml_ai_3",
+    "title": "Gradient Descent Step",
+    "category": "ml_ai",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Optimizer",
+      "Calculus"
+    ],
+    "description": "Perform a single weight update step for a parameter `w` in gradient descent. Given current weight `w`, learning rate `lr`, and derivative of loss with respect to weight `dw`, return the updated weight rounded to 4 decimal places.",
+    "starterCode": {
+      "javascript": "function updateWeight(w, lr, dw) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def update_weight(w, lr, dw):\n    # Write Python code here\n    return 0.0",
+      "java": "public double updateWeight(double w, double lr, double dw) {\n    // Write Java code here\n    return 0.0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[0.5, 0.1, 1.2]",
+        "expected": "0.38"
+      },
+      {
+        "input": "[1.5, 0.01, -0.5]",
+        "expected": "1.505"
+      },
+      {
+        "input": "[-2.0, 0.5, 4.0]",
+        "expected": "-4"
+      },
+      {
+        "input": "[0.1234, 0.1, 0.5678]",
+        "expected": "0.0666"
+      },
+      {
+        "input": "[0.0, 0.1, 0.0]",
+        "expected": "0"
+      }
+    ],
+    "hint": "The formula is: w_new = w - lr * dw. Use `.toFixed(4)` to round correctly.",
+    "solution": "return +(w - lr * dw).toFixed(4);",
+    "approach": "Gradient descent moves parameters opposite the slope gradient. By subtracting learning rate times the derivative (dw) from weight (w), we slide toward the error minimum."
+  },
+  {
+    "id": "ml_ai_4",
+    "title": "Euclidean Distance",
+    "category": "ml_ai",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Math",
+      "KNN"
+    ],
+    "description": "Write a function `euclideanDistance(p1, p2)` that returns the Euclidean distance between two multi-dimensional coordinate arrays of equal length. Round to 2 decimal places.",
+    "starterCode": {
+      "javascript": "function euclideanDistance(p1, p2) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def euclidean_distance(p1, p2):\n    # Write Python code here\n    return 0.0",
+      "java": "public double euclideanDistance(double[] p1, double[] p2) {\n    // Write Java code here\n    return 0.0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 2], [4, 6]]",
+        "expected": "5"
+      },
+      {
+        "input": "[[0, 0, 0], [3, 4, 12]]",
+        "expected": "13"
+      },
+      {
+        "input": "[[1, 1, 1, 1], [2, 2, 2, 2]]",
+        "expected": "2"
+      },
+      {
+        "input": "[[-1, -2], [2, 2]]",
+        "expected": "5"
+      },
+      {
+        "input": "[[0.5], [1.5]]",
+        "expected": "1"
+      }
+    ],
+    "hint": "Calculate sum of squared differences for each dimension: `(p1[i] - p2[i]) ** 2`. Take square root of sum.",
+    "solution": "let sum = 0;\nfor (let i = 0; i < p1.length; i++) sum += (p1[i] - p2[i]) ** 2;\nreturn +Math.sqrt(sum).toFixed(2);",
+    "approach": "Euclidean distance computes straight-line distance in multi-dimensional space by taking the square root of the sum of squared coordinate differences."
+  },
+  {
+    "id": "ml_ai_5",
+    "title": "Normalize a Dataset",
+    "category": "ml_ai",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Data Prep",
+      "MinMax"
+    ],
+    "description": "Implement Min-Max normalization. Given an array of numbers `data`, rescale each value to fit between `0` and `1` using Min-Max scaling. Round values to 2 decimal places.",
+    "starterCode": {
+      "javascript": "function normalize(data) {\n  // Write JavaScript code here\n  return [];\n}",
+      "python": "def normalize(data):\n    # Write Python code here\n    return []",
+      "java": "public double[] normalize(double[] data) {\n    // Write Java code here\n    return new double[0];\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[10, 20, 30, 40, 50]]",
+        "expected": "[0, 0.25, 0.5, 0.75, 1]"
+      },
+      {
+        "input": "[[1, 2, 3]]",
+        "expected": "[0, 0.5, 1]"
+      },
+      {
+        "input": "[[100, 100]]",
+        "expected": "[0.5, 0.5]"
+      },
+      {
+        "input": "[[5, 15, 5]]",
+        "expected": "[0, 1, 0]"
+      },
+      {
+        "input": "[[0, 10]]",
+        "expected": "[0, 1]"
+      }
+    ],
+    "hint": "Min-Max formula is: x_scaled = (x - min) / (max - min). If max === min, default scaled values to 0.5.",
+    "solution": "const min = Math.min(...data), max = Math.max(...data);\nconst range = max - min;\nreturn data.map(x => range === 0 ? 0.5 : +( (x - min) / range ).toFixed(2));",
+    "approach": "MinMax scaling bounds features between 0 and 1. We find the min and max values, then map each element x relative to the scale range."
+  },
+  {
+    "id": "ml_ai_6",
+    "title": "Find Best K (Inertia)",
+    "category": "ml_ai",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Clustering",
+      "Elbow Method"
+    ],
+    "description": "In K-Means, the 'elbow method' finds the optimal cluster count. Given an array of `inertia` values from K=1 to K=N, return the index K (1-based) where the 'elbow' (steepest decrease drop changes) is located.",
+    "starterCode": {
+      "javascript": "function findElbow(inertia) {\n  // inertia has values for K=1, 2, 3, 4...\n  // Write JavaScript code here\n  return 2;\n}",
+      "python": "def find_elbow(inertia):\n    # Write Python code here\n    return 2",
+      "java": "public int findElbow(double[] inertia) {\n    // Write Java code here\n    return 2;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1000, 200, 180, 160]]",
+        "expected": "2"
+      },
+      {
+        "input": "[[500, 400, 100, 90, 80]]",
+        "expected": "3"
+      },
+      {
+        "input": "[[100, 90, 80, 20]]",
+        "expected": "4"
+      },
+      {
+        "input": "[[800, 700, 600, 200, 180]]",
+        "expected": "4"
+      },
+      {
+        "input": "[[300, 50, 45]]",
+        "expected": "2"
+      }
+    ],
+    "hint": "Calculate differences between consecutive inertia values. The elbow is the point where the rate of drop slows down most dramatically.",
+    "solution": "let maxDiff = -1, elbowK = 2;\nfor(let i=0; i<inertia.length-2; i++) {\n  let drop1 = inertia[i] - inertia[i+1];\n  let drop2 = inertia[i+1] - inertia[i+2];\n  let diff = drop1 - drop2;\n  if (diff > maxDiff) { maxDiff = diff; elbowK = i + 2; }\n}\nreturn elbowK;",
+    "approach": "The elbow method identifies the optimal cluster number. We locate the elbow by finding the vertex where the drop rate between consecutive steps drops off most rapidly."
+  },
+  {
+    "id": "ml_ai_7",
+    "title": "Linear Regression Predict",
+    "category": "ml_ai",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Regression",
+      "Prediction"
+    ],
+    "description": "Write a function `predict(X, w, b)` that takes an array of input values `X`, a slope weight `w`, and a bias y-intercept `b`, and returns an array of predicted outputs where $y = w \\times x + b$.",
+    "starterCode": {
+      "javascript": "function predict(X, w, b) {\n  // Write JavaScript code here\n  return [];\n}",
+      "python": "def predict(X, w, b):\n    # Write Python code here\n    return []",
+      "java": "public double[] predict(double[] X, double w, double b) {\n    // Write Java code here\n    return new double[0];\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 2, 3], 2, 5]",
+        "expected": "[7, 9, 11]"
+      },
+      {
+        "input": "[[10, 20], 0.5, -2]",
+        "expected": "[3, 8]"
+      },
+      {
+        "input": "[[], 1.5, 2]",
+        "expected": "[]"
+      },
+      {
+        "input": "[[0], 10, -5]",
+        "expected": "[-5]"
+      },
+      {
+        "input": "[[1.5, 2.5], 2, 1]",
+        "expected": "[4, 6]"
+      }
+    ],
+    "hint": "Use map or loop through the input array X and evaluate y = w * x + b for each element.",
+    "solution": "return X.map(x => w * x + b);",
+    "approach": "Linear regression predicts continuous results. The prediction line is defined by y = wx + b. We apply this linear transform to each coordinate in feature vector X."
+  },
+  {
+    "id": "ml_ai_8",
+    "title": "Confusion Matrix",
+    "category": "ml_ai",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Evaluation",
+      "Matrix"
+    ],
+    "description": "Build a binary confusion matrix from predicted and actual labels. Given arrays of `actual` labels (0s and 1s) and `predicted` labels, return an object `{tp, fp, fn, tn}` representing True Positives, False Positives, False Negatives, and True Negatives.",
+    "starterCode": {
+      "javascript": "function getConfusionMatrix(actual, predicted) {\n  // Write JavaScript code here\n  return {tp:0, fp:0, fn:0, tn:0};\n}",
+      "python": "def get_confusion_matrix(actual, predicted):\n    # Write Python code here\n    return {'tp':0, 'fp':0, 'fn':0, 'tn':0}",
+      "java": "public Map<String, Integer> getConfusionMatrix(int[] actual, int[] predicted) {\n    // Write Java code here\n    return new HashMap<>();\n}"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 0, 1, 1, 0], [1, 1, 0, 1, 0]]",
+        "expected": "{\"tp\":2,\"fp\":1,\"fn\":1,\"tn\":1}"
+      },
+      {
+        "input": "[[1, 1], [1, 1]]",
+        "expected": "{\"tp\":2,\"fp\":0,\"fn\":0,\"tn\":0}"
+      },
+      {
+        "input": "[[0, 0], [0, 0]]",
+        "expected": "{\"tp\":0,\"fp\":0,\"fn\":0,\"tn\":2}"
+      },
+      {
+        "input": "[[1, 0], [0, 1]]",
+        "expected": "{\"tp\":0,\"fp\":1,\"fn\":1,\"tn\":0}"
+      },
+      {
+        "input": "[[1,1,0,0], [1,0,1,0]]",
+        "expected": "{\"tp\":1,\"fp\":1,\"fn\":1,\"tn\":1}"
+      }
+    ],
+    "hint": "Iterate through both arrays. If actual===1 and predicted===1, increment tp. If actual===0 and predicted===1, increment fp, and so on.",
+    "solution": "let tp=0, fp=0, fn=0, tn=0;\nfor (let i = 0; i < actual.length; i++) {\n  if (actual[i] === 1 && predicted[i] === 1) tp++;\n  else if (actual[i] === 0 && predicted[i] === 1) fp++;\n  else if (actual[i] === 1 && predicted[i] === 0) fn++;\n  else if (actual[i] === 0 && predicted[i] === 0) tn++;\n}\nreturn {tp, fp, fn, tn};",
+    "approach": "A confusion matrix reports classification counts. True Positives: actual 1, predicted 1. False Positives: actual 0, predicted 1. False Negatives: actual 1, predicted 0. True Negatives: actual 0, predicted 0."
+  },
+  {
+    "id": "ml_ai_9",
+    "title": "Calculate Entropy",
+    "category": "ml_ai",
+    "difficulty": "Medium",
+    "xpReward": 60,
+    "tags": [
+      "Math",
+      "Decision Tree"
+    ],
+    "description": "In decision trees, entropy measures impurity. Given the counts of two classes in a split node `c1` and `c2`, calculate the Shannon Entropy: $H(S) = -p_1 \\log_2(p_1) - p_2 \\log_2(p_2)$. Return the entropy rounded to 2 decimal places. Return 0 if the node is pure.",
+    "starterCode": {
+      "javascript": "function calculateEntropy(c1, c2) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def calculate_entropy(c1, c2):\n    # Write Python code here\n    return 0.0",
+      "java": "public double calculateEntropy(int c1, int c2) {\n    // Write Java code here\n    return 0.0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[5, 5]",
+        "expected": "1"
+      },
+      {
+        "input": "[10, 0]",
+        "expected": "0"
+      },
+      {
+        "input": "[8, 2]",
+        "expected": "0.72"
+      },
+      {
+        "input": "[0, 0]",
+        "expected": "0"
+      },
+      {
+        "input": "[15, 5]",
+        "expected": "0.81"
+      }
+    ],
+    "hint": "Total = c1 + c2. p1 = c1 / total, p2 = c2 / total. Entropy = -p1 * log2(p1) - p2 * log2(p2). Log2 can be calculated as Math.log(p) / Math.log(2).",
+    "solution": "const total = c1 + c2; if (total === 0 || c1 === 0 || c2 === 0) return 0;\nconst p1 = c1 / total, p2 = c2 / total;\nconst ent = -p1 * (Math.log(p1) / Math.log(2)) - p2 * (Math.log(p2) / Math.log(2));\nreturn +ent.toFixed(2);",
+    "approach": "Entropy evaluates partition impurity. In a binary split, we find the class fractions p1 and p2. We sum their log base 2 values scaled by their proportions. Pure splits yield 0 entropy."
+  },
+  {
+    "id": "ml_ai_10",
+    "title": "Sigmoid Activation",
+    "category": "ml_ai",
+    "difficulty": "Easy",
+    "xpReward": 40,
+    "tags": [
+      "Math",
+      "Sigmoid"
+    ],
+    "description": "Implement the sigmoid activation function: $S(x) = \\frac{1}{1 + e^{-x}}$. Write a function `sigmoid(x)` that returns the squeezed value rounded to 4 decimal places.",
+    "starterCode": {
+      "javascript": "function sigmoid(x) {\n  // Write JavaScript code here\n  return 0;\n}",
+      "python": "def sigmoid(x):\n    # Write Python code here\n    return 0.0",
+      "java": "public double sigmoid(double x) {\n    // Write Java code here\n    return 0.0;\n}"
+    },
+    "testCases": [
+      {
+        "input": "[0]",
+        "expected": "0.5"
+      },
+      {
+        "input": "[2]",
+        "expected": "0.8808"
+      },
+      {
+        "input": "[-2]",
+        "expected": "0.1192"
+      },
+      {
+        "input": "[10]",
+        "expected": "1"
+      },
+      {
+        "input": "[-10]",
+        "expected": "0"
+      }
+    ],
+    "hint": "The mathematical formula is: 1 / (1 + Math.exp(-x)). Wrap the return value with `.toFixed(4)` and convert to number.",
+    "solution": "return +(1 / (1 + Math.exp(-x))).toFixed(4);",
+    "approach": "The sigmoid function squashes any real-valued number into a probability range between 0 and 1. It acts as an activation threshold mapping in logistic neural nets."
+  }
+]

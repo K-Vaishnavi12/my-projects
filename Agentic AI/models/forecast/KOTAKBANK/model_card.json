@@ -1,0 +1,44 @@
+{
+  "symbol": "KOTAKBANK",
+  "best_model": "lstm",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "KOTAKBANK",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 3.912018481632283,
+        "rmse": 5.396663261916754,
+        "mape_pct": 0.9667123641085194,
+        "directional_accuracy": 0.48582995951417,
+        "n_samples": 248
+      },
+      "fit_seconds": 57.46
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 3.8886122150823814,
+        "rmse": 5.378800905407193,
+        "mape_pct": 0.9613388804516124,
+        "directional_accuracy": 0.4898785425101215,
+        "n_samples": 248
+      },
+      "fit_seconds": 15.25
+    },
+    "best_model": "lstm"
+  },
+  "trained_at": "2026-06-11T15:40:09.207544+00:00"
+}

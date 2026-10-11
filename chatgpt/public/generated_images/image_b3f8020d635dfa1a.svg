@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+          <defs>
+            <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0b0b0f" />
+              <stop offset="50%" stop-color="#1e1b4b" />
+              <stop offset="100%" stop-color="#4c1d95" />
+            </linearGradient>
+            <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#a78bfa" />
+              <stop offset="100%" stop-color="#ec4899" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <rect width="1024" height="1024" fill="url(#bg-grad)" />
+          <path d="M0 128 H1024 M0 256 H1024 M0 384 H1024 M0 512 H1024 M0 640 H1024 M0 768 H1024 M0 896 H1024" stroke="rgba(255,255,255,0.02)" stroke-width="2" />
+          <path d="M128 0 V1024 M256 0 V1024 M384 0 V1024 M512 0 V1024 M640 0 V1024 M768 0 V1024 M896 0 V1024" stroke="rgba(255,255,255,0.02)" stroke-width="2" />
+          
+          <circle cx="512" cy="400" r="180" fill="none" stroke="#8b5cf6" stroke-width="4" filter="url(#glow)" opacity="0.6" />
+          <circle cx="512" cy="400" r="220" fill="none" stroke="#ec4899" stroke-width="2" filter="url(#glow)" opacity="0.4" />
+          
+          <g transform="translate(448, 320) scale(1.5)">
+            <path d="M40 0 C45 15 50 35 45 55 C40 70 30 85 10 90 C-10 95 -25 80 -30 60 C-35 40 -30 20 -20 5" fill="none" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" filter="url(#glow)" />
+            <path d="M40 0 C45 15 50 35 45 55 C40 70 30 85 10 90 C-10 95 -25 80 -30 60 C-35 40 -30 20 -20 5" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" />
+          </g>
+          
+          <rect x="112" y="680" width="800" height="180" rx="20" fill="rgba(0, 0, 0, 0.6)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="2" />
+          <text x="512" y="745" font-family="'Outfit', sans-serif" font-size="28" font-weight="800" fill="url(#text-grad)" text-anchor="middle">NEURAL CANVAS FALLBACK</text>
+          <text x="512" y="805" font-family="'Inter', sans-serif" font-size="20" font-weight="500" fill="#e4e4e7" text-anchor="middle">Prompt: "a cute cyber monkey eating a banana"</text>
+        </svg>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEX Live Classroom — NexLearn AI</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Confetti library for completion celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <div class="space-bg"></div>
+  <div class="space-grid"></div>
+  <div class="particle-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+      NEXLEARN AI
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="classroom.html" class="active">Classroom</a>
+      <a href="code-arena.html">Code Arena</a>
+      <a href="vibe-studio.html">Vibe Studio</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="header-controls">
+      <div class="xp-badge">
+        XP: <span id="header-xp">0</span>
+      </div>
+      <div class="xp-badge" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4);">
+        Lvl: <span id="header-level" style="color: var(--neon-green);">1</span>
+      </div>
+      <button id="speech-toggle" class="toggle-btn" title="Toggle Voice Speech">🔊</button>
+      <div class="speed-control-container" style="display: flex; align-items: center; gap: 0.4rem; background: rgba(0, 212, 255, 0.05); border: 1px solid var(--border-glow); padding: 0.4rem 0.8rem; border-radius: 20px;">
+        <label for="speed-slider" style="font-size: 0.75rem; color: var(--text-secondary); font-family: var(--font-tech); user-select: none;">SPEED:</label>
+        <input type="range" id="speed-slider" min="0.5" max="1.5" step="0.5" value="1.0" class="speed-slider" style="width: 70px; cursor: pointer;" title="Slow / Normal / Fast">
+        <span id="speed-value-text" style="font-size: 0.75rem; color: var(--neon-blue); font-family: var(--font-mono); width: 45px; text-align: right;">Normal</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Live Classroom Layout -->
+  <main class="container">
+    <div class="classroom-layout">
+      
+      <!-- Left Sidebar: Tutor Capsule -->
+      <aside class="glass-card tutor-sidebar">
+        <div class="tutor-name">NEX TUTOR</div>
+        <div class="tutor-status">Online</div>
+        
+        <!-- Browser notice for voice features -->
+        <div class="browser-notice" id="browser-notice">
+          💡 For best voice experience, use Chrome or Edge.
+        </div>
+        
+        <div class="tutor-avatar-box">
+          <div class="mascot-container expr-neutral" id="tutor-avatar">
+            <div class="mascot-glow"></div>
+            <svg class="mascot-svg" viewBox="0 0 260 260" width="100%" height="100%">
+              <rect class="ear" x="35" y="115" width="15" height="40" rx="5" />
+              <rect class="ear" x="210" y="115" width="15" height="40" rx="5" />
+              <line class="antenna" x1="130" y1="90" x2="130" y2="50" />
+              <circle class="antenna-bulb" cx="130" cy="45" r="12" />
+              <rect x="115" y="175" width="30" height="20" rx="3" fill="#0f0f23" stroke="#00d4ff" stroke-width="2" />
+              <rect class="head" x="50" y="80" width="160" height="100" rx="20" />
+              <rect x="70" y="95" width="120" height="70" rx="10" fill="#080816" stroke="rgba(0, 212, 255, 0.15)" stroke-width="2" />
+              <circle class="eye eye-left" cx="100" cy="125" r="8" />
+              <circle class="eye eye-right" cx="160" cy="125" r="8" />
+              <line class="eye-brow eye-brow-left" x1="90" y1="112" x2="110" y2="112" />
+              <line class="eye-brow eye-brow-right" x1="150" y1="112" x2="170" y2="112" />
+              <path class="mouth" d="M 115 150 Q 130 160 145 150" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Topic Selector dropdown -->
+        <div style="width: 100%; text-align: left;">
+          <label for="topic-select" style="font-size: 0.8rem; color: var(--text-secondary); font-family: var(--font-tech);">CHOOSE LESSON TOPIC</label>
+          <select id="topic-select" class="doubt-input" style="margin-top: 0.4rem; cursor: pointer;">
+            <optgroup label="Machine Learning">
+              <!-- JS will load topics here -->
+            </optgroup>
+            <optgroup label="Artificial Intelligence">
+              <!-- JS will load topics here -->
+            </optgroup>
+            <optgroup label="Data Structures">
+              <!-- JS will load topics here -->
+            </optgroup>
+          </select>
+        </div>
+
+        <a href="code-arena.html" class="btn btn-secondary" style="width: 100%;">⚔️ Enter Code Arena</a>
+      </aside>
+
+      <!-- Right Panel: Lesson Board -->
+      <section class="glass-card board-container">
+        
+        <!-- Board Header -->
+        <div class="board-header">
+          <div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-family: var(--font-tech);">ACTIVE TOPIC</div>
+            <div class="active-topic-name" id="lesson-topic-title">Loading Topic...</div>
+          </div>
+          
+          <!-- Progression Dots -->
+          <div class="chunk-dots" id="progress-dots">
+            <div class="chunk-dot" title="Concept intro"></div>
+            <div class="chunk-dot" title="Mechanism"></div>
+            <div class="chunk-dot" title="Example"></div>
+            <div class="chunk-dot" title="Rule / Formula"></div>
+            <div class="chunk-dot" title="Summary"></div>
+          </div>
+        </div>
+
+        <!-- Board Main: Dialogue on left, Visual slide on right -->
+        <div class="board-main" id="board-main-content">
+          
+          <!-- Dialogue Area -->
+          <div class="dialogue-area">
+            <div class="speech-bubble" id="tutor-speech-bubble">
+              <span class="typewriter-text" id="tutor-text"></span>
+              <span class="cursor" id="typewriter-cursor"></span>
+            </div>
+
+            <!-- Voice feedback bubble -->
+            <div id="voice-feedback-bubble" class="voice-feedback-bubble" style="display: none;">
+              <span class="voice-feedback-icon">🎤</span>
+              <span id="voice-heard-text">I heard: ""</span>
+              <span class="voice-feedback-check">✓</span>
+            </div>
+            
+            <div class="board-footer">
+              <!-- Mic control toggle -->
+              <div class="mic-control-box" style="display: flex; align-items: center; gap: 0.5rem;">
+                <button id="mic-btn" class="mic-btn" title="Speak or type (always-listening)">🎤</button>
+                <span id="mic-status-text" style="font-size: 0.75rem; color: var(--text-secondary); font-family: var(--font-mono); user-select: none;">Speak or type</span>
+              </div>
+
+              <!-- Doubt interrupt button (always active during explanation) -->
+              <button id="doubt-trigger-btn" class="btn btn-pink" style="padding: 0.5rem 1rem; font-size: 0.8rem;">
+                ❋ I have a doubt
+              </button>
+              
+              <!-- Dialogue Control actions -->
+              <div class="actions-panel" id="tutor-actions">
+                <!-- Dynamic buttons: Start, Continue, Yes/No will be rendered here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Slide Box -->
+          <div class="visual-board">
+            <h4>VISUAL SLIDE / MATH CARD</h4>
+            <div class="visual-content" id="board-visual-content">
+              <!-- ASCII Flowchart or formulas rendered here -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Topic Selector Choice Board -->
+        <div id="topic-choice-board" style="display: none; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center; animation: fadeIn 0.5s;">
+          <h3 class="cyber-title" style="font-size: 1.2rem; color: var(--neon-blue); margin-top: 1rem;">
+            Select Your Learning Track
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; max-width: 500px; line-height: 1.5; margin-top: -0.8rem;">
+            Choose a study track to begin. NEX will guide you step-by-step with voice lessons and interactive checks.
+          </p>
+          <div class="track-choice-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; width: 100%; max-width: 700px; margin-top: 0.5rem;">
+            <button onclick="chooseTrack('ml')" class="btn btn-blue" style="flex-direction: column; padding: 1.5rem; gap: 0.5rem; height: auto;">
+              <span style="font-size: 2rem;">🧠</span>
+              <span style="font-weight: bold;">Machine Learning</span>
+            </button>
+            <button onclick="chooseTrack('ai')" class="btn" style="flex-direction: column; padding: 1.5rem; gap: 0.5rem; height: auto; border-color: var(--neon-purple); background: rgba(139,92,246,0.05);">
+              <span style="font-size: 2rem;">🛰</span>
+              <span style="font-weight: bold; color: var(--neon-purple);">Artificial Intelligence</span>
+            </button>
+            <button onclick="chooseTrack('dsa')" class="btn btn-green" style="flex-direction: column; padding: 1.5rem; gap: 0.5rem; height: auto;">
+              <span style="font-size: 2rem;">⛓</span>
+              <span style="font-weight: bold;">Data Structures</span>
+            </button>
+          </div>
+          
+          <!-- Selected Track Topics list -->
+          <div id="track-topics-list" style="display: none; width: 100%; max-width: 600px; background: rgba(5,5,16,0.6); border: 1px solid var(--border-glow); padding: 1.2rem; border-radius: 10px; margin-top: 1rem;">
+            <h4 id="selected-track-name" style="font-family: var(--font-tech); font-size: 1rem; color: var(--neon-blue); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.4rem; margin-bottom: 0.8rem;">
+              Topics
+            </h4>
+            <div id="topics-buttons-container" style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 250px; overflow-y: auto; padding-right: 0.3rem;">
+              <!-- Dynamic buttons per topic -->
+            </div>
+            <button onclick="backToTracks()" class="btn btn-secondary" style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">
+              ◀ Back to Tracks
+            </button>
+          </div>
+        </div>
+
+        <!-- Hidden Quiz Wrapper (shown after chunks complete) -->
+        <div id="quiz-wrapper" style="display: none;" class="quiz-container">
+          <div style="font-family: var(--font-tech); color: var(--neon-purple); font-size: 1.1rem; border-bottom: 1px solid rgba(139,92,246,0.2); padding-bottom: 0.4rem;">
+            🎯 TOPIC MINI QUIZ
+          </div>
+          <div id="quiz-question-box" class="quiz-question"></div>
+          <div id="quiz-choices-box" class="quiz-choices"></div>
+          <div id="quiz-feedback-box" class="quiz-feedback" style="display: none;"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+            <button id="quiz-hint-btn" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">
+              💡 Get Hint
+            </button>
+            <button id="quiz-next-btn" class="btn btn-blue" style="display: none; padding: 0.5rem 1rem;">
+              Next Question ▶
+            </button>
+          </div>
+        </div>
+
+        <!-- Hidden Completion Canvas & Box -->
+        <div id="topic-complete-box" style="display: none; text-align: center; padding: 2rem 0; animation: fadeIn 0.6s;">
+          <h2 class="neon-text-green" style="font-family: var(--font-tech); font-size: 1.8rem; margin-bottom: 1rem;">
+            🏆 TOPIC COMPLETED!
+          </h2>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+            Excellent work! You've successfully completed the lesson and answered the quiz. <br>
+            <span id="complete-xp-earn" class="neon-text-purple" style="font-weight: bold; font-size: 1.1rem;">+50 XP earned</span>
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem;">
+            <button id="complete-next-topic" class="btn btn-blue">Continue to Next Topic ▶</button>
+            <a href="code-arena.html" class="btn btn-secondary">Practice in Code Arena</a>
+          </div>
+        </div>
+
+        <!-- Doubt Panel (Slide-down toggle when doubt button is clicked) -->
+        <div class="doubt-panel" id="doubt-input-panel" style="display: none;">
+          <div class="doubt-input-wrapper">
+            <input type="text" id="doubt-question-input" class="doubt-input" placeholder="Ask NEX a question (e.g. 'Can you explain the formula?', 'What is a real world example?')">
+          </div>
+          <button id="doubt-submit-btn" class="btn btn-pink">Ask NEX</button>
+          <button id="doubt-cancel-btn" class="btn btn-secondary">Resume</button>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <script src="progress.js"></script>
+  <script src="classroom.js"></script>
+</body>
+</html>

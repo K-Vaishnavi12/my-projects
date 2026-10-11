@@ -1,0 +1,21 @@
+# ============================================================
+# Symposium - full LOCAL dev requirements (with TensorFlow)
+# Use this locally: pip install -r requirements-dev.txt
+# ============================================================
+# The main requirements.txt is optimized for Streamlit Cloud
+# and skips TensorFlow to fit in the 1 GB RAM limit.
+# The neural net auto-falls-back to scikit-learn MLPClassifier
+# when TF isn't installed.
+# ============================================================
+
+-r requirements.txt
+
+# --- Deep learning (adds ~700 MB) ---
+tensorflow==2.18.0
+
+# --- Extras for local dev ---
+seaborn
+streamlit-extras
+pytest
+pytest-mock
+google-generativeai

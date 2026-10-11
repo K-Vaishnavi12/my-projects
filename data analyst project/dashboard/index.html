@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics Command Center — Churn & Attribution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="grid-bg"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#hero" class="logo">
+        <span class="logo-bracket">[</span>ANALYTICS<span class="logo-bracket">]</span>
+      </a>
+      <div class="nav-links">
+        <a href="#churn">Churn & Revenue</a>
+        <a href="#attribution">Ad Attribution</a>
+        <a href="#summary">Impact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <p class="hero-label">Data Analytics Portfolio</p>
+        <h1 class="hero-title">
+          <span class="line">SaaS Churn</span>
+          <span class="line accent">& Revenue × Ad Attribution</span>
+        </h1>
+        <p class="hero-desc">Cohort retention, churn segmentation, ARR tracking — Incrementality & multi-touch attribution.</p>
+        <div class="hero-ctas">
+          <a href="#churn" class="btn btn-primary">View Churn Dashboard</a>
+          <a href="#attribution" class="btn btn-ghost">View Attribution</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card card-1">
+          <span class="card-kpi">22%</span>
+          <span class="card-label">Churn Reduction</span>
+        </div>
+        <div class="floating-card card-2">
+          <span class="card-kpi">18%</span>
+          <span class="card-label">LTV Improvement</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="churn" class="section section-churn">
+      <div class="section-header">
+        <span class="section-tag">01 — SaaS / IT</span>
+        <h2>Churn & Revenue Retention</h2>
+        <p>Subscription churn impacting ARR. Cohort analysis, risk segmentation, NRR.</p>
+      </div>
+      <div class="kpi-row">
+        <article class="kpi-card" data-value="4.2">
+          <div class="kpi-icon">↓</div>
+          <span class="kpi-value"><span class="counter" data-target="4.2">0</span>%</span>
+          <span class="kpi-label">Monthly Churn Rate</span>
+        </article>
+        <article class="kpi-card" data-value="1247">
+          <div class="kpi-icon">$</div>
+          <span class="kpi-value">$<span class="counter" data-target="1247">0</span></span>
+          <span class="kpi-label">Avg Customer LTV</span>
+        </article>
+        <article class="kpi-card" data-value="98">
+          <div class="kpi-icon">↗</div>
+          <span class="kpi-value"><span class="counter" data-target="98">0</span>%</span>
+          <span class="kpi-label">Net Revenue Retention</span>
+        </article>
+      </div>
+      <div class="charts-row">
+        <div class="chart-card glass">
+          <h3>Cohort Retention Curves</h3>
+          <div class="chart-wrap">
+            <canvas id="cohortHeatmap" aria-label="Cohort retention by month"></canvas>
+          </div>
+        </div>
+        <div class="chart-card glass">
+          <h3>Churn Risk Segments</h3>
+          <div class="chart-wrap">
+            <canvas id="churnSegments" aria-label="Customers by churn risk"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card glass chart-full">
+        <h3>MRR & Churn Trend</h3>
+        <div class="chart-wrap">
+          <canvas id="mrrTrend" aria-label="MRR and churn over time"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="attribution" class="section section-attribution">
+      <div class="section-header">
+        <span class="section-tag">02 — Marketing / SaaS</span>
+        <h2>Ad Spend Incrementality & Attribution</h2>
+        <p>Optimize spend, attribute revenue to channels. Incrementality tests, multi-touch models.</p>
+      </div>
+      <div class="kpi-row">
+        <article class="kpi-card kpi-attribution" data-value="42">
+          <div class="kpi-icon">↑</div>
+          <span class="kpi-value"><span class="counter" data-target="42">0</span>%</span>
+          <span class="kpi-label">Incremental Lift</span>
+        </article>
+        <article class="kpi-card kpi-attribution" data-value="3.2">
+          <div class="kpi-icon">×</div>
+          <span class="kpi-value"><span class="counter" data-target="3.2" data-decimals="1">0</span>×</span>
+          <span class="kpi-label">ROAS</span>
+        </article>
+        <article class="kpi-card kpi-attribution" data-value="89">
+          <div class="kpi-icon">%</div>
+          <span class="kpi-value"><span class="counter" data-target="89">0</span>%</span>
+          <span class="kpi-label">Paid Attribution Share</span>
+        </article>
+      </div>
+      <div class="charts-row">
+        <div class="chart-card glass">
+          <h3>Attribution by Channel</h3>
+          <div class="chart-wrap">
+            <canvas id="attributionChart" aria-label="Conversions attributed per channel"></canvas>
+          </div>
+        </div>
+        <div class="chart-card glass">
+          <h3>Spend vs Revenue by Channel</h3>
+          <div class="chart-wrap">
+            <canvas id="spendRevenueChart" aria-label="Spend and revenue by channel"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="section section-summary">
+      <div class="section-header">
+        <span class="section-tag">Impact</span>
+        <h2>Business Outcomes</h2>
+      </div>
+      <div class="impact-cards">
+        <article class="impact-card">
+          <div class="impact-number">5K+</div>
+          <p>Users in cohort analysis</p>
+        </article>
+        <article class="impact-card">
+          <div class="impact-number">22%</div>
+          <p>Churn reduction (simulated)</p>
+        </article>
+        <article class="impact-card">
+          <div class="impact-number">ARR</div>
+          <p>Dashboard for revenue retention</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Data Analytics — Python, SQL, Pandas, Power BI</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

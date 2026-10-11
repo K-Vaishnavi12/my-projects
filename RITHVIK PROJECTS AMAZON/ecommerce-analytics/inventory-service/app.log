@@ -1,0 +1,283 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-08-08 22:27:03.195  INFO 11948 --- [           main] c.a.c.i.InventoryServiceApplication      : Starting InventoryServiceApplication v1.0.0 using Java 11.0.27 on Vaishus-own with PID 11948 (C:\Users\kvais\OneDrive\Desktop\RITHVIK PROJECTS AMAZON\ecommerce-analytics\inventory-service\target\inventory-service-1.0.0.jar started by kvais in C:\Users\kvais\OneDrive\Desktop\RITHVIK PROJECTS AMAZON\ecommerce-analytics)
+2026-08-08 22:27:03.201 DEBUG 11948 --- [           main] c.a.c.i.InventoryServiceApplication      : Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-08-08 22:27:03.204  INFO 11948 --- [           main] c.a.c.i.InventoryServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-08-08 22:27:04.999  INFO 11948 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-08 22:27:05.004  INFO 11948 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-08 22:27:05.058  INFO 11948 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2026-08-08 22:27:06.646  INFO 11948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2026-08-08 22:27:06.668  INFO 11948 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-08-08 22:27:06.669  INFO 11948 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-08-08 22:27:06.813  INFO 11948 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-08-08 22:27:06.814  INFO 11948 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3438 ms
+2026-08-08 22:27:09.713  INFO 11948 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoint(s) beneath base path '/actuator'
+2026-08-08 22:27:09.952  INFO 11948 --- [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-inventory-service-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = inventory-service-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-08-08 22:27:10.551  INFO 11948 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.2
+2026-08-08 22:27:10.554  INFO 11948 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f8c67dc3ae0a3265
+2026-08-08 22:27:10.554  INFO 11948 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1786208230548
+2026-08-08 22:27:10.632  INFO 11948 --- [           main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Subscribed to topic(s): order-created
+2026-08-08 22:27:10.730  INFO 11948 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2026-08-08 22:27:10.753  INFO 11948 --- [           main] c.a.c.i.InventoryServiceApplication      : Started InventoryServiceApplication in 8.601 seconds (JVM running for 9.287)
+2026-08-08 22:27:11.703  INFO 11948 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Resetting the last seen epoch of partition order-created-0 to 0 since the associated topicId changed from null to 53tHgLVUR-yzou6xiIoKow
+2026-08-08 22:27:11.708  INFO 11948 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cluster ID: 2G4h3SqfT6CSx1Zk6u0fUg
+2026-08-08 22:27:11.710  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Discovered group coordinator localhost:29092 (id: 2147483646 rack: null)
+2026-08-08 22:27:11.719  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] (Re-)joining group
+2026-08-08 22:27:11.776  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Request joining group due to: need to re-join with the given member-id
+2026-08-08 22:27:11.777  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] (Re-)joining group
+2026-08-08 22:27:15.515  INFO 11948 --- [nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-08 22:27:15.516  INFO 11948 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-08-08 22:27:15.517  INFO 11948 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-08-08 22:27:41.242  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-inventory-service-group-1-af043456-bfb7-415a-9a2e-989517ac4f4b', protocol='range'}
+2026-08-08 22:27:41.246  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Finished assignment for group at generation 2: {consumer-inventory-service-group-1-af043456-bfb7-415a-9a2e-989517ac4f4b=Assignment(partitions=[order-created-0])}
+2026-08-08 22:27:41.253  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-inventory-service-group-1-af043456-bfb7-415a-9a2e-989517ac4f4b', protocol='range'}
+2026-08-08 22:27:41.254  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Notifying assignor about the new Assignment(partitions=[order-created-0])
+2026-08-08 22:27:41.257  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Adding newly assigned partitions: order-created-0
+2026-08-08 22:27:41.266  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Setting offset for partition order-created-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1 rack: null)], epoch=0}}
+2026-08-08 22:27:41.266  INFO 11948 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : inventory-service-group: partitions assigned: [order-created-0]
+2026-08-08 22:27:44.359  INFO 11948 --- [nio-8082-exec-7] o.apache.coyote.http11.Http11Processor   : The host [inventory_backend] is not valid
+ Note: further occurrences of request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: The character [_] is never valid in a domain name.
+	at org.apache.tomcat.util.http.parser.HttpParser$DomainParseState.next(HttpParser.java:1045) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.http.parser.HttpParser.readHostDomainName(HttpParser.java:931) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.http.parser.Host.parse(Host.java:67) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.http.parser.Host.parse(Host.java:43) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessor.parseHost(AbstractProcessor.java:297) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.prepareRequest(Http11Processor.java:784) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2026-08-08 22:27:45.313  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : Received order-created: orderId=ORD-96C47159-A7A userId=smoke-user-1
+2026-08-08 22:27:45.324 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 1 x P001 (remaining=97)
+2026-08-08 22:27:45.328 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 2 x P002 (remaining=494)
+2026-08-08 22:27:45.330  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : RESERVED stock for order ORD-96C47159-A7A
+2026-08-08 22:27:45.336  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-08-08 22:27:45.352  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2026-08-08 22:27:45.383  INFO 11948 --- [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.2
+2026-08-08 22:27:45.384  INFO 11948 --- [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f8c67dc3ae0a3265
+2026-08-08 22:27:45.384  INFO 11948 --- [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1786208265383
+2026-08-08 22:27:45.403  INFO 11948 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: 2G4h3SqfT6CSx1Zk6u0fUg
+2026-08-08 22:27:45.404  INFO 11948 --- [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 4 with epoch 0
+2026-08-08 22:27:45.429  INFO 11948 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition inventory-reserved-0 to 0 since the associated topicId changed from null to dLqnSxm0RjydxoJNsk2BNQ
+2026-08-08 22:27:45.483  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : Received order-created: orderId=ORD-0378CCC2-2ED userId=smoke-user-2
+2026-08-08 22:27:45.494 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 1 x P001 (remaining=96)
+2026-08-08 22:27:45.499 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 2 x P002 (remaining=492)
+2026-08-08 22:27:45.499  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : RESERVED stock for order ORD-0378CCC2-2ED
+2026-08-08 22:27:45.511  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : Received order-created: orderId=ORD-1317104D-1BD userId=smoke-user-3
+2026-08-08 22:27:45.515 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 1 x P001 (remaining=95)
+2026-08-08 22:27:45.521 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 2 x P002 (remaining=490)
+2026-08-08 22:27:45.521  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : RESERVED stock for order ORD-1317104D-1BD
+2026-08-08 22:27:45.533  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : Received order-created: orderId=ORD-4DF39E89-62E userId=smoke-user-4
+2026-08-08 22:27:45.541 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 1 x P001 (remaining=94)
+2026-08-08 22:27:45.548 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 2 x P002 (remaining=488)
+2026-08-08 22:27:45.548  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : RESERVED stock for order ORD-4DF39E89-62E
+2026-08-08 22:27:45.590  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : Received order-created: orderId=ORD-8AD632CB-6AF userId=smoke-user-5
+2026-08-08 22:27:45.595 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 1 x P001 (remaining=93)
+2026-08-08 22:27:45.599 DEBUG 11948 --- [ntainer#0-0-C-1] c.a.c.i.service.InventoryService         : Reserved 2 x P002 (remaining=486)
+2026-08-08 22:27:45.599  INFO 11948 --- [ntainer#0-0-C-1] c.a.c.i.consumer.OrderCreatedConsumer    : RESERVED stock for order ORD-8AD632CB-6AF
+2026-08-08 22:36:11.865  INFO 11948 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Node -1 disconnected.
+2026-08-08 22:36:45.477  INFO 11948 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2026-08-08 23:20:13.902  INFO 11948 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Disconnecting from node 1 due to request timeout.
+2026-08-08 23:20:13.930  INFO 11948 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight FETCH request with correlation id 7073 due to node 1 being disconnected (elapsed time since creation: 104847ms, elapsed time since send: 104847ms, request timeout: 30000ms)
+2026-08-08 23:20:13.932  INFO 11948 --- [y-service-group] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Error sending fetch request (sessionId=1576982828, epoch=6037) to node 1:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2026-08-08 23:20:13.932  INFO 11948 --- [y-service-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Group coordinator localhost:29092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response.isDisconnected: false. Rediscovery will be attempted.
+2026-08-08 23:20:13.932  INFO 11948 --- [y-service-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Requesting disconnect from last known coordinator localhost:29092 (id: 2147483646 rack: null)
+2026-08-08 23:20:13.968  INFO 11948 --- [y-service-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Client requested disconnect from node 2147483646
+2026-08-08 23:20:14.262  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Discovered group coordinator localhost:29092 (id: 2147483646 rack: null)
+2026-08-08 23:20:14.265  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Discovered group coordinator localhost:29092 (id: 2147483646 rack: null)
+2026-08-08 23:20:14.267  INFO 11948 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Discovered group coordinator localhost:29092 (id: 2147483646 rack: null)

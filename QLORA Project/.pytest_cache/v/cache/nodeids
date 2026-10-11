@@ -1,0 +1,10 @@
+[
+  "tests/test_app_interface.py::test_answer_question_base_interface",
+  "tests/test_app_interface.py::test_answer_question_rag_interface",
+  "tests/test_rag_integration.py::test_toy_rag_pipeline_end_to_end",
+  "tests/test_rag_pipeline_unit.py::test_chunk_documents_preserves_content_signal",
+  "tests/test_rag_pipeline_unit.py::test_chunk_documents_splits_long_text",
+  "tests/test_ragas_eval_smoke.py::test_evaluate_system_with_ragas_smoke_with_mocked_backend",
+  "tests/test_ragas_eval_smoke.py::test_single_query_ragas_skips_without_ground_truth",
+  "tests/test_retrieval_unit.py::test_build_retriever_returns_non_empty_results"
+]

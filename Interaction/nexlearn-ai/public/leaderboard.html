@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard & Badges — NexLearn AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="space-bg"></div>
+  <div class="space-grid"></div>
+  <div class="particle-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+      NEXLEARN AI
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="classroom.html">Classroom</a>
+      <a href="code-arena.html">Code Arena</a>
+      <a href="vibe-studio.html">Vibe Studio</a>
+      <a href="leaderboard.html" class="active">Leaderboard</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="header-controls">
+      <div class="xp-badge">
+        XP: <span id="header-xp">0</span>
+      </div>
+      <div class="xp-badge" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4);">
+        Lvl: <span id="header-level" style="color: var(--neon-green);">1</span>
+      </div>
+      <button id="speech-toggle" class="toggle-btn" title="Toggle Voice Speech">🔊</button>
+    </div>
+  </header>
+
+  <!-- Leaderboard Content -->
+  <main class="container" style="display:grid; grid-template-columns: 1.5fr 1fr; gap:2rem; align-items:start;">
+    
+    <!-- Left: Rankings Panel -->
+    <section class="glass-card" style="min-height:500px;">
+      <h2 class="cyber-title" style="font-size:1.3rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center;">
+        <span>🏆 Global Rankings</span>
+        <span style="font-size:0.75rem; color:var(--text-secondary); font-family:var(--font-sans);">Active Season 1</span>
+      </h2>
+
+      <!-- Tab Buttons -->
+      <div class="leaderboard-tabs">
+        <button id="tab-global" class="btn btn-blue" style="font-size:0.8rem; padding:0.5rem 1rem;">Global Top 10</button>
+        <button id="tab-friends" class="btn btn-secondary" style="font-size:0.8rem; padding:0.5rem 1rem;">Competing Friends</button>
+      </div>
+
+      <!-- Table -->
+      <div style="overflow-x:auto; margin-top:1.5rem;">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Learner</th>
+              <th>XP Total</th>
+              <th>Level</th>
+              <th>Badges</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <!-- Populated dynamically via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Right: Badge Cabinet Showcase -->
+    <section class="glass-card">
+      <h2 class="cyber-title" style="font-size:1.3rem; border-bottom:1px solid var(--border-glow); padding-bottom:0.5rem; margin-bottom:1rem;">
+        🎖 Badge Showcase
+      </h2>
+      <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.4; margin-bottom:1.5rem;">
+        Unlock custom cryptographic badges by completing lessons, answering quizzes on first tries, or solving arena coding challenges!
+      </p>
+
+      <div class="badge-grid" id="badges-container">
+        <!-- Badge 1: ML Novice -->
+        <div class="badge-item" id="badge-ml_novice">
+          <div class="badge-icon">📉</div>
+          <span style="font-family:var(--font-tech); font-size:0.75rem; font-weight:bold; color:var(--neon-blue);">Linear Learner</span>
+          <span style="font-size:0.65rem; color:var(--text-secondary);">First ML Lesson</span>
+        </div>
+
+        <!-- Badge 2: AI Novice -->
+        <div class="badge-item" id="badge-ai_novice">
+          <div class="badge-icon">🛰</div>
+          <span style="font-family:var(--font-tech); font-size:0.75rem; font-weight:bold; color:var(--neon-purple);">A* Path Finder</span>
+          <span style="font-size:0.65rem; color:var(--text-secondary);">First AI Lesson</span>
+        </div>
+
+        <!-- Badge 3: DSA Novice -->
+        <div class="badge-item" id="badge-dsa_novice">
+          <div class="badge-icon">⛓</div>
+          <span style="font-family:var(--font-tech); font-size:0.75rem; font-weight:bold; color:var(--neon-green);">Linked Legend</span>
+          <span style="font-size:0.65rem; color:var(--text-secondary);">First DSA Lesson</span>
+        </div>
+
+        <!-- Badge 4: Level 3 -->
+        <div class="badge-item" id="badge-level_3">
+          <div class="badge-icon">🥉</div>
+          <span style="font-family:var(--font-tech); font-size:0.75rem; font-weight:bold; color:var(--neon-yellow);">Level 3 Cadet</span>
+          <span style="font-size:0.65rem; color:var(--text-secondary);">Reach Level 3</span>
+        </div>
+
+        <!-- Badge 5: Level 5 -->
+        <div class="badge-item" id="badge-level_5">
+          <div class="badge-icon">🥈</div>
+          <span style="font-family:var(--font-tech); font-size:0.75rem; font-weight:bold; color:var(--neon-pink);">Level 5 Captain</span>
+          <span style="font-size:0.65rem; color:var(--text-secondary);">Reach Level 5</span>
+        </div>
+
+        <!-- Badge 6: Arena Veteran -->
+        <div class="badge-item" id="badge-arena_first">
+          <div class="badge-icon">⚔️</div>
+          <span style="font-family:var(--font-tech); font-size:0.75rem; font-weight:bold; color:var(--neon-blue);">Arena Veteran</span>
+          <span style="font-size:0.65rem; color:var(--text-secondary);">Solve 1 Challenge</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="progress.js"></script>
+  <script src="leaderboard.js"></script>
+</body>
+</html>

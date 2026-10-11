@@ -1,0 +1,15 @@
+com/amazon/clone/order/model/OrderItem.class
+com/amazon/clone/order/event/OrderCreatedEvent.class
+com/amazon/clone/order/model/Order$OrderBuilder.class
+com/amazon/clone/order/controller/OrderController.class
+com/amazon/clone/order/exception/GlobalExceptionHandler.class
+com/amazon/clone/order/model/OrderItem$OrderItemBuilder.class
+com/amazon/clone/order/config/DynamoDbTableInitializer.class
+com/amazon/clone/order/model/Order.class
+com/amazon/clone/order/repository/OrderRepository.class
+com/amazon/clone/order/model/CreateOrderRequest.class
+com/amazon/clone/order/config/DynamoDbConfig.class
+com/amazon/clone/order/service/OrderService.class
+com/amazon/clone/order/OrderServiceApplication.class
+com/amazon/clone/order/config/RedisConfig.class
+com/amazon/clone/order/exception/OrderNotFoundException.class

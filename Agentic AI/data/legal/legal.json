@@ -1,0 +1,5 @@
+[
+  {"type": "compliance", "title": "MCA21 annual return due", "entity": "Company X", "due_date": "2025-03-31"},
+  {"type": "regulatory", "title": "SEBI disclosure norms update", "effective": "2025-04-01", "summary": "Revised disclosure requirements for listed entities"},
+  {"type": "compliance", "title": "Board meeting minutes filing", "entity": "Company X", "due_date": "2025-03-15"}
+]

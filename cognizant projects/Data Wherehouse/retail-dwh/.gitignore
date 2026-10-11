@@ -1,0 +1,22 @@
+# Byte-compiled
+__pycache__/
+*.pyc
+
+# Env / secrets
+.env
+*.log
+
+# Data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+
+# IDE
+.vscode/
+.idea/

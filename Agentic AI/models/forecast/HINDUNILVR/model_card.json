@@ -1,0 +1,44 @@
+{
+  "symbol": "HINDUNILVR",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "HINDUNILVR",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 22.812233741928207,
+        "rmse": 30.686357501748166,
+        "mape_pct": 0.9679545728676211,
+        "directional_accuracy": 0.43724696356275305,
+        "n_samples": 248
+      },
+      "fit_seconds": 30.95
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 23.499922779405022,
+        "rmse": 31.46724363387264,
+        "mape_pct": 0.9980457126638288,
+        "directional_accuracy": 0.4534412955465587,
+        "n_samples": 248
+      },
+      "fit_seconds": 41.11
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:35:28.121206+00:00"
+}

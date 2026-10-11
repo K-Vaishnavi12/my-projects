@@ -1,0 +1,55 @@
+# Retail DWH Docker stack
+# Postgres (warehouse) + Airflow (LocalExecutor)
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: retail_postgres
+    environment:
+      POSTGRES_USER:     ${PG_USER:-retail}
+      POSTGRES_PASSWORD: ${PG_PASSWORD:-retail}
+      POSTGRES_DB:       ${PG_DB:-retail_dwh}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER:-retail}"]
+      interval: 5s
+      retries: 5
+
+  airflow:
+    image: apache/airflow:2.9.2-python3.11
+    container_name: retail_airflow
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${PG_USER:-retail}:${PG_PASSWORD:-retail}@postgres:5432/${PG_DB:-retail_dwh}
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+      _AIRFLOW_DB_MIGRATE: "true"
+      _AIRFLOW_WWW_USER_CREATE: "true"
+      _AIRFLOW_WWW_USER_USERNAME: admin
+      _AIRFLOW_WWW_USER_PASSWORD: admin
+      PG_HOST: postgres
+      PG_USER: ${PG_USER:-retail}
+      PG_PASSWORD: ${PG_PASSWORD:-retail}
+      PG_DB: ${PG_DB:-retail_dwh}
+      PYTHONPATH: /opt/airflow
+      _PIP_ADDITIONAL_REQUIREMENTS: "pyarrow==16.1.0 pytest==8.2.2"
+    ports:
+      - "8081:8080"   # host 8081 -> Airflow 8080 (8080 was busy on host)
+    volumes:
+      - ../dags:/opt/airflow/dags
+      - ../etl:/opt/airflow/etl
+      - ../tests:/opt/airflow/tests
+      - ../data:/opt/airflow/data
+      - ../sql:/opt/airflow/sql
+      - airflow_logs:/opt/airflow/logs
+    command: bash -c "airflow standalone"
+
+volumes:
+  pgdata:
+  airflow_logs:

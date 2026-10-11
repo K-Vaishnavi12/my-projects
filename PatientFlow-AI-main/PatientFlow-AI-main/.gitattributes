@@ -1,0 +1,15 @@
+# GitHub Linguist overrides.
+# The ML training/inference source lives here for reference and to power the
+# /predict endpoint, but this project's primary contribution is the SQL layer.
+# Tell Linguist to exclude the ML pipeline from language stats.
+
+ml/src/**           linguist-vendored
+ml/models/**        linguist-vendored
+ml/reports/**       linguist-vendored
+
+# Ensure SQL is properly detected
+*.sql               linguist-detectable=true
+*.sql               linguist-language=SQL
+
+# Lockfiles / generated
+package-lock.json   linguist-generated=true

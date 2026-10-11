@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — NexLearn AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="space-bg"></div>
+  <div class="space-grid"></div>
+  <div class="particle-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+      NEXLEARN AI
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="classroom.html">Classroom</a>
+      <a href="code-arena.html">Code Arena</a>
+      <a href="vibe-studio.html">Vibe Studio</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+    </nav>
+    <div class="header-controls">
+      <div class="xp-badge">
+        XP: <span id="header-xp">0</span>
+      </div>
+      <div class="xp-badge" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4);">
+        Lvl: <span id="header-level" style="color: var(--neon-green);">1</span>
+      </div>
+      <button id="speech-toggle" class="toggle-btn" title="Toggle Voice Speech">🔊</button>
+    </div>
+  </header>
+
+  <!-- Dashboard Main Layout -->
+  <main class="container">
+    <div class="dashboard-layout">
+      
+      <!-- Left Column: Curriculum Roadmap Map -->
+      <section class="progress-map-section">
+        <div class="glass-card">
+          <h2 class="cyber-title" style="font-size:1.3rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center;">
+            <span>🗺️ Curriculum roadmap</span>
+            <span style="font-size:0.75rem; color:var(--text-secondary); font-family:var(--font-sans);">Click node to load lesson</span>
+          </h2>
+
+          <div class="curriculum-tree" id="curriculum-tree-container">
+            
+            <!-- Machine Learning Track -->
+            <div class="track-container" id="track-ml">
+              <div class="track-title">Machine Learning (10 Topics)</div>
+              <div class="track-nodes" id="nodes-ml">
+                <!-- Nodes loaded dynamically via JS -->
+              </div>
+            </div>
+
+            <!-- Artificial Intelligence Track -->
+            <div class="track-container" id="track-ai">
+              <div class="track-title">Artificial Intelligence (9 Topics)</div>
+              <div class="track-nodes" id="nodes-ai">
+                <!-- Nodes loaded dynamically via JS -->
+              </div>
+            </div>
+
+            <!-- Data Structures Track -->
+            <div class="track-container" id="track-dsa">
+              <div class="track-title">Data Structures & Algorithms (10 Topics)</div>
+              <div class="track-nodes" id="nodes-dsa">
+                <!-- Nodes loaded dynamically via JS -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Profile, Streaks & Weekly Analytics -->
+      <section style="display:flex; flex-direction:column; gap:2rem;">
+        
+        <!-- Profile & Streak Card -->
+        <div class="glass-card streak-card">
+          <div class="streak-flame">🔥</div>
+          <div>
+            <h3 style="font-family:var(--font-tech); font-size:1.4rem; color:var(--neon-yellow);" id="dash-streak-count">
+              0 Day Streak
+            </h3>
+            <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.4; margin-top:0.3rem;">
+              Complete a lesson or submit a coding challenge today to keep your fire burning!
+            </p>
+          </div>
+        </div>
+
+        <!-- Weekly XP Analytics Chart -->
+        <div class="glass-card">
+          <h3 class="cyber-title" style="font-size:1.1rem; margin-bottom:1rem; border-bottom:1px solid var(--border-glow); padding-bottom:0.5rem;">
+            📊 Weekly Activity (XP)
+          </h3>
+          <div class="chart-box">
+            <svg class="chart-svg" viewBox="0 0 400 200">
+              <!-- Grid lines -->
+              <line class="chart-grid" x1="50" y1="20" x2="50" y2="170" />
+              <line class="chart-grid" x1="100" y1="20" x2="100" y2="170" />
+              <line class="chart-grid" x1="150" y1="20" x2="150" y2="170" />
+              <line class="chart-grid" x1="200" y1="20" x2="200" y2="170" />
+              <line class="chart-grid" x1="250" y1="20" x2="250" y2="170" />
+              <line class="chart-grid" x1="300" y1="20" x2="300" y2="170" />
+              <line class="chart-grid" x1="350" y1="20" x2="350" y2="170" />
+              
+              <!-- Bottom axis line -->
+              <line x1="40" y1="170" x2="360" y2="170" stroke="var(--border-glow)" stroke-width="2" />
+              
+              <!-- XP Line path (dynamically shaped in JS or hardcoded default) -->
+              <path class="chart-path" d="M 50 160 L 100 150 L 150 120 L 200 130 L 250 80 L 300 110 L 350 40" id="xp-chart-path" />
+              
+              <!-- Data Points (circles) -->
+              <circle cx="50" cy="160" r="4" fill="var(--neon-blue)" />
+              <circle cx="100" cy="150" r="4" fill="var(--neon-blue)" />
+              <circle cx="150" cy="120" r="4" fill="var(--neon-blue)" />
+              <circle cx="200" cy="130" r="4" fill="var(--neon-blue)" />
+              <circle cx="250" cy="80" r="4" fill="var(--neon-blue)" />
+              <circle cx="300" cy="110" r="4" fill="var(--neon-blue)" />
+              <circle cx="350" cy="40" r="4" fill="var(--neon-green)" />
+              
+              <!-- Labels -->
+              <text x="50" y="190" fill="var(--text-secondary)" font-size="9" text-anchor="middle">Mon</text>
+              <text x="100" y="190" fill="var(--text-secondary)" font-size="9" text-anchor="middle">Tue</text>
+              <text x="150" y="190" fill="var(--text-secondary)" font-size="9" text-anchor="middle">Wed</text>
+              <text x="200" y="190" fill="var(--text-secondary)" font-size="9" text-anchor="middle">Thu</text>
+              <text x="250" y="190" fill="var(--text-secondary)" font-size="9" text-anchor="middle">Fri</text>
+              <text x="300" y="190" fill="var(--text-secondary)" font-size="9" text-anchor="middle">Sat</text>
+              <text x="350" y="190" fill="var(--text-secondary)" font-size="9" text-anchor="middle">Sun</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Daily Challenges list -->
+        <div class="glass-card">
+          <h3 class="cyber-title" style="font-size:1.1rem; border-bottom:1px solid var(--border-glow); padding-bottom:0.5rem; margin-bottom:1rem;">
+            🎯 Daily Objectives
+          </h3>
+          <div style="display:flex; flex-direction:column; gap:0.8rem;">
+            
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.03); padding-bottom:0.6rem;">
+              <div>
+                <strong style="font-size:0.85rem; color:#fff;">Complete 1 Lesson Session</strong>
+                <p style="font-size:0.7rem; color:var(--text-secondary);">Learn standard algorithms or formulas with NEX.</p>
+              </div>
+              <span id="obj-lesson-status" class="difficulty-badge" style="background:rgba(255,0,127,0.1); border-color:var(--neon-pink); color:var(--neon-pink);">0/1</span>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:0.6rem;">
+              <div>
+                <strong style="font-size:0.85rem; color:#fff;">Solve 1 Code Challenge</strong>
+                <p style="font-size:0.7rem; color:var(--text-secondary);">Write functions and compile test suites in the Arena.</p>
+              </div>
+              <span id="obj-challenge-status" class="difficulty-badge" style="background:rgba(255,0,127,0.1); border-color:var(--neon-pink); color:var(--neon-pink);">0/1</span>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <script src="progress.js"></script>
+  <script>
+    // Dashboard controllers
+    document.addEventListener("DOMContentLoaded", () => {
+      // Small timeout to let global progress sync with backend
+      setTimeout(() => {
+        loadCurriculumNodes();
+        syncStreakAndObjectives();
+        animateAnalyticsChart();
+      }, 300);
+    });
+
+    async function loadCurriculumNodes() {
+      try {
+        const res = await fetch("/api/topics");
+        if (res.ok) {
+          const topics = await res.json();
+          renderNodesTrack(topics, 'ml', 'nodes-ml');
+          renderNodesTrack(topics, 'ai', 'nodes-ai');
+          renderNodesTrack(topics, 'dsa', 'nodes-dsa');
+        }
+      } catch (err) {
+        console.error("Error loading curriculum roadmap nodes:", err);
+      }
+    }
+
+    function renderNodesTrack(topics, category, containerId) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = "";
+
+      const categoryTopics = topics.filter(t => t.category === category);
+      const completedTopics = window.userProgress.completedTopics || [];
+
+      // A topic is "unlocked" (can be clicked) if it's the first topic, completed, 
+      // or if the previous topic in the list is completed.
+      categoryTopics.forEach((topic, idx) => {
+        const isCompleted = completedTopics.includes(topic.id);
+        
+        let isCurrent = false;
+        let isLocked = true;
+        
+        if (idx === 0) {
+          isLocked = false;
+          if (!isCompleted) isCurrent = true;
+        } else {
+          const prevCompleted = completedTopics.includes(categoryTopics[idx - 1].id);
+          if (prevCompleted) {
+            isLocked = false;
+            if (!isCompleted) isCurrent = true;
+          }
+        }
+
+        const node = document.createElement("button");
+        node.className = `node-btn`;
+        if (isCompleted) {
+          node.classList.add("completed");
+          node.innerHTML = `✓ ${idx + 1}. ${topic.name}`;
+        } else if (isCurrent) {
+          node.classList.add("current");
+          node.innerHTML = `● ${idx + 1}. ${topic.name}`;
+        } else if (isLocked) {
+          node.classList.add("locked");
+          node.disabled = true;
+          node.innerHTML = `🔒 ${idx + 1}. ${topic.name}`;
+        } else {
+          node.innerHTML = `○ ${idx + 1}. ${topic.name}`;
+        }
+
+        if (!isLocked) {
+          node.onclick = () => {
+            localStorage.setItem("nex_last_topic_id", topic.id);
+            window.location.href = `classroom.html`;
+          };
+        }
+
+        container.appendChild(node);
+      });
+    }
+
+    function syncStreakAndObjectives() {
+      // Streak count
+      const streakText = document.getElementById("dash-streak-count");
+      const streak = window.userProgress.streak || 0;
+      streakText.textContent = `${streak} Day Streak`;
+
+      // Daily Objectives
+      const completedCount = window.userProgress.completedTopics.length;
+      if (completedCount > 0) {
+        const objLesson = document.getElementById("obj-lesson-status");
+        objLesson.textContent = "1/1";
+        objLesson.style.background = "rgba(16,185,129,0.1)";
+        objLesson.style.borderColor = "var(--neon-green)";
+        objLesson.style.color = "var(--neon-green)";
+      }
+      
+      const solvedCount = window.userProgress.completedChallenges.length;
+      if (solvedCount > 0) {
+        const objChallenge = document.getElementById("obj-challenge-status");
+        objChallenge.textContent = "1/1";
+        objChallenge.style.background = "rgba(16,185,129,0.1)";
+        objChallenge.style.borderColor = "var(--neon-green)";
+        objChallenge.style.color = "var(--neon-green)";
+      }
+    }
+
+    function animateAnalyticsChart() {
+      // Animate line point to reflect user's current XP dynamically
+      const chartPath = document.getElementById("xp-chart-path");
+      if (chartPath) {
+        // Base line values, final point Sunday scales to user's XP capped representation
+        const currentXP = window.userProgress.xp;
+        const capValue = Math.min(170 - (currentXP * 0.1), 20); // maps 0-1000 XP to 170-70 y coordinates
+        
+        // Update Sunday circle y coordinate and line coordinate
+        const circles = document.querySelectorAll(".chart-svg circle");
+        if (circles.length === 7) {
+          circles[6].setAttribute("cy", capValue);
+        }
+        chartPath.setAttribute("d", `M 50 160 L 100 150 L 150 120 L 200 130 L 250 80 L 300 110 L 350 ${capValue}`);
+      }
+    }
+  </script>
+</body>
+</html>

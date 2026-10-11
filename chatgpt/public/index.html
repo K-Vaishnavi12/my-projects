@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural Harness - Gemini Sandbox</title>
+  <!-- Google Fonts: Outift, Inter, Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Collapsible Sidebar -->
+    <aside id="app-sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon"></div>
+          <span>NEURAL HARNESS</span>
+        </div>
+        <button id="new-chat-btn" class="btn btn-primary btn-new-chat">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          New Chat
+        </button>
+      </div>
+
+      <div class="history-list-container">
+        <h3>Recent</h3>
+        <div id="history-list" class="history-list">
+          <!-- Populated dynamically -->
+          <div class="history-skeleton"></div>
+          <div class="history-skeleton"></div>
+          <div class="history-skeleton"></div>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <button id="toggle-settings-btn" class="btn btn-secondary btn-full">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Settings
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Chat Workspace -->
+    <main id="main-content" class="chat-workspace">
+      <!-- Top Header -->
+      <header class="chat-header">
+        <div class="header-left">
+          <!-- Sidebar Toggle Hamburger -->
+          <button id="sidebar-toggle-btn" class="icon-btn sidebar-toggle-btn" title="Toggle Sidebar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          
+          <div class="header-info">
+            <h2 id="active-chat-title">New Conversation</h2>
+            <div class="model-badge">
+              <span id="active-model-name">gemini-2.0-flash</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="harness-status">
+          <div id="status-spinner" class="status-indicator-spinner hidden"></div>
+          <span id="status-text">Harness Ready</span>
+        </div>
+      </header>
+
+      <!-- Message History Container -->
+      <div id="chat-messages" class="chat-messages">
+        <!-- Welcome Screen (Gemini Style) -->
+        <div class="welcome-screen">
+          <div class="welcome-badge">SYSTEM ONLINE</div>
+          <h1 class="gemini-greeting">Hello, Sandbox</h1>
+          <h2 class="gemini-subheading">How can I help you today?</h2>
+          <p class="gemini-intro">Ask questions, execute code locally, search the web in real-time, or generate visually rich vector assets.</p>
+          
+          <div class="suggestions-grid">
+            <div class="suggestion-card" data-prompt="Write a Python script to compute the first 10 prime numbers and run it.">
+              <h4>🐍 Python Sandbox</h4>
+              <p>Write & execute code locally to get answers.</p>
+            </div>
+            <div class="suggestion-card" data-prompt="Search the web for the latest SpaceX launch status and summarize.">
+              <h4>🌐 Web Search</h4>
+              <p>Fetch real-time documentation or news.</p>
+            </div>
+            <div class="suggestion-card" data-prompt="Generate an image of a cybernetic space banana floating in a neon galaxy.">
+              <h4>🎨 Image Generator</h4>
+              <p>Generate high-quality cached art.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input Area (Gemini Style Pill) -->
+      <footer class="chat-input-area">
+        <div class="input-container-wrapper">
+          <div class="input-wrapper">
+            <textarea id="chat-input" placeholder="Enter a prompt here..." rows="1"></textarea>
+            <div class="input-actions">
+              <button id="send-btn" class="send-btn" disabled title="Send message">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </div>
+          </div>
+          <div class="input-footer-disclaimer">
+            Neural Harness may display inaccurate info, including about people, so double-check its responses.
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Settings Overlay Modal -->
+    <div id="settings-panel" class="settings-panel hidden">
+      <div class="settings-header">
+        <h3>Harness Configuration</h3>
+        <button id="close-settings-btn" class="close-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="settings-body">
+        <!-- Model Selection -->
+        <div class="settings-group">
+          <label for="model-select">Active Model Provider</label>
+          <select id="model-select" class="form-control">
+            <!-- Dynamic option generation -->
+          </select>
+          <small class="form-text">Ensure corresponding API keys are set in `.env`</small>
+        </div>
+
+        <!-- Prompt Configs -->
+        <div class="settings-group">
+          <label for="prompt-select">System Prompt Template</label>
+          <select id="prompt-select" class="form-control">
+            <!-- Dynamic prompt template options -->
+          </select>
+        </div>
+
+        <!-- System Prompt Text View (Read Only) -->
+        <div class="settings-group">
+          <label>Prompt Content</label>
+          <textarea id="prompt-preview" class="form-control code-preview" readonly></textarea>
+        </div>
+
+        <!-- Parameters -->
+        <div class="settings-group">
+          <div class="slider-label">
+            <label for="temperature-slider">Temperature</label>
+            <span id="temperature-value">0.7</span>
+          </div>
+          <input type="range" id="temperature-slider" class="form-control-range" min="0" max="1.5" step="0.1" value="0.7">
+        </div>
+
+        <div class="settings-group">
+          <div class="slider-label">
+            <label for="tokens-slider">Max Output Tokens</label>
+            <span id="tokens-value">4096</span>
+          </div>
+          <input type="range" id="tokens-slider" class="form-control-range" min="256" max="8192" step="256" value="4096">
+        </div>
+
+        <!-- Key diagnostic -->
+        <div class="settings-group keys-diagnostic">
+          <h4>Key Configuration Diagnostics</h4>
+          <div class="diagnostic-item">
+            <span>Gemini Key:</span>
+            <span id="diag-gemini" class="status-dot">Unknown</span>
+          </div>
+          <div class="diagnostic-item">
+            <span>OpenAI Key:</span>
+            <span id="diag-openai" class="status-dot">Unknown</span>
+          </div>
+          <div class="diagnostic-item">
+            <span>Anthropic Key:</span>
+            <span id="diag-anthropic" class="status-dot">Unknown</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-footer">
+        <button id="save-settings-btn" class="btn btn-primary btn-full">Apply Harness Settings</button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

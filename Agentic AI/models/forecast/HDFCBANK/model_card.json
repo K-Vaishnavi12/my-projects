@@ -1,0 +1,44 @@
+{
+  "symbol": "HDFCBANK",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "HDFCBANK",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 7.542483107142647,
+        "rmse": 10.352800091288405,
+        "mape_pct": 0.8524849553101987,
+        "directional_accuracy": 0.5141700404858299,
+        "n_samples": 248
+      },
+      "fit_seconds": 83.91
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 7.5498811991010575,
+        "rmse": 10.361616022023034,
+        "mape_pct": 0.853785945519889,
+        "directional_accuracy": 0.5303643724696356,
+        "n_samples": 248
+      },
+      "fit_seconds": 11.43
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:34:15.562202+00:00"
+}

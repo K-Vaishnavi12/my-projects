@@ -1,0 +1,7 @@
+com/amazon/clone/inventory/consumer/OrderCreatedConsumer.class
+com/amazon/clone/inventory/controller/InventoryController.class
+com/amazon/clone/inventory/event/InventoryEvent.class
+com/amazon/clone/inventory/InventoryServiceApplication.class
+com/amazon/clone/inventory/service/InventoryService.class
+com/amazon/clone/inventory/event/InventoryEvent$InventoryEventBuilder.class
+com/amazon/clone/inventory/event/OrderCreatedEvent.class

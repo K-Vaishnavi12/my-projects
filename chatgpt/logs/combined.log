@@ -1,0 +1,250 @@
+{"timestamp":"2026-06-06T08:12:16.444Z","level":"debug","message":"Creating new conversation session: test_session_1780733536444","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.454Z","level":"debug","message":"Saved conversation: test_session_1780733536444","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.455Z","level":"debug","message":"Loaded conversation: test_session_1780733536444 (2 messages)","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.456Z","level":"info","message":"Consolidating memory for session test_session_1780733536444: current size 31","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.457Z","level":"success","message":"Memory consolidated. New size: 24","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.459Z","level":"success","message":"Deleted conversation file for: test_session_1780733536444","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.460Z","level":"debug","message":"Creating new conversation session: test_session_1780733536444","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.667Z","level":"debug","message":"Initializing model provider of type: gemini","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.669Z","level":"debug","message":"Initializing model provider of type: openai","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.672Z","level":"debug","message":"Initializing model provider of type: anthropic","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.675Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.681Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_6246a75627f38e2d.js","meta":{}}
+{"timestamp":"2026-06-06T08:12:16.819Z","level":"success","message":"Code execution finished with exit code: 0","meta":{}}
+{"timestamp":"2026-06-06T08:12:17.060Z","level":"info","message":"Executing python script...","meta":{}}
+{"timestamp":"2026-06-06T08:12:17.061Z","level":"debug","message":"Spawning subprocess: python C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_b34cee90051e3eac.py","meta":{}}
+{"timestamp":"2026-06-06T08:12:17.445Z","level":"success","message":"Code execution finished with exit code: 0","meta":{}}
+{"timestamp":"2026-06-06T08:12:17.446Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:12:17.447Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_a8ed398b2aabe0a1.js","meta":{}}
+{"timestamp":"2026-06-06T08:12:22.469Z","level":"warn","message":"Subprocess for javascript timed out after 5000ms","meta":{}}
+{"timestamp":"2026-06-06T08:12:22.475Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:12:22.476Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_c1ffe0d618603a03.js","meta":{}}
+{"timestamp":"2026-06-06T08:12:22.563Z","level":"success","message":"Code execution finished with exit code: 1","meta":{}}
+{"timestamp":"2026-06-06T08:12:22.708Z","level":"info","message":"Requesting image generation for: \"a cute cyber monkey eating a banana\"","meta":{}}
+{"timestamp":"2026-06-06T08:12:22.708Z","level":"info","message":"Using Pollinations AI fallback image generator url: https://image.pollinations.ai/prompt/a%20cute%20cyber%20monkey%20eating%20a%20banana?width=1024&height=1024&seed=324491&nologo=true&private=true","meta":{}}
+{"timestamp":"2026-06-06T08:12:22.709Z","level":"debug","message":"Downloading image from source: https://image.pollinations.ai/prompt/a%20cute%20cyber%20monkey%20eating%20a%20banana?width=1024&heig...","meta":{}}
+{"timestamp":"2026-06-06T08:12:24.055Z","level":"error","message":"Failed to cache image locally","meta":{"error":"Failed to fetch image from source: Payment Required","stack":"Error: Failed to fetch image from source: Payment Required\n    at Object.execute (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/src/tools/imageGen.js:68:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async TestContext.<anonymous> (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/tests/tools.test.js:79:23)\n    at async Test.run (node:internal/test_runner/test:980:9)\n    at async TestContext.<anonymous> (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/tests/tools.test.js:78:3)\n    at async Test.run (node:internal/test_runner/test:980:9)\n    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)"}}
+{"timestamp":"2026-06-06T08:12:48.375Z","level":"debug","message":"Creating new conversation session: test_session_1780733568375","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.380Z","level":"debug","message":"Saved conversation: test_session_1780733568375","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.381Z","level":"debug","message":"Loaded conversation: test_session_1780733568375 (2 messages)","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.385Z","level":"info","message":"Consolidating memory for session test_session_1780733568375: current size 31","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.387Z","level":"success","message":"Memory consolidated. New size: 24","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.390Z","level":"success","message":"Deleted conversation file for: test_session_1780733568375","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.391Z","level":"debug","message":"Creating new conversation session: test_session_1780733568375","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.546Z","level":"debug","message":"Initializing model provider of type: gemini","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.548Z","level":"debug","message":"Initializing model provider of type: openai","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.549Z","level":"debug","message":"Initializing model provider of type: anthropic","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.560Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.563Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_193627db2cd1edf9.js","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.657Z","level":"success","message":"Code execution finished with exit code: 0","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.658Z","level":"info","message":"Executing python script...","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.659Z","level":"debug","message":"Spawning subprocess: python C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_2607615137eab03a.py","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.772Z","level":"success","message":"Code execution finished with exit code: 0","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.773Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:12:48.774Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_22915445dd917003.js","meta":{}}
+{"timestamp":"2026-06-06T08:12:53.792Z","level":"warn","message":"Subprocess for javascript timed out after 5000ms","meta":{}}
+{"timestamp":"2026-06-06T08:12:53.801Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:12:53.802Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_fadf75cfc59ce823.js","meta":{}}
+{"timestamp":"2026-06-06T08:12:53.882Z","level":"success","message":"Code execution finished with exit code: 1","meta":{}}
+{"timestamp":"2026-06-06T08:12:53.884Z","level":"info","message":"Requesting image generation for: \"a cute cyber monkey eating a banana\"","meta":{}}
+{"timestamp":"2026-06-06T08:12:53.885Z","level":"info","message":"Using Pollinations AI fallback image generator url: https://image.pollinations.ai/prompt/a%20cute%20cyber%20monkey%20eating%20a%20banana?width=1024&height=1024&seed=856326&nologo=true&private=true","meta":{}}
+{"timestamp":"2026-06-06T08:12:53.885Z","level":"debug","message":"Downloading image from source: https://image.pollinations.ai/prompt/a%20cute%20cyber%20monkey%20eating%20a%20banana?width=1024&heig...","meta":{}}
+{"timestamp":"2026-06-06T08:12:54.578Z","level":"error","message":"Failed to fetch image online, generating fallback vector SVG","meta":{"error":"Failed to fetch image from source: Payment Required","stack":"Error: Failed to fetch image from source: Payment Required\n    at Object.execute (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/src/tools/imageGen.js:68:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async TestContext.<anonymous> (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/tests/tools.test.js:79:23)\n    at async Test.run (node:internal/test_runner/test:980:9)\n    at async TestContext.<anonymous> (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/tests/tools.test.js:78:3)\n    at async Test.run (node:internal/test_runner/test:980:9)\n    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)"}}
+{"timestamp":"2026-06-06T08:12:54.579Z","level":"success","message":"Image generation fallback generated locally at /generated_images/image_1701e5ec3046c748.svg","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.391Z","level":"debug","message":"Creating new conversation session: test_session_1780733588390","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.395Z","level":"debug","message":"Saved conversation: test_session_1780733588390","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.395Z","level":"debug","message":"Loaded conversation: test_session_1780733588390 (2 messages)","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.397Z","level":"info","message":"Consolidating memory for session test_session_1780733588390: current size 31","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.398Z","level":"success","message":"Memory consolidated. New size: 24","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.400Z","level":"success","message":"Deleted conversation file for: test_session_1780733588390","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.401Z","level":"debug","message":"Creating new conversation session: test_session_1780733588390","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.588Z","level":"debug","message":"Initializing model provider of type: gemini","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.589Z","level":"debug","message":"Initializing model provider of type: openai","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.591Z","level":"debug","message":"Initializing model provider of type: anthropic","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.590Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.593Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_c7b208b9de5319d8.js","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.689Z","level":"success","message":"Code execution finished with exit code: 0","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.691Z","level":"info","message":"Executing python script...","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.691Z","level":"debug","message":"Spawning subprocess: python C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_e19d280a8ad91ad5.py","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.784Z","level":"success","message":"Code execution finished with exit code: 0","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.786Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:13:08.787Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_3f3a3f896896faf1.js","meta":{}}
+{"timestamp":"2026-06-06T08:13:13.816Z","level":"warn","message":"Subprocess for javascript timed out after 5000ms","meta":{}}
+{"timestamp":"2026-06-06T08:13:13.829Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:13:13.832Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_47cdbe6c649848c4.js","meta":{}}
+{"timestamp":"2026-06-06T08:13:13.938Z","level":"success","message":"Code execution finished with exit code: 1","meta":{}}
+{"timestamp":"2026-06-06T08:13:13.941Z","level":"info","message":"Requesting image generation for: \"a cute cyber monkey eating a banana\"","meta":{}}
+{"timestamp":"2026-06-06T08:13:13.942Z","level":"info","message":"Using Pollinations AI fallback image generator url: https://image.pollinations.ai/prompt/a%20cute%20cyber%20monkey%20eating%20a%20banana?width=1024&height=1024&seed=564474&nologo=true&private=true","meta":{}}
+{"timestamp":"2026-06-06T08:13:13.943Z","level":"debug","message":"Downloading image from source: https://image.pollinations.ai/prompt/a%20cute%20cyber%20monkey%20eating%20a%20banana?width=1024&heig...","meta":{}}
+{"timestamp":"2026-06-06T08:13:15.303Z","level":"error","message":"Failed to fetch image online, generating fallback vector SVG","meta":{"error":"Failed to fetch image from source: Payment Required","stack":"Error: Failed to fetch image from source: Payment Required\n    at Object.execute (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/src/tools/imageGen.js:68:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async TestContext.<anonymous> (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/tests/tools.test.js:79:23)\n    at async Test.run (node:internal/test_runner/test:980:9)\n    at async TestContext.<anonymous> (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/tests/tools.test.js:78:3)\n    at async Test.run (node:internal/test_runner/test:980:9)\n    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)"}}
+{"timestamp":"2026-06-06T08:13:15.305Z","level":"success","message":"Image generation fallback generated locally at /generated_images/image_b3f8020d635dfa1a.svg","meta":{}}
+{"timestamp":"2026-06-06T08:48:09.636Z","level":"success","message":"Server running at http://localhost:3000","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.041Z","level":"debug","message":"Creating new conversation session: test_session_1780735917040","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.047Z","level":"debug","message":"Saved conversation: test_session_1780735917040","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.047Z","level":"debug","message":"Loaded conversation: test_session_1780735917040 (2 messages)","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.050Z","level":"info","message":"Consolidating memory for session test_session_1780735917040: current size 31","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.052Z","level":"success","message":"Memory consolidated. New size: 24","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.054Z","level":"success","message":"Deleted conversation file for: test_session_1780735917040","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.054Z","level":"debug","message":"Creating new conversation session: test_session_1780735917040","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.244Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.247Z","level":"debug","message":"Initializing model provider of type: gemini","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.248Z","level":"debug","message":"Initializing model provider of type: openai","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.249Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_2d3518faded97914.js","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.251Z","level":"debug","message":"Initializing model provider of type: anthropic","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.344Z","level":"success","message":"Code execution finished with exit code: 0","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.489Z","level":"info","message":"Executing python script...","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.490Z","level":"debug","message":"Spawning subprocess: python C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_11883fb02d426337.py","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.885Z","level":"success","message":"Code execution finished with exit code: 0","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.887Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:51:57.888Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_dc7bf4ccf46b1323.js","meta":{}}
+{"timestamp":"2026-06-06T08:52:02.910Z","level":"warn","message":"Subprocess for javascript timed out after 5000ms","meta":{}}
+{"timestamp":"2026-06-06T08:52:02.923Z","level":"info","message":"Executing javascript script...","meta":{}}
+{"timestamp":"2026-06-06T08:52:02.926Z","level":"debug","message":"Spawning subprocess: node C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\temp_run\\script_cf00d2a9b97db6dc.js","meta":{}}
+{"timestamp":"2026-06-06T08:52:03.067Z","level":"success","message":"Code execution finished with exit code: 1","meta":{}}
+{"timestamp":"2026-06-06T08:52:03.172Z","level":"info","message":"Requesting image generation for: \"a cute cyber monkey eating a banana\"","meta":{}}
+{"timestamp":"2026-06-06T08:52:03.173Z","level":"info","message":"Using Pollinations AI fallback image generator url: https://image.pollinations.ai/prompt/a%20cute%20cyber%20monkey%20eating%20a%20banana?width=1024&height=1024&seed=79038&nologo=true&private=true","meta":{}}
+{"timestamp":"2026-06-06T08:52:03.174Z","level":"debug","message":"Downloading image from source: https://image.pollinations.ai/prompt/a%20cute%20cyber%20monkey%20eating%20a%20banana?width=1024&heig...","meta":{}}
+{"timestamp":"2026-06-06T08:52:04.035Z","level":"error","message":"Failed to fetch image online, generating fallback vector SVG","meta":{"error":"Failed to fetch image from source: Payment Required","stack":"Error: Failed to fetch image from source: Payment Required\n    at Object.execute (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/src/tools/imageGen.js:68:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async TestContext.<anonymous> (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/tests/tools.test.js:79:23)\n    at async Test.run (node:internal/test_runner/test:980:9)\n    at async TestContext.<anonymous> (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/tests/tools.test.js:78:3)\n    at async Test.run (node:internal/test_runner/test:980:9)\n    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)"}}
+{"timestamp":"2026-06-06T08:52:04.040Z","level":"success","message":"Image generation fallback generated locally at /generated_images/image_8b25af085dd9ed5e.svg","meta":{}}
+{"timestamp":"2026-06-06T09:33:20.564Z","level":"info","message":"Updated configuration saved.","meta":{}}
+{"timestamp":"2026-06-06T09:33:23.439Z","level":"info","message":"Starting chat loop for session: session_1780738360793","meta":{}}
+{"timestamp":"2026-06-06T09:33:23.441Z","level":"debug","message":"Creating new conversation session: session_1780738360793","meta":{}}
+{"timestamp":"2026-06-06T09:33:23.443Z","level":"debug","message":"Saved conversation: session_1780738360793","meta":{}}
+{"timestamp":"2026-06-06T09:33:23.444Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-06T09:33:23.446Z","level":"debug","message":"Loaded conversation: session_1780738360793 (1 messages)","meta":{}}
+{"timestamp":"2026-06-06T09:33:23.447Z","level":"debug","message":"Initializing model provider of type: gemini","meta":{}}
+{"timestamp":"2026-06-06T09:33:23.449Z","level":"info","message":"Calling Gemini model generation...","meta":{}}
+{"timestamp":"2026-06-06T09:33:23.452Z","level":"error","message":"Error during chat processing","meta":{"error":"GEMINI_API_KEY is not configured in environment.","stack":"Error: GEMINI_API_KEY is not configured in environment.\n    at GeminiProvider.generate (file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/src/providers/gemini.js:70:13)\n    at file:///C:/Users/kvais/OneDrive/Desktop/Projects%20folder/chatgpt/src/index.js:185:39\n    at Layer.handle [as handle_request] (C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at serveStatic (C:\\Users\\kvais\\OneDrive\\Desktop\\Projects folder\\chatgpt\\node_modules\\serve-static\\index.js:75:16)"}}
+{"timestamp":"2026-06-10T08:55:11.949Z","level":"success","message":"Server running at http://localhost:3000","meta":{}}
+{"timestamp":"2026-06-10T08:55:34.206Z","level":"success","message":"Server running at http://localhost:3000","meta":{}}
+{"timestamp":"2026-06-10T08:55:41.640Z","level":"info","message":"Starting chat loop for session: test_123","meta":{}}
+{"timestamp":"2026-06-10T08:55:41.641Z","level":"debug","message":"Creating new conversation session: test_123","meta":{}}
+{"timestamp":"2026-06-10T08:55:41.642Z","level":"debug","message":"Saved conversation: test_123","meta":{}}
+{"timestamp":"2026-06-10T08:55:41.646Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T08:55:41.646Z","level":"debug","message":"Loaded conversation: test_123 (1 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:55:41.647Z","level":"debug","message":"Initializing model provider of type: ollama","meta":{}}
+{"timestamp":"2026-06-10T08:55:41.648Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T08:55:47.041Z","level":"info","message":"Starting chat loop for session: test_123","meta":{}}
+{"timestamp":"2026-06-10T08:55:47.043Z","level":"debug","message":"Loaded conversation: test_123 (1 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:55:47.043Z","level":"debug","message":"Saved conversation: test_123","meta":{}}
+{"timestamp":"2026-06-10T08:55:47.044Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T08:55:47.044Z","level":"debug","message":"Loaded conversation: test_123 (2 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:55:47.045Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T08:56:11.116Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T08:56:11.120Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T08:56:16.683Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T08:56:16.684Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T08:56:19.800Z","level":"debug","message":"Loaded conversation: test_123 (2 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:56:19.803Z","level":"debug","message":"Saved conversation: test_123","meta":{}}
+{"timestamp":"2026-06-10T08:56:25.815Z","level":"debug","message":"Loaded conversation: test_123 (3 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:56:25.816Z","level":"debug","message":"Saved conversation: test_123","meta":{}}
+{"timestamp":"2026-06-10T08:57:04.836Z","level":"success","message":"Server running at http://localhost:3000","meta":{}}
+{"timestamp":"2026-06-10T08:57:22.407Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:57:22.409Z","level":"debug","message":"Creating new conversation session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:57:22.413Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:57:22.414Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T08:57:22.417Z","level":"debug","message":"Loaded conversation: session_1781081825179 (1 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:57:22.418Z","level":"debug","message":"Initializing model provider of type: ollama","meta":{}}
+{"timestamp":"2026-06-10T08:57:22.421Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T08:57:26.371Z","level":"info","message":"Updated configuration saved.","meta":{}}
+{"timestamp":"2026-06-10T08:57:27.255Z","level":"info","message":"Updated configuration saved.","meta":{}}
+{"timestamp":"2026-06-10T08:58:02.917Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T08:58:02.918Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T08:58:38.805Z","level":"debug","message":"Loaded conversation: session_1781081825179 (1 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:58:38.806Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:58:48.149Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:58:48.153Z","level":"debug","message":"Loaded conversation: session_1781081825179 (2 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:58:48.159Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:58:48.163Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T08:58:48.166Z","level":"debug","message":"Loaded conversation: session_1781081825179 (3 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:58:48.169Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T08:59:01.548Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T08:59:01.549Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T08:59:14.689Z","level":"debug","message":"Loaded conversation: session_1781081825179 (3 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:59:14.690Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:59:58.361Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:59:58.362Z","level":"debug","message":"Loaded conversation: session_1781081825179 (4 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:59:58.365Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T08:59:58.368Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T08:59:58.369Z","level":"debug","message":"Loaded conversation: session_1781081825179 (5 messages)","meta":{}}
+{"timestamp":"2026-06-10T08:59:58.371Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T09:00:22.963Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T09:00:22.965Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T09:02:39.233Z","level":"debug","message":"Loaded conversation: session_1781081825179 (5 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:02:39.237Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:03:20.889Z","level":"info","message":"Updated configuration saved.","meta":{}}
+{"timestamp":"2026-06-10T09:03:44.427Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:03:44.449Z","level":"debug","message":"Loaded conversation: session_1781081825179 (6 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:03:44.452Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:03:44.455Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T09:03:44.458Z","level":"debug","message":"Loaded conversation: session_1781081825179 (7 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:03:44.463Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T09:03:48.967Z","level":"success","message":"Deleted conversation file for: test_123","meta":{}}
+{"timestamp":"2026-06-10T09:03:49.889Z","level":"success","message":"Deleted conversation file for: session_1780738360793","meta":{}}
+{"timestamp":"2026-06-10T09:05:04.464Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T09:05:04.484Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T09:05:39.428Z","level":"info","message":"Updated configuration saved.","meta":{}}
+{"timestamp":"2026-06-10T09:06:21.709Z","level":"debug","message":"Loaded conversation: session_1781081825179 (7 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:06:21.713Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:06:38.804Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:06:38.807Z","level":"debug","message":"Loaded conversation: session_1781081825179 (8 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:06:38.809Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:06:38.811Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T09:06:38.812Z","level":"debug","message":"Loaded conversation: session_1781081825179 (9 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:06:38.813Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T09:08:28.225Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T09:08:28.236Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T09:09:36.673Z","level":"debug","message":"Loaded conversation: session_1781081825179 (9 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:09:36.676Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:12:36.728Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:12:36.732Z","level":"debug","message":"Loaded conversation: session_1781081825179 (10 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:12:36.736Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:12:36.739Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T09:12:36.743Z","level":"debug","message":"Loaded conversation: session_1781081825179 (11 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:12:36.745Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T09:13:18.276Z","level":"debug","message":"Loaded conversation: session_1781081825179 (11 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:13:27.068Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:13:27.070Z","level":"debug","message":"Loaded conversation: session_1781081825179 (11 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:13:27.074Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:13:27.076Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T09:13:27.078Z","level":"debug","message":"Loaded conversation: session_1781081825179 (12 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:13:27.079Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T09:13:47.903Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T09:13:47.904Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T09:15:03.190Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T09:15:03.193Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T09:16:40.207Z","level":"debug","message":"Loaded conversation: session_1781081825179 (12 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:16:40.211Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:18:09.753Z","level":"debug","message":"Loaded conversation: session_1781081825179 (13 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:18:09.756Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:18:46.601Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:18:46.603Z","level":"debug","message":"Loaded conversation: session_1781081825179 (14 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:18:46.605Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T09:18:46.608Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T09:18:46.609Z","level":"debug","message":"Loaded conversation: session_1781081825179 (15 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:18:46.610Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T09:22:37.504Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T09:22:37.506Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T09:23:08.967Z","level":"debug","message":"Loaded conversation: session_1781081825179 (15 messages)","meta":{}}
+{"timestamp":"2026-06-10T09:23:08.971Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T10:44:26.265Z","level":"info","message":"Starting chat loop for session: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T10:44:26.273Z","level":"debug","message":"Loaded conversation: session_1781081825179 (16 messages)","meta":{}}
+{"timestamp":"2026-06-10T10:44:26.279Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T10:44:26.282Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T10:44:26.286Z","level":"debug","message":"Loaded conversation: session_1781081825179 (17 messages)","meta":{}}
+{"timestamp":"2026-06-10T10:44:26.293Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T10:44:58.696Z","level":"info","message":"Starting chat loop for session: session_1781088287715","meta":{}}
+{"timestamp":"2026-06-10T10:44:58.710Z","level":"debug","message":"Creating new conversation session: session_1781088287715","meta":{}}
+{"timestamp":"2026-06-10T10:44:58.714Z","level":"debug","message":"Saved conversation: session_1781088287715","meta":{}}
+{"timestamp":"2026-06-10T10:44:58.722Z","level":"info","message":"Agent loop iteration: 1/5","meta":{}}
+{"timestamp":"2026-06-10T10:44:58.726Z","level":"debug","message":"Loaded conversation: session_1781088287715 (1 messages)","meta":{}}
+{"timestamp":"2026-06-10T10:44:58.729Z","level":"info","message":"Calling Ollama model generation...","meta":{}}
+{"timestamp":"2026-06-10T10:47:54.295Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T10:47:54.301Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T10:48:42.453Z","level":"success","message":"Ollama call succeeded","meta":{}}
+{"timestamp":"2026-06-10T10:48:42.459Z","level":"info","message":"Model returned final text. Initiating stream to user.","meta":{}}
+{"timestamp":"2026-06-10T10:49:03.037Z","level":"debug","message":"Loaded conversation: session_1781081825179 (17 messages)","meta":{}}
+{"timestamp":"2026-06-10T10:49:03.041Z","level":"debug","message":"Saved conversation: session_1781081825179","meta":{}}
+{"timestamp":"2026-06-10T10:49:38.001Z","level":"debug","message":"Loaded conversation: session_1781088287715 (1 messages)","meta":{}}
+{"timestamp":"2026-06-10T10:49:38.004Z","level":"debug","message":"Saved conversation: session_1781088287715","meta":{}}
+{"timestamp":"2026-06-10T10:51:57.762Z","level":"debug","message":"Loaded conversation: session_1781081825179 (18 messages)","meta":{}}

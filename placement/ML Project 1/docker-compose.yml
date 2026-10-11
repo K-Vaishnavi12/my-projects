@@ -1,0 +1,32 @@
+# ============================================================
+# Symposium - local docker-compose
+# ============================================================
+# Brings up the app + a local MongoDB (with vectorSearch shim).
+# For the real deployment you swap the mongo service for Atlas.
+# ============================================================
+services:
+  symposium:
+    build: .
+    image: symposium:latest
+    container_name: symposium-app
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7.0
+    container_name: symposium-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: symposium
+
+volumes:
+  mongo_data:

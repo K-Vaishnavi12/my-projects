@@ -1,0 +1,237 @@
+.profile-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profile-hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-game);
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.5);
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.name-input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    font-family: var(--font-game);
+    font-size: 1.4rem;
+    font-weight: 700;
+    outline: none;
+    width: 100%;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    transition: border-color 0.2s;
+}
+
+.name-input:focus {
+    border-color: var(--neon-blue);
+}
+
+.level-title {
+    color: var(--neon-blue);
+    font-size: 0.85rem;
+    font-family: var(--font-game);
+    margin-bottom: 12px;
+}
+
+.xp-bar-wrap {
+    max-width: 340px;
+}
+
+.xp-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.xp-hint {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.profile-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.pstat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 64px;
+}
+
+.pstat-val {
+    font-family: var(--font-game);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.pstat-lbl {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mod-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.mod-row:last-child {
+    border-bottom: none;
+}
+
+.mod-row-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.mod-row-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.mod-row-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+}
+
+.mod-row-score {
+    font-size: 0.75rem;
+    color: var(--neon-blue);
+}
+
+.mod-row-status {
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.mod-row-status.done {
+    color: var(--neon-green);
+}
+
+.mod-row-status.pending {
+    color: var(--text-muted);
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.badge-card {
+    background: var(--bg-card2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.badge-card.earned {
+    border-color: var(--neon-yellow);
+    box-shadow: 0 0 14px rgba(250, 204, 21, 0.25);
+    animation: pop-in 0.4s ease;
+}
+
+.badge-card.locked-badge {
+    opacity: 0.45;
+}
+
+.badge-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.badge-name {
+    font-family: var(--font-game);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.badge-desc {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.badge-xp {
+    font-family: var(--font-game);
+    font-size: 0.68rem;
+    color: var(--neon-yellow);
+}
+
+.badge-lock-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+}

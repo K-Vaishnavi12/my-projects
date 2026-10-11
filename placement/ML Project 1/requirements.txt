@@ -1,0 +1,49 @@
+# ============================================================
+# Symposium - SLIM requirements for Streamlit Cloud (1 GB RAM)
+# ============================================================
+# Streamlit Cloud auto-picks this file. TensorFlow is dropped;
+# the NeuralDebateScorer falls back to a scikit-learn MLPClassifier
+# automatically (see symposium/ml/neural_debate_scorer.py).
+# ============================================================
+
+# --- Core ---
+python-dotenv
+pydantic>=2.9
+pydantic-settings>=2.6
+loguru
+tqdm
+tenacity
+
+# --- Data + ETL ---
+pandas
+numpy
+wikipedia-api==0.7.1
+beautifulsoup4
+lxml
+requests
+
+# --- SQL DWH ---
+sqlalchemy
+# sqlite ships with Python
+
+# --- NoSQL / Vector store ---
+pymongo>=4.10
+faiss-cpu
+
+# --- Embeddings (CPU torch is auto-installed by sentence-transformers) ---
+sentence-transformers
+
+# --- Classical ML (covers everything now, including neural net fallback) ---
+scikit-learn
+scipy
+joblib
+
+# --- Plotting ---
+matplotlib
+plotly
+
+# --- LLM / GenAI ---
+groq
+
+# --- Web app ---
+streamlit

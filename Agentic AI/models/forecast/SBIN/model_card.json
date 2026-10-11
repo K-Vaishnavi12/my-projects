@@ -1,0 +1,44 @@
+{
+  "symbol": "SBIN",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "SBIN",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 9.320443971037706,
+        "rmse": 14.44011080641046,
+        "mape_pct": 0.9430373245369735,
+        "directional_accuracy": 0.4898785425101215,
+        "n_samples": 248
+      },
+      "fit_seconds": 61.43
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 9.332588770302937,
+        "rmse": 14.458895716363173,
+        "mape_pct": 0.9439646718703105,
+        "directional_accuracy": 0.47368421052631576,
+        "n_samples": 248
+      },
+      "fit_seconds": 21.87
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:43:32.852081+00:00"
+}

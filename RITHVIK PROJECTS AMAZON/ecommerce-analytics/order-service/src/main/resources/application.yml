@@ -1,0 +1,56 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: order-service
+
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 2000ms
+
+  kafka:
+    bootstrap-servers: localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 3
+      properties:
+        enable.idempotence: true
+    consumer:
+      group-id: order-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.amazon.clone.order.event"
+
+aws:
+  region: us-east-1
+  endpoint: http://localhost:4566   # LocalStack
+  accessKey: test
+  secretKey: test
+  dynamodb:
+    ordersTable: Orders
+
+app:
+  kafka:
+    topics:
+      order-created: order-created
+      order-updated: order-updated
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    tags:
+      application: order-service
+
+logging:
+  level:
+    com.amazon.clone: DEBUG
+    software.amazon.awssdk: WARN

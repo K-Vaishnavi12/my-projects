@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Arena — NexLearn AI</title>
+  <!-- CodeMirror CDN CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- CodeMirror CDN JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <!-- CodeMirror Modes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/clike/clike.min.js"></script>
+</head>
+<body>
+
+  <div class="space-bg"></div>
+  <div class="space-grid"></div>
+  <div class="particle-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+      NEXLEARN AI
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="classroom.html">Classroom</a>
+      <a href="code-arena.html" class="active">Code Arena</a>
+      <a href="vibe-studio.html">Vibe Studio</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="header-controls">
+      <div class="xp-badge">
+        XP: <span id="header-xp">0</span>
+      </div>
+      <div class="xp-badge" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4);">
+        Lvl: <span id="header-level" style="color: var(--neon-green);">1</span>
+      </div>
+      <button id="speech-toggle" class="toggle-btn" title="Toggle Voice Speech">🔊</button>
+    </div>
+  </header>
+
+  <!-- Code Arena Workspace -->
+  <main class="container" style="max-width: 1400px; margin-top: 1.5rem;">
+    
+    <!-- Filters and Progress Bar -->
+    <div class="filters-bar glass-card">
+      <div class="filter-group">
+        <input type="text" id="search-input" placeholder="🔍 Search problems...">
+        
+        <select id="category-filter">
+          <option value="all">📁 All Categories</option>
+          <option value="dsa_easy">🟢 DSA Easy</option>
+          <option value="dsa_medium">🟡 DSA Medium</option>
+          <option value="ml_ai">🤖 ML/AI Logic</option>
+        </select>
+        
+        <select id="difficulty-filter">
+          <option value="all">⚡ All Difficulties</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        
+        <select id="status-filter">
+          <option value="all">🎯 All States</option>
+          <option value="solved">Solved</option>
+          <option value="unsolved">Unsolved</option>
+        </select>
+        
+        <select id="sort-filter">
+          <option value="default">🔀 Sort Default</option>
+          <option value="difficulty">Difficulty (Low-High)</option>
+          <option value="xp">XP Rewards</option>
+          <option value="title">Alphabetical</option>
+        </select>
+      </div>
+      
+      <div class="arena-progress">
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+        <span id="progress-text" style="font-family:var(--font-tech); font-size:0.85rem; color:var(--neon-green);">0/30 Solved</span>
+      </div>
+    </div>
+
+    <!-- Mode Tabs -->
+    <div class="mode-tabs">
+      <button class="mode-btn active" id="mode-practice" data-mode="practice">Practice Mode</button>
+      <button class="mode-btn" id="mode-speed" data-mode="speed">⏱️ Speed Challenge</button>
+      <button class="mode-btn" id="mode-daily" data-mode="daily">⭐ Daily Double XP</button>
+    </div>
+
+    <!-- Three-Panel Layout -->
+    <div class="three-panel-layout">
+      
+      <!-- Left Panel: Problem library & Details -->
+      <section class="arena-panel glass-card" style="overflow-y: auto;">
+        <h3 class="cyber-title" style="font-size: 0.9rem; color: var(--neon-blue); margin-bottom: 0.3rem;">Problem Library</h3>
+        <div class="challenge-list-container" id="arena-challenge-list" style="margin-bottom: 0.8rem;">
+          <!-- Loaded dynamically -->
+          <div style="padding:1rem; text-align:center; color:var(--text-muted);">Loading challenges...</div>
+        </div>
+        
+        <hr style="border: 0; border-top: 1px solid rgba(0,212,255,0.15); margin-bottom: 0.8rem;">
+        
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.4rem;">
+          <h2 id="challenge-title" style="font-family:var(--font-tech); font-size:1.1rem; color:#fff;">Select a challenge</h2>
+          <span id="challenge-difficulty" class="difficulty-badge easy">Easy</span>
+        </div>
+        
+        <div style="font-size:0.75rem; color:var(--text-secondary); display:flex; gap:1rem; margin-bottom: 0.8rem;">
+          <span>Reward: <strong id="challenge-xp" class="neon-text-purple">+40 XP</strong></span>
+          <span>Status: <strong id="challenge-status" class="neon-text-blue">Unsolved</strong></span>
+        </div>
+
+        <div id="challenge-body" style="font-size:0.85rem; line-height:1.5; color:var(--text-primary); overflow-y:auto; flex-grow:1; margin-bottom: 0.8rem;">
+          Select a problem from the library to begin writing code. Supported environments are JavaScript, Python, and Java.
+        </div>
+
+        <div id="challenge-hint-box" class="quiz-feedback" style="display:none; font-size:0.8rem; border-color:var(--neon-purple); background:rgba(139,92,246,0.05); margin-bottom: 0.5rem;">
+        </div>
+
+        <!-- Reference Solution Box -->
+        <div id="challenge-solution-box" class="quiz-feedback" style="display:none; font-size:0.8rem; border-color:var(--neon-green); background:rgba(16,185,129,0.05);">
+          <h4 style="color:var(--neon-green); margin-bottom: 0.3rem;">Reference Solution:</h4>
+          <pre id="challenge-solution-code" style="white-space:pre-wrap; font-family:var(--font-mono); font-size:0.75rem; margin-top:0.4rem; padding:0.4rem; background:rgba(0,0,0,0.3); border-radius:4px; max-height:150px; overflow-y:auto;"></pre>
+        </div>
+      </section>
+
+      <!-- Center Panel: Code Editor -->
+      <section class="code-workspace arena-panel glass-card">
+        <div class="editor-header">
+          <div style="display: flex; gap: 0.6rem; align-items: center;">
+            <select id="language-select" style="background: rgba(13,13,33,0.8); border: 1px solid var(--border-glow); color: #fff; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; outline: none; cursor: pointer;">
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+            </select>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Compiler</span>
+          </div>
+          <div style="display:flex; gap:0.5rem;">
+            <button id="arena-hint-btn" class="btn btn-secondary" style="padding:0.3rem 0.6rem; font-size:0.7rem;">💡 Get Hint (-10 XP)</button>
+            <button id="arena-solution-btn" class="btn btn-secondary" style="padding:0.3rem 0.6rem; font-size:0.7rem; display:none;" disabled>🔑 View Solution (3 fails)</button>
+          </div>
+        </div>
+
+        <!-- CodeMirror Editor -->
+        <div class="editor-wrapper">
+          <textarea id="editor-code" style="display:none;"></textarea>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <button id="arena-reset-btn" class="btn btn-secondary" style="padding:0.4rem 0.8rem; font-size:0.8rem;">Reset Code</button>
+          <button id="arena-run-btn" class="btn btn-blue" style="padding:0.4rem 1.2rem; font-size:0.8rem;">🚀 Submit Code</button>
+        </div>
+      </section>
+
+      <!-- Right Panel: Test Cases & Terminal -->
+      <section class="arena-panel glass-card" style="justify-content: space-between;">
+        <div>
+          <!-- Timer Display -->
+          <div class="timer-box" id="timer-display">
+            ⏳ PRACTICE MODE
+          </div>
+          
+          <h3 class="cyber-title" style="font-size: 0.9rem; color: var(--neon-purple); margin-top: 1rem; margin-bottom: 0.5rem;">Assertions Suite</h3>
+          
+          <!-- Live Test Cases -->
+          <div class="test-suite-panel" id="test-suite-container">
+            <!-- Populated dynamically -->
+            <div style="padding:1rem; text-align:center; color:var(--text-muted); font-size:0.8rem;">Select a challenge to view test assertions.</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-family:var(--font-tech); font-size:0.8rem; color:var(--text-secondary); margin-bottom:0.4rem;">Terminal outputs</h4>
+          <div class="terminal-logs" id="terminal-output">
+            <div class="terminal-line info">> Terminal Ready. Ingesting challenge specifications...</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Ask Nex floating button -->
+  <button id="ask-nex-float-btn" class="ask-nex-float">
+    🤖 Ask Nex
+  </button>
+
+  <!-- Ask Nex Sidebar Overlay -->
+  <div class="ask-nex-overlay" id="ask-nex-sidebar">
+    <div class="ask-nex-header">
+      <span style="font-family:var(--font-tech); font-size:0.95rem; color:var(--neon-blue);">NEX LIVE ASSISTANT</span>
+      <button id="ask-nex-close-btn" style="background:transparent; border:none; color:var(--text-secondary); cursor:pointer; font-size:1.1rem;">✕</button>
+    </div>
+
+    <!-- Avatar -->
+    <div style="display:flex; justify-content:center; align-items:center; height:110px; margin-top: 0.5rem;">
+      <div class="mascot-container" style="width:100px; height:100px; filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));" id="nex-avatar-container">
+        <div class="mascot-glow"></div>
+        <svg class="mascot-svg" viewBox="0 0 260 260" style="width:100%; height:100%;">
+          <g id="mascot-face" class="expr-happy">
+            <line class="antenna" x1="130" y1="70" x2="130" y2="40" />
+            <circle class="antenna-bulb" cx="130" cy="35" r="10" />
+            <rect class="ear" x="45" y="110" width="15" height="40" rx="5" />
+            <rect class="ear" x="200" y="110" width="15" height="40" rx="5" />
+            <rect class="head" x="60" y="70" width="140" height="120" rx="30" />
+            <circle class="eye eye-left" cx="105" cy="120" r="10" />
+            <circle class="eye eye-right" cx="155" cy="120" r="10" />
+            <line class="eye-brow eye-brow-left" x1="95" y1="100" x2="115" y2="100" />
+            <line class="eye-brow eye-brow-right" x1="145" y1="100" x2="165" y2="100" />
+            <path class="mouth" d="M 115 155 Q 130 165 145 155" />
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Speech box -->
+    <div class="speech-bubble" style="font-size:0.8rem; max-height:160px; flex-grow:0;" id="nex-speech-bubble">
+      <span class="typewriter-text" id="nex-speech-text">Welcome to the Code Arena! I can help guide your approach. Click "Reveal Approach" or ask a doubt!</span><span class="cursor" id="nex-cursor"></span>
+    </div>
+
+    <!-- Voice Control tools -->
+    <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top: auto;">
+      <button id="reveal-approach-btn" class="btn btn-blue" style="font-size:0.75rem; padding:0.4rem;">💡 Explain Approach</button>
+      
+      <div class="doubt-panel" style="margin-top:0.4rem; padding-top:0.6rem; border-top: 1px solid rgba(0, 212, 255, 0.15);">
+        <div class="doubt-input-wrapper">
+          <input type="text" id="doubt-input" class="doubt-input" placeholder="Ask a doubt..." style="padding:0.45rem 0.6rem; font-size:0.8rem;">
+        </div>
+        <button id="mic-btn" class="mic-btn" style="width:34px; height:34px;" title="Ask Doubt by Voice">🎙️</button>
+      </div>
+
+      <!-- Controls -->
+      <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:var(--text-secondary); margin-top:0.2rem;">
+        <span>Speech Rate: <strong id="speed-val">1.0x</strong></span>
+        <input type="range" id="speech-speed" min="0.5" max="2.0" step="0.1" value="1.0" class="speed-slider" style="width:70px;">
+      </div>
+      
+      <!-- Voice Listening Box -->
+      <div id="voice-status-wrapper" style="display:none;">
+        <div class="voice-feedback-bubble" style="margin-top:0.2rem; padding:0.4rem 0.6rem;">
+          <span class="voice-feedback-icon">🎤</span>
+          <span id="voice-heard-text">Listening...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="progress.js"></script>
+  <script src="arena.js"></script>
+</body>
+</html>

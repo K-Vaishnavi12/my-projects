@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexLearn AI — Live AI Classroom & Coding Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Layer -->
+  <div class="space-bg"></div>
+  <div class="space-grid"></div>
+  <div class="particle-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <a href="index.html" class="logo">
+      <svg class="logo-icon" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+      NEXLEARN AI
+    </a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="classroom.html">Classroom</a>
+      <a href="code-arena.html">Code Arena</a>
+      <a href="vibe-studio.html">Vibe Studio</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="header-controls">
+      <div class="xp-badge">
+        <svg width="14" height="14" fill="var(--neon-purple)" viewBox="0 0 24 24">
+          <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99z"/>
+        </svg>
+        XP: <span id="header-xp">0</span>
+      </div>
+      <div class="xp-badge" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4);">
+        Lvl: <span id="header-level" style="color: var(--neon-green);">1</span>
+      </div>
+      <button id="speech-toggle" class="toggle-btn" title="Toggle Voice Speech">
+        🔊
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1 class="cyber-title">Learn ML, AI & DSA <br>with a <span>Live AI Tutor</span></h1>
+        <p>Step into the future of learning. Interact with NEX, our live AI tutor, in a conversational classroom where you can ask doubts anytime, write code side-by-side, solve challenges, and climb the leaderboard.</p>
+        <div style="display: flex; gap: 1rem;">
+          <a href="classroom.html" class="btn btn-blue">Start Learning ▶</a>
+          <a href="dashboard.html" class="btn btn-secondary">View My Track</a>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="mascot-container">
+          <div class="mascot-glow"></div>
+          <!-- Animated Mascot SVG -->
+          <svg class="mascot-svg" viewBox="0 0 260 260" width="100%" height="100%">
+            <rect class="ear" x="35" y="115" width="15" height="40" rx="5" />
+            <rect class="ear" x="210" y="115" width="15" height="40" rx="5" />
+            <line class="antenna" x1="130" y1="90" x2="130" y2="50" />
+            <circle class="antenna-bulb" cx="130" cy="45" r="12" />
+            <rect x="115" y="175" width="30" height="20" rx="3" fill="#0f0f23" stroke="#00d4ff" stroke-width="2" />
+            <rect class="head" x="50" y="80" width="160" height="100" rx="20" />
+            <rect x="70" y="95" width="120" height="70" rx="10" fill="#080816" stroke="rgba(0, 212, 255, 0.15)" stroke-width="2" />
+            <circle class="eye eye-left" cx="100" cy="125" r="8" />
+            <circle class="eye eye-right" cx="160" cy="125" r="8" />
+            <line class="eye-brow eye-brow-left" x1="90" y1="112" x2="110" y2="112" />
+            <line class="eye-brow eye-brow-right" x1="150" y1="112" x2="170" y2="112" />
+            <path class="mouth" d="M 115 150 Q 130 160 145 150" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar glass-card">
+      <div class="stat-item">
+        <h3>50+</h3>
+        <p>Core Curriculum Topics</p>
+      </div>
+      <div class="stat-item">
+        <h3>200+</h3>
+        <p>Interactive Coding Challenges</p>
+      </div>
+      <div class="stat-item">
+        <h3>Live</h3>
+        <p>AI Tutor Sessions & Doubts Res</p>
+      </div>
+    </section>
+
+    <!-- Platform Modules Grid -->
+    <section class="features-grid">
+      
+      <!-- Card 1: Classroom -->
+      <div class="glass-card feature-card purple-theme">
+        <div class="feature-icon">🎓</div>
+        <h2>Live AI Classroom</h2>
+        <p>Attend live concept explanations with NEX. Speak or type doubts at any point to interrupt and learn through simpler analogies or visual guides.</p>
+        <a href="classroom.html" class="btn btn-pink">Enter Class</a>
+      </div>
+
+      <!-- Card 2: Code Arena -->
+      <div class="glass-card feature-card">
+        <div class="feature-icon">⚔️</div>
+        <h2>Code Arena</h2>
+        <p>Tackle algorithmic challenges in Machine Learning formulas, AI search methods, and classical data structures. Run tests instantly.</p>
+        <a href="code-arena.html" class="btn btn-blue">Battle Code</a>
+      </div>
+
+      <!-- Card 3: Vibe Studio -->
+      <div class="glass-card feature-card green-theme">
+        <div class="feature-icon">✨</div>
+        <h2>Vibe Coding Studio</h2>
+        <p>Write raw script files alongside an AI copilot. Visualize sorting mechanisms, search bounds, and ML algorithms live as you tweak the code.</p>
+        <a href="vibe-studio.html" class="btn btn-green">Launch Studio</a>
+      </div>
+
+      <!-- Card 4: Leaderboard -->
+      <div class="glass-card feature-card pink-theme">
+        <div class="feature-icon">🏆</div>
+        <h2>Leaderboard</h2>
+        <p>See where you rank globally and compare XP totals against rivals. Unlock badges for topic streaks and perfect quiz performance.</p>
+        <a href="leaderboard.html" class="btn btn-pink">Show Ranks</a>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="progress.js"></script>
+</body>
+</html>

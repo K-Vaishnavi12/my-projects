@@ -1,0 +1,5 @@
+com/amazon/clone/analytics/event/OrderCreatedEvent.class
+com/amazon/clone/analytics/service/AnalyticsService.class
+com/amazon/clone/analytics/controller/AnalyticsController.class
+com/amazon/clone/analytics/AnalyticsServiceApplication.class
+com/amazon/clone/analytics/consumer/OrderEventConsumer.class

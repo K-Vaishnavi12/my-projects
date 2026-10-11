@@ -1,0 +1,14 @@
+# Core ETL runtime
+pandas==2.2.2
+pyarrow==16.1.0
+SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
+python-dotenv==1.0.1
+
+# Orchestration (Airflow is normally installed via the Docker image;
+# pin here only for local dev / IDE support)
+apache-airflow==2.9.2
+
+# Transformation
+dbt-core==1.8.2
+dbt-postgres==1.8.2

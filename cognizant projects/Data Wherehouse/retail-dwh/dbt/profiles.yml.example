@@ -1,0 +1,13 @@
+# Copy to ~/.dbt/profiles.yml and adjust as needed
+retail_dwh:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: retail
+      password: retail
+      dbname: retail_dwh
+      schema: marts
+      threads: 4

@@ -1,0 +1,20 @@
+{
+  "doctor_mean_service": {
+    "D001_GenPrac_Sharma": 5.097349287179619,
+    "D002_GenPrac_Iyer": 7.6768410537941865,
+    "D003_Cardio_Banerjee": 31.21797574586118,
+    "D004_Pediatric_Khan": 11.65060552695875,
+    "D005_Derma_Roy": 3.121206120808266,
+    "D006_Ortho_Mehta": 15.179082871139412
+  },
+  "doctor_no_show_rate": {
+    "D001_GenPrac_Sharma": 0.1471708631422466,
+    "D002_GenPrac_Iyer": 0.14509205380139273,
+    "D003_Cardio_Banerjee": 0.1438721136767318,
+    "D004_Pediatric_Khan": 0.1420041052435156,
+    "D005_Derma_Roy": 0.14822391668216478,
+    "D006_Ortho_Mehta": 0.15446386395843173
+  },
+  "global_service": 12.32606260783694,
+  "global_no_show": 0.146796875
+}

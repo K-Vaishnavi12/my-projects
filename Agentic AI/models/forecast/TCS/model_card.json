@@ -1,0 +1,44 @@
+{
+  "symbol": "TCS",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "TCS",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 30.08262525715263,
+        "rmse": 43.383241475825955,
+        "mape_pct": 1.0588871553445025,
+        "directional_accuracy": 0.5141700404858299,
+        "n_samples": 248
+      },
+      "fit_seconds": 24.4
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 30.859807784321298,
+        "rmse": 44.07008936838983,
+        "mape_pct": 1.0876914692408364,
+        "directional_accuracy": 0.5101214574898786,
+        "n_samples": 248
+      },
+      "fit_seconds": 47.66
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:45:33.544151+00:00"
+}

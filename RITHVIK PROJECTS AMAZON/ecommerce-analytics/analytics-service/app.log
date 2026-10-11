@@ -1,0 +1,178 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-08-08 22:27:03.311  INFO 27368 --- [           main] c.a.c.a.AnalyticsServiceApplication      : Starting AnalyticsServiceApplication v1.0.0 using Java 11.0.27 on Vaishus-own with PID 27368 (C:\Users\kvais\OneDrive\Desktop\RITHVIK PROJECTS AMAZON\ecommerce-analytics\analytics-service\target\analytics-service-1.0.0.jar started by kvais in C:\Users\kvais\OneDrive\Desktop\RITHVIK PROJECTS AMAZON\ecommerce-analytics)
+2026-08-08 22:27:03.315 DEBUG 27368 --- [           main] c.a.c.a.AnalyticsServiceApplication      : Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-08-08 22:27:03.318  INFO 27368 --- [           main] c.a.c.a.AnalyticsServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-08-08 22:27:05.126  INFO 27368 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-08-08 22:27:05.138  INFO 27368 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-08-08 22:27:05.227  INFO 27368 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2026-08-08 22:27:06.810  INFO 27368 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2026-08-08 22:27:06.831  INFO 27368 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-08-08 22:27:06.831  INFO 27368 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-08-08 22:27:06.992  INFO 27368 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-08-08 22:27:06.992  INFO 27368 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3545 ms
+2026-08-08 22:27:09.996  INFO 27368 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 4 endpoint(s) beneath base path '/actuator'
+2026-08-08 22:27:10.398  INFO 27368 --- [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:29092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-analytics-service-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = analytics-service-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-08-08 22:27:10.843  INFO 27368 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.1.2
+2026-08-08 22:27:10.846  INFO 27368 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f8c67dc3ae0a3265
+2026-08-08 22:27:10.846  INFO 27368 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1786208230840
+2026-08-08 22:27:10.900  INFO 27368 --- [           main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Subscribed to topic(s): order-created
+2026-08-08 22:27:10.978  INFO 27368 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2026-08-08 22:27:11.055  INFO 27368 --- [           main] c.a.c.a.AnalyticsServiceApplication      : Started AnalyticsServiceApplication in 8.769 seconds (JVM running for 9.559)
+2026-08-08 22:27:11.991  INFO 27368 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Resetting the last seen epoch of partition order-created-0 to 0 since the associated topicId changed from null to 53tHgLVUR-yzou6xiIoKow
+2026-08-08 22:27:11.996  INFO 27368 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Cluster ID: 2G4h3SqfT6CSx1Zk6u0fUg
+2026-08-08 22:27:11.999  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Discovered group coordinator localhost:29092 (id: 2147483646 rack: null)
+2026-08-08 22:27:12.008  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] (Re-)joining group
+2026-08-08 22:27:12.041  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Request joining group due to: need to re-join with the given member-id
+2026-08-08 22:27:12.041  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] (Re-)joining group
+2026-08-08 22:27:15.217  INFO 27368 --- [nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-08 22:27:15.218  INFO 27368 --- [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-08-08 22:27:15.218  INFO 27368 --- [nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-08-08 22:27:41.167  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-analytics-service-group-1-dcd908c1-64ab-4fd3-98d8-93e92a4f79a3', protocol='range'}
+2026-08-08 22:27:41.168  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Finished assignment for group at generation 2: {consumer-analytics-service-group-1-dcd908c1-64ab-4fd3-98d8-93e92a4f79a3=Assignment(partitions=[order-created-0])}
+2026-08-08 22:27:41.177  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-analytics-service-group-1-dcd908c1-64ab-4fd3-98d8-93e92a4f79a3', protocol='range'}
+2026-08-08 22:27:41.177  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Notifying assignor about the new Assignment(partitions=[order-created-0])
+2026-08-08 22:27:41.179  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Adding newly assigned partitions: order-created-0
+2026-08-08 22:27:41.187  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Setting offset for partition order-created-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:29092 (id: 1 rack: null)], epoch=0}}
+2026-08-08 22:27:41.189  INFO 27368 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : analytics-service-group: partitions assigned: [order-created-0]
+2026-08-08 22:27:45.362 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.service.AnalyticsService         : recorded order=ORD-96C47159-A7A amount=10597.0
+2026-08-08 22:27:45.362 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.consumer.OrderEventConsumer      : analytics recorded orderId=ORD-96C47159-A7A
+2026-08-08 22:27:45.409 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.service.AnalyticsService         : recorded order=ORD-0378CCC2-2ED amount=10597.0
+2026-08-08 22:27:45.409 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.consumer.OrderEventConsumer      : analytics recorded orderId=ORD-0378CCC2-2ED
+2026-08-08 22:27:45.445 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.service.AnalyticsService         : recorded order=ORD-1317104D-1BD amount=10597.0
+2026-08-08 22:27:45.445 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.consumer.OrderEventConsumer      : analytics recorded orderId=ORD-1317104D-1BD
+2026-08-08 22:27:45.540 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.service.AnalyticsService         : recorded order=ORD-4DF39E89-62E amount=10597.0
+2026-08-08 22:27:45.541 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.consumer.OrderEventConsumer      : analytics recorded orderId=ORD-4DF39E89-62E
+2026-08-08 22:27:45.612 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.service.AnalyticsService         : recorded order=ORD-8AD632CB-6AF amount=10597.0
+2026-08-08 22:27:45.613 DEBUG 27368 --- [ntainer#0-0-C-1] c.a.c.a.consumer.OrderEventConsumer      : analytics recorded orderId=ORD-8AD632CB-6AF
+2026-08-08 22:27:47.681  INFO 27368 --- [nio-8083-exec-8] o.apache.coyote.http11.Http11Processor   : The host [analytics_backend] is not valid
+ Note: further occurrences of request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: The character [_] is never valid in a domain name.
+	at org.apache.tomcat.util.http.parser.HttpParser$DomainParseState.next(HttpParser.java:1045) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.http.parser.HttpParser.readHostDomainName(HttpParser.java:931) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.http.parser.Host.parse(Host.java:67) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.http.parser.Host.parse(Host.java:43) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessor.parseHost(AbstractProcessor.java:297) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.prepareRequest(Http11Processor.java:784) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:928) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1794) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.83.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2026-08-08 22:36:12.470  INFO 27368 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Node -1 disconnected.
+2026-08-08 23:20:13.902  INFO 27368 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Disconnecting from node 1 due to request timeout.
+2026-08-08 23:20:13.950  INFO 27368 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Cancelled in-flight FETCH request with correlation id 7074 due to node 1 being disconnected (elapsed time since creation: 104847ms, elapsed time since send: 104847ms, request timeout: 30000ms)
+2026-08-08 23:20:13.950  INFO 27368 --- [s-service-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Group coordinator localhost:29092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response.isDisconnected: false. Rediscovery will be attempted.
+2026-08-08 23:20:13.950  INFO 27368 --- [s-service-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Requesting disconnect from last known coordinator localhost:29092 (id: 2147483646 rack: null)
+2026-08-08 23:20:13.953  INFO 27368 --- [s-service-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Client requested disconnect from node 2147483646
+2026-08-08 23:20:13.976  INFO 27368 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Error sending fetch request (sessionId=188526725, epoch=6038) to node 1:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2026-08-08 23:20:14.267  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Discovered group coordinator localhost:29092 (id: 2147483646 rack: null)
+2026-08-08 23:20:14.269  INFO 27368 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-analytics-service-group-1, groupId=analytics-service-group] Discovered group coordinator localhost:29092 (id: 2147483646 rack: null)

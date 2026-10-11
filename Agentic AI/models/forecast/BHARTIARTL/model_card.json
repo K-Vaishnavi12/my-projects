@@ -1,0 +1,44 @@
+{
+  "symbol": "BHARTIARTL",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "BHARTIARTL",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 17.63495989441628,
+        "rmse": 23.856064471259696,
+        "mape_pct": 0.9087629018281087,
+        "directional_accuracy": 0.46153846153846156,
+        "n_samples": 248
+      },
+      "fit_seconds": 103.62
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 17.647901861791368,
+        "rmse": 23.82585653666316,
+        "mape_pct": 0.9101208848186613,
+        "directional_accuracy": 0.46153846153846156,
+        "n_samples": 248
+      },
+      "fit_seconds": 49.39
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:32:39.704814+00:00"
+}

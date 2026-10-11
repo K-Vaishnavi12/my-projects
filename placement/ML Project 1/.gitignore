@@ -1,0 +1,57 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Env (CRITICAL: never commit .env - contains API keys) ----
+.env
+.env.local
+.env.production
+*.pem
+
+# ---- Data (never commit) ----
+data/raw/*
+data/staging/*
+data/processed/*
+data/models/*
+data/exports/*
+!data/**/.gitkeep
+
+# ---- ML artefacts ----
+*.joblib
+*.pkl
+*.h5
+*.keras
+mlruns/
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+
+# ---- IDE ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# ---- Logs ----
+logs/
+*.log
+
+# ---- OS ----
+Thumbs.db
+Desktop.ini
+
+# ---- Temp/dev scripts ----
+_smoke*.py
+_final*.py
+_connect*.py
+_pagecheck.py

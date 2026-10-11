@@ -1,0 +1,34 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: analytics-service
+  redis:
+    host: localhost
+    port: 6379
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: analytics-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: false
+        spring.json.value.default.type: com.amazon.clone.analytics.event.OrderCreatedEvent
+app:
+  kafka:
+    topics:
+      order-created: order-created
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    tags:
+      application: analytics-service
+logging:
+  level:
+    com.amazon.clone: DEBUG

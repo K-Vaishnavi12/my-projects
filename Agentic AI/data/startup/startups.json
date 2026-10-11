@@ -1,0 +1,5 @@
+[
+  {"name": "TechFlow Pvt Ltd", "sector": "SaaS", "founders": ["A. Kumar", "B. Singh"], "registered": "2025-02-01", "funding_stage": "seed"},
+  {"name": "GreenEnergy Solutions", "sector": "CleanTech", "founders": ["C. Patel"], "registered": "2025-02-15", "funding_stage": "pre-seed"},
+  {"name": "HealthBridge", "sector": "HealthTech", "founders": ["D. Nair", "E. Reddy"], "registered": "2025-02-20", "funding_stage": "Series A"}
+]

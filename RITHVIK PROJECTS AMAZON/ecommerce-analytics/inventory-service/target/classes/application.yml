@@ -1,0 +1,40 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: inventory-service
+  redis:
+    host: localhost
+    port: 6379
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: inventory-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: false
+        spring.json.value.default.type: com.amazon.clone.inventory.event.OrderCreatedEvent
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+app:
+  kafka:
+    topics:
+      order-created: order-created
+      inventory-reserved: inventory-reserved
+      inventory-failed: inventory-failed
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    tags:
+      application: inventory-service
+logging:
+  level:
+    com.amazon.clone: DEBUG

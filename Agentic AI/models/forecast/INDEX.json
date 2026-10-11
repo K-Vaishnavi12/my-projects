@@ -1,0 +1,30 @@
+{
+  "symbols": [
+    "BHARTIARTL",
+    "HDFCBANK",
+    "HINDUNILVR",
+    "ICICIBANK",
+    "INFY",
+    "ITC",
+    "KOTAKBANK",
+    "NIFTY50",
+    "RELIANCE",
+    "SBIN",
+    "SENSEX",
+    "TCS"
+  ],
+  "best_models": {
+    "BHARTIARTL": "arima",
+    "HDFCBANK": "arima",
+    "HINDUNILVR": "arima",
+    "ICICIBANK": "arima",
+    "INFY": "arima",
+    "ITC": "arima",
+    "KOTAKBANK": "lstm",
+    "NIFTY50": "arima",
+    "RELIANCE": "lstm",
+    "SBIN": "arima",
+    "SENSEX": "arima",
+    "TCS": "arima"
+  }
+}

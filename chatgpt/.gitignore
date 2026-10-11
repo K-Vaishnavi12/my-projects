@@ -1,0 +1,6 @@
+node_modules/
+.env
+.data/
+logs/
+temp_run/
+package-lock.json

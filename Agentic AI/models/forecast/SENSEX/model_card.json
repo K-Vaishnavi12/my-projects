@@ -1,0 +1,44 @@
+{
+  "symbol": "SENSEX",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "SENSEX",
+    "n_train": 888,
+    "n_val": 98,
+    "n_test": 247,
+    "arima": {
+      "metrics": {
+        "mae": 480.38587231900385,
+        "rmse": 639.0395661226719,
+        "mape_pct": 0.6021153342840744,
+        "directional_accuracy": 0.5,
+        "n_samples": 247
+      },
+      "fit_seconds": 29.51
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 483.612410264262,
+        "rmse": 644.1333660887193,
+        "mape_pct": 0.6062976723128941,
+        "directional_accuracy": 0.5,
+        "n_samples": 247
+      },
+      "fit_seconds": 17.87
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:44:20.884665+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "amazon-qa",
+  "dataset_size": 693304405,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/embedding-data/Amazon-QA@be7d206d5e5dea14bab0a989c83aefb7ae1d0ebf/amazon-qa.jsonl.gz": {
+      "num_bytes": 247496265,
+      "checksum": null
+    }
+  },
+  "download_size": 247496265,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 940800670,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 693304405,
+      "num_examples": 1095290,
+      "shard_lengths": [
+        791946,
+        303344
+      ],
+      "dataset_name": "amazon-qa"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

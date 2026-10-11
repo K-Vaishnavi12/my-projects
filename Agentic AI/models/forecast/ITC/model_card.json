@@ -1,0 +1,44 @@
+{
+  "symbol": "ITC",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "ITC",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 2.9183027325302286,
+        "rmse": 4.405006570189635,
+        "mape_pct": 0.82865735493085,
+        "directional_accuracy": 0.4979757085020243,
+        "n_samples": 248
+      },
+      "fit_seconds": 34.46
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 2.944867023965702,
+        "rmse": 4.426249434039118,
+        "mape_pct": 0.8371647929371889,
+        "directional_accuracy": 0.4979757085020243,
+        "n_samples": 248
+      },
+      "fit_seconds": 13.81
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:38:55.833595+00:00"
+}

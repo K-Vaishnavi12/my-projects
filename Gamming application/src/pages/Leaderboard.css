@@ -1,0 +1,125 @@
+.leaderboard-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    position: relative;
+}
+
+.lb-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.your-rank-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 50px;
+    padding: 8px 20px;
+    margin-top: 16px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.your-rank-pill strong {
+    color: var(--neon-blue);
+    font-family: var(--font-game);
+}
+
+.lb-table {
+    padding: 0;
+    overflow: hidden;
+}
+
+.lb-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 90px 80px 110px;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+    font-size: 0.9rem;
+}
+
+.lb-row:last-child {
+    border-bottom: none;
+}
+
+.lb-row:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.lb-thead {
+    background: var(--bg-card2);
+    font-family: var(--font-game);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+}
+
+.lb-you {
+    background: rgba(56, 189, 248, 0.07);
+    border-left: 3px solid var(--neon-blue);
+}
+
+.lb-top {}
+
+.lb-rank {
+    display: flex;
+    align-items: center;
+}
+
+.rank-num {
+    font-family: var(--font-game);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.lb-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.lb-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.you-tag {
+    background: var(--neon-blue);
+    color: #000;
+    font-size: 0.65rem;
+    font-family: var(--font-game);
+    padding: 1px 6px;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+.level-pill {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: var(--neon-purple);
+    font-family: var(--font-game);
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+
+.lb-xp {
+    font-family: var(--font-game);
+    font-weight: 700;
+    color: var(--text-primary);
+}

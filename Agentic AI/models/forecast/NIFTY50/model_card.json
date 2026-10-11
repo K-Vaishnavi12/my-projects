@@ -1,0 +1,44 @@
+{
+  "symbol": "NIFTY50",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "NIFTY50",
+    "n_train": 890,
+    "n_val": 98,
+    "n_test": 247,
+    "arima": {
+      "metrics": {
+        "mae": 147.02916274866087,
+        "rmse": 195.8946614193688,
+        "mape_pct": 0.5973254634120297,
+        "directional_accuracy": 0.5203252032520326,
+        "n_samples": 247
+      },
+      "fit_seconds": 29.41
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 147.44460404008063,
+        "rmse": 197.12024933214423,
+        "mape_pct": 0.599235716611644,
+        "directional_accuracy": 0.516260162601626,
+        "n_samples": 247
+      },
+      "fit_seconds": 16.3
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:40:55.783291+00:00"
+}

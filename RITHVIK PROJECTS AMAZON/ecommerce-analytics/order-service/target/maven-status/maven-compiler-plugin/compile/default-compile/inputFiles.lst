@@ -1,0 +1,13 @@
+/app/src/main/java/com/amazon/clone/order/controller/OrderController.java
+/app/src/main/java/com/amazon/clone/order/config/RedisConfig.java
+/app/src/main/java/com/amazon/clone/order/model/CreateOrderRequest.java
+/app/src/main/java/com/amazon/clone/order/config/DynamoDbTableInitializer.java
+/app/src/main/java/com/amazon/clone/order/exception/GlobalExceptionHandler.java
+/app/src/main/java/com/amazon/clone/order/model/OrderItem.java
+/app/src/main/java/com/amazon/clone/order/service/OrderService.java
+/app/src/main/java/com/amazon/clone/order/config/DynamoDbConfig.java
+/app/src/main/java/com/amazon/clone/order/event/OrderCreatedEvent.java
+/app/src/main/java/com/amazon/clone/order/model/Order.java
+/app/src/main/java/com/amazon/clone/order/repository/OrderRepository.java
+/app/src/main/java/com/amazon/clone/order/OrderServiceApplication.java
+/app/src/main/java/com/amazon/clone/order/exception/OrderNotFoundException.java

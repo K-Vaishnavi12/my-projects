@@ -1,0 +1,116 @@
+{
+  "task": "financial_sentiment",
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "best": "tfidf",
+  "results": {
+    "n_train": 288,
+    "n_test": 72,
+    "labels": [
+      "negative",
+      "neutral",
+      "positive"
+    ],
+    "tfidf_baseline": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "per_class": {
+        "negative": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 24
+        },
+        "neutral": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 24
+        },
+        "positive": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 24
+        }
+      },
+      "confusion_matrix": [
+        [
+          24,
+          0,
+          0
+        ],
+        [
+          0,
+          24,
+          0
+        ],
+        [
+          0,
+          0,
+          24
+        ]
+      ],
+      "labels": [
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    },
+    "distilbert": {
+      "accuracy": 0.9305555555555556,
+      "macro_precision": 0.9425287356321839,
+      "macro_recall": 0.9305555555555555,
+      "macro_f1": 0.9297937691970163,
+      "per_class": {
+        "negative": {
+          "precision": 1.0,
+          "recall": 0.7916666666666666,
+          "f1": 0.8837209302325582,
+          "support": 24
+        },
+        "neutral": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 24
+        },
+        "positive": {
+          "precision": 0.8275862068965517,
+          "recall": 1.0,
+          "f1": 0.9056603773584906,
+          "support": 24
+        }
+      },
+      "confusion_matrix": [
+        [
+          19,
+          0,
+          5
+        ],
+        [
+          0,
+          24,
+          0
+        ],
+        [
+          0,
+          0,
+          24
+        ]
+      ],
+      "labels": [
+        "negative",
+        "neutral",
+        "positive"
+      ]
+    },
+    "best": "tfidf"
+  },
+  "trained_at": "2026-06-11T15:49:30.227906+00:00"
+}

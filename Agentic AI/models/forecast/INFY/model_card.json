@@ -1,0 +1,44 @@
+{
+  "symbol": "INFY",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "INFY",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 17.083727340833825,
+        "rmse": 23.970685304549658,
+        "mape_pct": 1.2046813980911615,
+        "directional_accuracy": 0.5303643724696356,
+        "n_samples": 248
+      },
+      "fit_seconds": 58.88
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 17.091573055972287,
+        "rmse": 23.987244371636134,
+        "mape_pct": 1.2057110924465955,
+        "directional_accuracy": 0.5263157894736842,
+        "n_samples": 248
+      },
+      "fit_seconds": 17.3
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:38:06.960464+00:00"
+}

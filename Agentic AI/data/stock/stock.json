@@ -1,0 +1,86 @@
+[
+  {
+    "symbol": "SENSEX",
+    "price": 74483.04,
+    "change_pct": -0.11,
+    "volume": 0,
+    "is_index": true
+  },
+  {
+    "symbol": "NIFTY50",
+    "price": 23063.6,
+    "change_pct": -0.38,
+    "volume": 0,
+    "is_index": true
+  },
+  {
+    "symbol": "RELIANCE",
+    "price": 1368.3,
+    "change_pct": -0.9,
+    "volume": 4094268,
+    "is_index": false
+  },
+  {
+    "symbol": "TCS",
+    "price": 2376.7,
+    "change_pct": -1.4,
+    "volume": 889692,
+    "is_index": false
+  },
+  {
+    "symbol": "INFY",
+    "price": 1231.2,
+    "change_pct": -1.37,
+    "volume": 2090612,
+    "is_index": false
+  },
+  {
+    "symbol": "HDFCBANK",
+    "price": 824.4,
+    "change_pct": 0.91,
+    "volume": 11313176,
+    "is_index": false
+  },
+  {
+    "symbol": "ICICIBANK",
+    "price": 1242.9,
+    "change_pct": -0.95,
+    "volume": 3462841,
+    "is_index": false
+  },
+  {
+    "symbol": "HINDUNILVR",
+    "price": 2166.0,
+    "change_pct": 0.28,
+    "volume": 328179,
+    "is_index": false
+  },
+  {
+    "symbol": "SBIN",
+    "price": 1047.0,
+    "change_pct": 0.0,
+    "volume": 3224674,
+    "is_index": false
+  },
+  {
+    "symbol": "BHARTIARTL",
+    "price": 1786.0,
+    "change_pct": -0.96,
+    "volume": 3353004,
+    "is_index": false
+  },
+  {
+    "symbol": "ITC",
+    "price": 303.95,
+    "change_pct": 0.83,
+    "volume": 10141670,
+    "is_index": false
+  },
+  {
+    "symbol": "KOTAKBANK",
+    "price": 367.8,
+    "change_pct": 0.26,
+    "volume": 3860424,
+    "is_index": false
+  }
+]

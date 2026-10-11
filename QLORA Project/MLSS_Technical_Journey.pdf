@@ -1,0 +1,146 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 3553 >>
+stream
+BT
+/F1 16 Tf
+50 770 Td
+(MLSS Application Statement: Technical Journey in AI/ML) Tj
+/F1 11 Tf
+0 -28 Td
+14 TL
+(My technical journey in AI/ML started with curiosity and trial and error. I began by) Tj
+T*
+(learning Python and basic machine learning, then moved toward NLP because I was more) Tj
+T*
+(interested in systems that can interact with people than in benchmark-only models. Over) Tj
+T*
+(time, I shifted from running notebooks to building complete, reusable pipelines.) Tj
+T*
+() Tj
+T*
+(The strongest project I have built so far is AmazonQA-RAG. I designed it as an end-to-end) Tj
+T*
+(system instead of a single model experiment. In Phase 1, I fine-tuned an instruction model) Tj
+T*
+(on Amazon-style question-answer data using QLoRA so training could run on limited hardware.) Tj
+T*
+(In Phase 2, I built a retrieval pipeline with sentence-transformer embeddings and FAISS so) Tj
+T*
+(the model could answer with evidence rather than guess. In Phase 3, I added RAGAS-based) Tj
+T*
+(evaluation across three variants \(base, RAG plus base, and RAG plus fine-tuned\) to measure) Tj
+T*
+(faithfulness, answer relevancy, context precision, and context recall. In Phase 4, I) Tj
+T*
+(packaged everything into a Streamlit app with model switching, context inspection, and) Tj
+T*
+(optional per-query diagnostics.) Tj
+T*
+() Tj
+T*
+(Before this project, I also explored classic ML workflows such as tabular classification,) Tj
+T*
+(feature engineering, and model validation, but I kept returning to language systems because) Tj
+T*
+(they have a direct user-facing impact. I experimented with prompt design, embedding-based) Tj
+T*
+(search, and few-shot setups to understand where simple methods fail and where architecture) Tj
+T*
+(choices matter. That gradual progression helped me move from “getting a model to run” to) Tj
+T*
+(thinking about system behavior, error cases, and user trust.) Tj
+T*
+() Tj
+T*
+(This journey taught me practical lessons: good prompts are not enough, retrieval quality can) Tj
+T*
+(dominate generation quality, and evaluation must be built into the workflow from day one. I) Tj
+T*
+(also learned to care about reproducibility, configuration design, and failure handling,) Tj
+T*
+(because real systems break in unexpected ways.) Tj
+T*
+() Tj
+T*
+(At the same time, I am very aware of my gaps. I want deeper understanding of optimization) Tj
+T*
+(and generalization, stronger intuition for representation learning, and more systematic) Tj
+T*
+(knowledge of advanced topics such as multimodal learning, efficient fine-tuning at scale,) Tj
+T*
+(and principled error analysis. I also want to improve how I read research papers and convert) Tj
+T*
+(them into clean engineering decisions rather than copying recipes.) Tj
+T*
+() Tj
+T*
+(MLSS is exactly the environment I need for this next step. I am looking for structured) Tj
+T*
+(depth, strong mentorship, and peers who challenge each other to think rigorously. I can) Tj
+T*
+(contribute practical experience in shipping applied NLP systems under constraints, and I) Tj
+T*
+(will benefit from the program's emphasis on fundamentals, experiments, and research mindset.) Tj
+T*
+() Tj
+T*
+(What makes me a strong fit is the combination of curiosity and execution. I do not stop at) Tj
+T*
+(“the model works.” I keep asking why it works, where it fails, and how to make it more) Tj
+T*
+(trustworthy. I enjoy the full cycle: building, testing, debugging, and explaining decisions) Tj
+T*
+(clearly.) Tj
+T*
+() Tj
+T*
+(In short, my goal is to become an engineer who is both implementation-strong and research-) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 7 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 211 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+14 TL
+(aware. I want to learn from MLSS, contribute actively to the cohort, and carry that learning) Tj
+T*
+(into real systems that are useful, reliable, and grounded in evidence.) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000003852 00000 n 
+0000003978 00000 n 
+0000004240 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4310
+%%EOF

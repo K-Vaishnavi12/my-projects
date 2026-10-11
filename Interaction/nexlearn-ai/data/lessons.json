@@ -1,0 +1,3391 @@
+[
+  {
+    "topicId": "ml_1",
+    "intro": "Hey! Today we're learning What is ML? Types of ML. Let me walk you through it step by step. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Machine Learning (ML) is a subfield of artificial intelligence that allows computers to learn from data without being explicitly programmed. Instead of writing code with hardcoded rules, we feed data into algorithms which build mathematical models to make predictions or decisions.",
+        "simplified": "Think of ML like teaching a child to recognize a dog. Instead of explaining all biological rules of dog shapes, you show them 100 pictures of dogs, and they learn the patterns themselves.",
+        "visual": "   [Data] ---> (ML Algorithm) ---> [Mathematical Model]\n                                          |\n                                          v\n   [New Data] --------------------> [Predictions!]",
+        "bullet_points": [
+          "Computers learn patterns from historical data.",
+          "Eliminates the need for hardcoded if-else logic.",
+          "Uses mathematical models to make future predictions."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "ML works by using training data to adjust parameters of an algorithm, minimizing errors between predictions and actual values. This process is divided into Supervised Learning (labeled training data), Unsupervised Learning (finding hidden patterns in unlabeled data), and Reinforcement Learning (learning through rewards and punishments).",
+        "simplified": "Supervised learning is like studying with an answer key. Unsupervised learning is like sorting random buttons into piles by shape. Reinforcement learning is like training a puppy with treats.",
+        "visual": "TYPES OF ML:\n ├── Supervised   --> Labeled Data (e.g. Spam/Not Spam)\n ├── Unsupervised --> Unlabeled Data (e.g. Customer Segments)\n └── Reinforcement--> Reward/Penalty (e.g. Chess AI)",
+        "bullet_points": [
+          "Supervised: Learns from Input-Output pairs.",
+          "Unsupervised: Groups data based on similarities.",
+          "Reinforcement: Learns by interacting with an environment."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In spam filters, ML analyzes millions of emails labeled as 'spam' or 'ham'. It identifies words frequently found in spam (e.g., 'buy', 'win', 'crypto') and predicts the probability that incoming emails are spam. In recommendations, companies like Netflix group users with similar viewing history to recommend new movies.",
+        "simplified": "Netflix recommends shows by saying: 'Hey, you and Alex both liked Stranger Things, so you might also like Wednesday since Alex loved it.' That's collaborative filtering!",
+        "visual": "   [User A: Likes movie 1, 2, 3]  <-- Similar profiles --> [User B: Likes movie 1, 2]\n   Recommendation to User B: Movie 3! 🎬",
+        "bullet_points": [
+          "Email spam classification is Supervised Classification.",
+          "Netflix recommendations use clustering and collaborative filters.",
+          "Self-driving cars use Reinforcement Learning to learn lane navigation."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The core of ML is minimizing a loss function, which computes the difference between predicted outcomes (y-hat) and true outcomes (y). The algorithm uses optimization algorithms like Gradient Descent to iteratively adjust weights (w) and bias (b) to reduce this loss.",
+        "simplified": "Think of it as walking down a foggy mountain. You take small steps in the steepest downward direction (gradient descent) until you reach the valley (minimum error).",
+        "visual": "Loss Function:  L = ∑ (y_actual - y_predicted)²\n\n     Error |   *   (High Error)\n           |    * \n           |     * \n           |       * ---> [Optimal weights at the bottom]\n           +-----------------\n                 Weights (w)",
+        "bullet_points": [
+          "Loss function measures accuracy (lower is better).",
+          "Weights determine feature importance.",
+          "Gradient descent guides the model to the minimum error."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To sum up, ML shifts programming from rules-based to data-driven. By adjusting weights using optimization algorithms, computers learn mapping rules from data and apply them to unlock predictive capabilities across classification, clustering, and decision-making systems.",
+        "simplified": "In short: Don't code the rules. Feed data to the computer, let it figure out the rules, verify with a quiz, and use it to predict the future!",
+        "visual": "Classic Programming:  [Data] + [Rules]  ---> [Output]\nMachine Learning:     [Data] + [Output] ---> [Rules] 🚀",
+        "bullet_points": [
+          "Classic: Rules + Data = Answers.",
+          "ML: Data + Answers = Rules.",
+          "Enables scalable automation for complex problems."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "Which type of learning deals with grouping customers together without pre-existing labels?",
+        "choices": [
+          "Supervised Learning",
+          "Unsupervised Learning",
+          "Reinforcement Learning",
+          "Deep Learning"
+        ],
+        "answer": 1,
+        "explanation": "Unsupervised learning groups unlabeled data based on structural similarities (e.g. clustering customers).",
+        "hint": "Since there are no pre-existing labels (no answer key), the model must discover the groups on its own."
+      },
+      {
+        "type": "tf",
+        "question": "Supervised learning requires labeled training data.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Supervised learning mapping relies on input-output pairs to train correctly.",
+        "hint": "Supervised means there is a teacher providing correct answers/labels for each training example."
+      },
+      {
+        "type": "fitb",
+        "question": "The optimization algorithm that iteratively adjusts weights to minimize the loss function is called __________ descent.",
+        "answer": "gradient",
+        "explanation": "Gradient descent is the standard optimization algorithm used to minimize loss by sliding down the loss curve.",
+        "hint": "It refers to the slope of a curve, going downward."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "difference",
+          "ai",
+          "ml",
+          "deep learning"
+        ],
+        "answer": "AI is the broad concept of machines acting smart. ML is a subset of AI where machines learn from data. Deep Learning is a subset of ML using deep neural networks."
+      },
+      {
+        "keywords": [
+          "supervised",
+          "label",
+          "labeled"
+        ],
+        "answer": "Labeled data means each sample includes the correct answer. For example, an email text paired with the label 'Spam' or 'Not Spam'."
+      },
+      {
+        "keywords": [
+          "unsupervised",
+          "clustering"
+        ],
+        "answer": "Unsupervised learning works with unlabeled data. The goal is to discover patterns, structures, or anomalies, like grouping similar songs in Spotify."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_2",
+    "intro": "Welcome back! Today we're tackling Linear Regression — the bedrock of predictive analysis. Ready to master the math of straight lines?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Linear Regression is a supervised learning algorithm used to predict a continuous numerical output based on one or more input features. It assumes there is a linear relationship between the input variables (x) and the single output variable (y).",
+        "simplified": "Think of it like predicting a house price based on its size. Generally, the bigger the house, the higher the price. We draw a straight line through our data points to predict prices for new sizes.",
+        "visual": "   Price ($) |\n             |        *   (Actual House)\n             |      */  \n             |     / *   <-- Best Fit Line\n             |   */\n             +----------------------\n                   Size (sq ft)",
+        "bullet_points": [
+          "Predicts continuous numerical outputs (like salary, temperature, prices).",
+          "Finds the best-fitting straight line through data points.",
+          "Relies on a linear correlation between inputs and outputs."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "Linear regression fits a straight line that minimizes the sum of squared differences (residuals) between predicted points and actual data points. This fitting method is known as Ordinary Least Squares (OLS), and it optimizes the slope and intercept coefficients.",
+        "simplified": "We start with a random line, calculate how far off it is from all real points, and nudge the line up, down, or tilt it until the total distance (error) is as small as possible.",
+        "visual": "   Point (x, y) *   \n                | \n                | <--- Error (Residual)\n   Line         o \n   ---------------------\n   Goal: Make the sum of all squared residual lines minimum!",
+        "bullet_points": [
+          "Residuals are the errors: (y_actual - y_predicted).",
+          "We square the errors so positive and negative errors don't cancel out.",
+          "OLS is the mathematical method used to find the minimum squared error line."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "A classic example is predicting crop yields based on rainfall amount. By analyzing years of historical data on rainfall and crop tonnage, a farm can build a linear model to project harvest yields based on seasonal weather forecasts.",
+        "simplified": "Another example is predicting your exam score based on study hours. If studying 0 hours gives 30%, and every hour adds 5%, your prediction line grows straight up from 30.",
+        "visual": "   Study hours: 0 hrs -> 30% | 2 hrs -> 40% | 4 hrs -> 50%\n   Line equation: Score = 30 + 5 * Hours",
+        "bullet_points": [
+          "Input (independent variable): Study hours, Rainfall.",
+          "Output (dependent variable): Exam score, Crop yield.",
+          "Allows forecasting and predicting what-if scenarios."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The equation for simple linear regression is: y = m*x + c (or y = w*x + b). Here, y is the predicted output, x is the input feature, m (or w) represents the weight/slope (change in y per unit of x), and c (or b) is the bias/y-intercept (value of y when x is 0).",
+        "simplified": "y = mx + c. 'c' is where you start (on the vertical y-axis), and 'm' is how steep the hill rises for every step 'x' you take forward.",
+        "visual": "      y = w * x + b\n      │   │   │   └─── Bias (y-intercept)\n      │   │   └─── Input Feature\n      │   └─── Slope Weight\n      └─── Predicted Value",
+        "bullet_points": [
+          "w (weight): controls the slope of the line.",
+          "b (bias): controls the vertical position of the line.",
+          "If x = 0, y = b. This is the baseline starting prediction."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "In summary, Linear Regression draws a straight line mapping input features to continuous outputs. By optimizing slope weight (w) and bias (b) via squared error minimization, we create a mathematical formula that projects numerical outcomes for unseen inputs.",
+        "simplified": "Linear Regression is just y = mx + c. We train the model to find the best m and c coefficients from our data, and then we plug in x to get our forecast!",
+        "visual": "   [Linear Regression] = Best Fit Line: y = wx + b 🎯",
+        "bullet_points": [
+          "Supervised algorithm for continuous predictions.",
+          "Finds parameters 'w' and 'b' that minimize Mean Squared Error (MSE).",
+          "Highly interpretable, but fails on highly complex non-linear structures."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What does the bias parameter (b) represent in the linear regression line equation y = wx + b?",
+        "choices": [
+          "The steepness of the line",
+          "The output value when the input x is 0",
+          "The average calculation error",
+          "The total count of data points"
+        ],
+        "answer": 1,
+        "explanation": "The bias (b) is the y-intercept, which is the value of y when the feature input x equals 0.",
+        "hint": "If you plug x = 0 into the formula y = wx + b, the term wx becomes 0."
+      },
+      {
+        "type": "tf",
+        "question": "Linear regression is the optimal algorithm for predicting discrete category labels like 'Spam' or 'Not Spam'.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "False. Linear regression is for continuous values. Classification tasks use algorithms like Logistic Regression.",
+        "hint": "A straight line goes to infinity, whereas category probabilities should be capped between 0 and 1."
+      },
+      {
+        "type": "fitb",
+        "question": "The standard metric used to measure performance by averaging the squared differences of errors is Mean __________ Error.",
+        "answer": "squared",
+        "explanation": "Mean Squared Error (MSE) measures the average of the squares of errors between predictions and actuals.",
+        "hint": "It takes the error, multiplies it by itself, and averages them."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "equation",
+          "equation of line"
+        ],
+        "answer": "The equation is y = wx + b. y is predicted value, x is input, w is slope weight, and b is bias intercept."
+      },
+      {
+        "keywords": [
+          "gradient descent",
+          "train",
+          "optimize"
+        ],
+        "answer": "Gradient descent adjusts weight (w) and bias (b) step-by-step. It looks at the current error and nudges w and b in the direction that lowers the error."
+      },
+      {
+        "keywords": [
+          "outliers",
+          "sensitive"
+        ],
+        "answer": "Yes, linear regression is highly sensitive to outliers. Because it squares errors, a single point far away creates a massive penalty, pulling the line toward it."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_5",
+    "intro": "Hey learner! Today we're looking at K-Nearest Neighbors (KNN) — a simple, intuitive classification method. Ready to see how neighbors define identity?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "K-Nearest Neighbors (KNN) is a supervised learning algorithm used for classification and regression. It works on the principle that similar data points exist in close proximity. To classify a new point, it looks at the 'K' closest labeled data points and takes a majority vote.",
+        "simplified": "Think of it as 'birds of a feather flock together'. If you want to know if a mystery food is a fruit or vegetable, you look at its 3 closest food matches in taste and color. If 2 are fruits and 1 is a vegetable, you label it a fruit!",
+        "visual": "     Class A (*)      Class B (o)\n         *  *            o  o\n           *    [?]    o\n                 |\n        Looks at K closest neighbors!",
+        "bullet_points": [
+          "KNN is instance-based and 'lazy' (no training phase).",
+          "Classifies based on spatial proximity.",
+          "K is a user-defined integer (the number of neighbors)."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "When classifying a query point, KNN calculates the distance between that point and all training dataset points. It sorts the distances, identifies the 'K' closest neighbors, and determines the most common label among them. K is typically an odd number to avoid tie-breaks.",
+        "simplified": "1. Choose K (e.g., K = 3). 2. Measure distance to all points. 3. Find the 3 nearest points. 4. Take a majority vote. Winner takes all!",
+        "visual": "  Step 1: Calc distances -> d1=1.2, d2=0.5, d3=2.4...\n  Step 2: Find K=3 nearest -> Class A (0.5), Class A (0.8), Class B (1.1)\n  Step 3: Majority vote -> 2 votes Class A vs 1 vote Class B -> Winner: Class A! 🏆",
+        "bullet_points": [
+          "Requires storing the entire dataset in memory.",
+          "Calculates distances for every single prediction.",
+          "Odd K values prevent 50/50 split voting ties."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In real estate appraisal, KNN evaluates a target property by identifying 5 nearby homes (K=5) that sold recently and share similar characteristics (square footage, bedrooms). The average price of these neighbors is used as the valuation model.",
+        "simplified": "Another example is movie suggestions. If you like action and sci-fi, KNN finds users with matching movie ratings (your nearest neighbors) and recommends what they watched.",
+        "visual": "   Your taste: [Action: 9, Comedy: 2, Sci-Fi: 10]\n   Nearest neighbor's taste: [Action: 10, Comedy: 1, Sci-Fi: 9]\n   Since they are highly similar, recommend their favorites to you!",
+        "bullet_points": [
+          "Used in recommender systems.",
+          "Used in retail to group similar product purchase profiles.",
+          "Highly effective for simple image recognition benchmarks."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The distance metric is crucial. The most common is Euclidean Distance: d = √[ ∑ (qi - pi)² ]. Other distance equations include Manhattan Distance (sum of absolute differences) and Minkowski Distance (generalized distance metric).",
+        "simplified": "Euclidean distance is the ruler-line distance between two points: diagonal line. Manhattan distance is walking blocks in a grid city (only horizontal and vertical).",
+        "visual": "   Euclidean:  A ─── diagonal ─── B  ( d = √[ (x2-x1)² + (y2-y1)² ] )\n\n   Manhattan:  A ──┐ ( d = |x2-x1| + |y2-y1| )\n                 └── B",
+        "bullet_points": [
+          "Euclidean is best for flat geometric continuous spaces.",
+          "Manhattan is useful when dimensions are not directly comparable.",
+          "Feature scaling (normalization) is mandatory, otherwise larger scale features dominate."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "In summary, KNN is a non-parametric classifier that assigns labels based on the votes of K nearest neighbors in vector space. While simple and training-free, its execution is slow on large datasets because it computes distances on every run.",
+        "simplified": "KNN has no learning phase. It simply remembers the coordinates of all training data, and classifies new items based on their closest geometric neighbors!",
+        "visual": "   KNN Summary: Find K nearest -> Vote majority -> Output Label 🎯",
+        "bullet_points": [
+          "No training time, but slow testing time.",
+          "Highly sensitive to noisy data and irrelevant features.",
+          "Requires feature scaling (e.g. MinMax or Z-Score standardization)."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the danger of setting K to an even number in KNN classification?",
+        "choices": [
+          "The algorithm will crash",
+          "Distance calculations take twice as long",
+          "Voting ties can occur between classes",
+          "The accuracy drops to zero"
+        ],
+        "answer": 2,
+        "explanation": "If K is even (e.g., K=4) and predicting binary classes, votes can tie 2-2, creating class ambiguity.",
+        "hint": "An even number can be split exactly down the middle."
+      },
+      {
+        "type": "tf",
+        "question": "KNN requires a long and computationally expensive training phase.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "False. KNN is a lazy learner. Its training is instant (storing data), but prediction testing is computationally expensive.",
+        "hint": "Think about when the distance formula actually runs: when learning or when predicting?"
+      },
+      {
+        "type": "fitb",
+        "question": "The geometric distance calculated as the straight-line diagonal between two points is called __________ distance.",
+        "answer": "euclidean",
+        "explanation": "Euclidean distance is the straight-line distance between two points in Euclidean space.",
+        "hint": "Named after a famous Greek mathematician, founder of geometry."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "k",
+          "choose k",
+          "best k"
+        ],
+        "answer": "A small K (like K=1) makes the model sensitive to noise (overfitting). A large K makes it smooth but potentially groups unrelated classes (underfitting). Usually, K=√N (square root of data count) is a good starting point."
+      },
+      {
+        "keywords": [
+          "slow",
+          "speed",
+          "complexity"
+        ],
+        "answer": "KNN is slow because for a new point, it calculates distance to all N points. If N is 1 million, it performs 1 million distance checks per prediction."
+      },
+      {
+        "keywords": [
+          "distance",
+          "metrics"
+        ],
+        "answer": "Euclidean checks straight lines. Manhattan checks grid lines. Cosine similarity checks the angle between vectors (great for text classification)."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_3",
+    "intro": "Greetings, explorer! Today we are looking at Heuristic Search (A* Algorithm) — the golden pathfinding method in AI. Ready to chart the course?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "The A* (A-Star) Algorithm is a heuristic-driven search algorithm used for pathfinding and graph traversal. It finds the shortest path between a starting node and a goal node by combining actual path costs with heuristic estimates of remaining distances.",
+        "simplified": "Think of GPS navigation. Instead of searching every country road in all directions (like BFS), A* prioritizes roads that lead directly toward your destination city.",
+        "visual": "   BFS (blind search):     Expands in circles like ripples ⭕\n   A* (heuristic search):  Targets directly toward the goal ──> 🎯",
+        "bullet_points": [
+          "Finds the absolute shortest path efficiently.",
+          "Widely used in maps, games, and robotics.",
+          "Informed search: uses problem-specific knowledge (heuristics)."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "A* maintains a priority queue of paths to explore. It evaluates nodes by calculating a cost function f(n) = g(n) + h(n). It always expands the node with the lowest f(n) score, tracking visited nodes in a closed set to avoid loops.",
+        "simplified": "We calculate: f (total score) = g (distance traveled) + h (estimated distance left). We always check the node that has the smallest total score first.",
+        "visual": "   Start (A) ── g(n)=cost ──> Node (n) ── h(n)=estimated ──> Goal (B)\n   Total A* Score: f(n) = g(n) + h(n)",
+        "bullet_points": [
+          "g(n): Exact cost to reach node n from start.",
+          "h(n): Estimated cost to reach goal from node n.",
+          "Updates node parents to reconstruct the final path."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In video games, like StarCraft or Age of Empires, when you click a unit to move across a map cluttered with trees, rocks, and rivers, the game engine uses A* in real-time to compute the obstacle-free path instantly.",
+        "simplified": "Imagine walking through a maze. You keep track of how many steps you took (g) and look at the exit to estimate how far it is in a straight line (h). You avoid directions that move away from the exit.",
+        "visual": "   [Unit] ──(A* Pathfinding around walls)──> [Target Location]\n   [Unit] ──> [Path: Right -> Up -> Right] ──> [Target] ✅",
+        "bullet_points": [
+          "Map pathing uses road lengths as g(n) and straight-line coordinates as h(n).",
+          "Prevents NPCs from walking into walls or taking circular routes.",
+          "Adapts dynamically if obstacles move."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The core rule is: f(n) = g(n) + h(n). For A* to guarantee the shortest path, the heuristic function h(n) MUST be 'admissible', meaning it never overestimates the actual cost to reach the goal. A common admissible heuristic is straight-line Euclidean distance.",
+        "simplified": "Rule: Never overestimate. If the exit is 10 miles away, your heuristic must guess 10 or less (e.g. straight-line distance). If it guesses 15, A* might ignore the best path!",
+        "visual": "   Admissibility: h(n) ≤ h*(n)  [True cost to goal]\n\n   Example: Straight-Line vs Actual Road\n   Node ──(Actual Road: 12km)──> Goal\n   Node ──(Straight-Line: 8km)──> Goal (Heuristic h = 8 is Admissible!)",
+        "bullet_points": [
+          "f(n) = g(n) + h(n) combines past cost and future estimate.",
+          "Admissible: h(n) never exceeds the true shortest path cost.",
+          "Consistent (monotonic): h(n) ≤ cost(n, c) + h(c) for neighbors."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "In summary, A* combines Dijkstra's algorithm (minimizing g(n)) and Greedy Best-First Search (minimizing h(n)). By evaluating nodes via f(n) = g(n) + h(n) with an admissible heuristic, it achieves optimal pathfinding efficiency.",
+        "simplified": "A* is the ultimate smart navigator: it balances where it came from (g) with where it is going (h) to find the absolute best path without wasting time checking bad routes!",
+        "visual": "   A* = Dijkstra (g) + Greedy Best-First (h) ➔ Optimal & Fast! 🚀",
+        "bullet_points": [
+          "Guarantees shortest path if heuristic is admissible.",
+          "Reduces search space compared to blind search.",
+          "Requires memory storage for visited and boundary nodes."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary condition for a heuristic h(n) to guarantee that A* finds the shortest path?",
+        "choices": [
+          "It must compute instantly",
+          "It must be admissible (never overestimate cost)",
+          "It must be equal to g(n)",
+          "It must return integer values"
+        ],
+        "answer": 1,
+        "explanation": "An admissible heuristic never overestimates the cost, ensuring A* doesn't bypass optimal paths.",
+        "hint": "The heuristic is a guess of remaining distance. It must be optimistic (equal to or shorter than the real path)."
+      },
+      {
+        "type": "tf",
+        "question": "If h(n) is set to 0 for all nodes, A* behaves exactly like Dijkstra's algorithm.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. If h(n) = 0, then f(n) = g(n), which is Dijkstra's algorithm (evaluating nodes based solely on distance from start).",
+        "hint": "Without a heuristic, there is no guide pointing toward the target; we evaluate only paths traveled."
+      },
+      {
+        "type": "fitb",
+        "question": "In the cost equation f(n) = g(n) + h(n), the term representing the cost to reach node n from the start is __________.",
+        "answer": "g(n)",
+        "explanation": "g(n) is the exact cost from the start node to the current node n.",
+        "hint": "It is the first function added in the formula, representing history."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "admissible",
+          "overestimate"
+        ],
+        "answer": "Admissible means optimistic. If the actual shortest path from A to B is 10 steps, the heuristic must estimate 10 or fewer steps. If it estimates 11, it is inadmissible."
+      },
+      {
+        "keywords": [
+          "dijkstra",
+          "difference"
+        ],
+        "answer": "Dijkstra only looks at cost from start (g). A* looks at cost from start (g) and estimates cost to goal (h). A* is much faster because it has direction."
+      },
+      {
+        "keywords": [
+          "heuristic",
+          "examples"
+        ],
+        "answer": "For grid movements, Manhattan distance is used (if moving in 4 directions). Euclidean straight-line distance is used if moving in any direction."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_2",
+    "intro": "Welcome, coder! Today we are mastering Linked Lists — a dynamic data structure that breaks free from contiguous memory blocks. Ready to connect the nodes?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "A Linked List is a linear data structure where elements are not stored in contiguous memory locations. Instead, each element is a separate object called a 'Node'. Each node contains two items: the data, and a reference (pointer) to the next node in the sequence.",
+        "simplified": "Think of a linked list like a treasure hunt. You start at clue 1 (Head). Clue 1 doesn't tell you where clue 5 is; it only tells you where to find clue 2. You follow the links until a clue says 'The End' (Null).",
+        "visual": "   Head ──> [Data: 10 | Next] ──> [Data: 20 | Next] ──> [Data: 30 | Null]",
+        "bullet_points": [
+          "Dynamic size: can grow and shrink easily.",
+          "Non-contiguous memory allocation.",
+          "Consists of nodes holding data and next pointers."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "Linked lists are traversed sequentially starting from the 'Head' pointer. Insertions and deletions are highly efficient because they only require updating node pointers, rather than shifting elements in memory like an array. However, accessing an element takes O(N) time.",
+        "simplified": "To insert a page in a loose-leaf binder, you just open it, slip the page in, and snap it shut. You don't need to rewrite all other pages. But to find page 50, you must turn pages 1 to 49 one by one.",
+        "visual": "   Insert Node B between A and C:\n   Before:  [Node A | Next] ───────────────> [Node C | Next]\n   After:   [Node A | Next] ──> [Node B] ──> [Node C | Next]",
+        "bullet_points": [
+          "Accessing an index is O(N) (linear traversal).",
+          "Insertion/Deletion is O(1) if you already have a pointer to the location.",
+          "Wastes memory on pointer storage compared to arrays."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "Linked lists power the undo/redo functionality in text editors (each action points to the previous and next states). They also structure the playlist queue of music apps like Spotify, where songs link to the next track.",
+        "simplified": "Your web browser history (Back and Forward buttons) is a Doubly Linked List. The current page links to the previous page you visited and the next page in your history stack.",
+        "visual": "   [Google] <── (Prev/Next) ──> [Wikipedia] <── (Prev/Next) ──> [GitHub]\n                    Back Button <───   │   ───> Forward Button",
+        "bullet_points": [
+          "Singly Linked List: nodes point to the next node only.",
+          "Doubly Linked List: nodes point to both next and previous nodes.",
+          "Circular Linked List: the last node points back to the head node."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The standard structure of a node in Javascript is represented as a class: `class Node { constructor(value) { this.val = value; this.next = null; } }`. Traversing is done using a loop: `while(current !== null) { current = current.next; }`.",
+        "simplified": "To traverse: create a moving marker called 'current'. Set it to the 'head'. Read its value, then move it to 'current.next'. Repeat until current is empty (null).",
+        "visual": "   class Node {\n     constructor(data) {\n       this.data = data;\n       this.next = null;\n     }\n   }",
+        "bullet_points": [
+          "Always handle the boundary case where the list is empty (head is null).",
+          "When deleting a node, update the preceding node's next reference.",
+          "Always save reference to current.next before severing nodes to avoid losing the tail."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "In summary, Linked Lists offer dynamic size and O(1) node modifications by structuring data as nodes linked by pointers. They trade off array random access speeds (O(1) index access) for memory flexibility and efficient insertions.",
+        "simplified": "Linked lists are nodes chained together by pointers. Great for additions/removals, slow for direct lookups, and always starts traversing from the Head!",
+        "visual": "   Linked List Summary: Dynamic chain ➔ Head -> Node -> Node -> Null ⛓",
+        "bullet_points": [
+          "No pre-allocated contiguous memory required.",
+          "Linear search time: O(N) access time.",
+          "Pointers take additional memory (overhead)."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the time complexity to access the 5th element in a singly linked list of size N?",
+        "choices": [
+          "O(1)",
+          "O(N)",
+          "O(log N)",
+          "O(N²)"
+        ],
+        "answer": 1,
+        "explanation": "You must traverse from the head, node by node, to reach the 5th element, resulting in linear O(N) time complexity.",
+        "hint": "Linked lists do not support index-based random access. You have to start at node 1."
+      },
+      {
+        "type": "tf",
+        "question": "Deleting a node from a linked list requires shifting all subsequent elements in memory.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "False. Deleting only requires updating the pointer of the preceding node to bypass the deleted node. No elements are shifted.",
+        "hint": "Think of removing a paperclip from a chain: you just connect the clips on either side of it."
+      },
+      {
+        "type": "fitb",
+        "question": "The node that marks the starting point of a linked list is called the __________.",
+        "answer": "head",
+        "explanation": "The head pointer designates the entry point of the linked list.",
+        "hint": "It is the opposite of the tail."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "array",
+          "difference",
+          "versus"
+        ],
+        "answer": "Arrays have fixed sizes and allow O(1) random access. Linked Lists have dynamic sizes, allow O(1) insertions without shifting, but require O(N) sequential access."
+      },
+      {
+        "keywords": [
+          "doubly",
+          "pointer"
+        ],
+        "answer": "Doubly linked lists have two pointers per node: next and prev. This allows you to traverse backwards, but uses more memory."
+      },
+      {
+        "keywords": [
+          "sentinel",
+          "dummy"
+        ],
+        "answer": "A dummy or sentinel node is a temporary node placed at the head of the list. It simplifies edge-case code for insertions and deletions."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_7",
+    "intro": "Welcome, developer! Today we are organizing data with Sorting Algorithms. Let's compare Bubble Sort and Merge Sort! Ready to order the chaos?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Sorting Algorithms arrange elements of a list in a specific order (numerical or alphabetical). Efficient sorting is critical for optimizing other algorithms (like Binary Search) that require sorted data to operate.",
+        "simplified": "Imagine sorting a deck of cards. You can swap adjacent cards one by one (Bubble Sort) or split the deck into piles, sort the piles, and merge them back (Merge Sort).",
+        "visual": "   Unsorted: [5, 2, 9, 1]  ───(Sorting Algorithm)───> Sorted: [1, 2, 5, 9]",
+        "bullet_points": [
+          "Rearranges elements in ascending or descending order.",
+          "Crucial precursor for search optimizations.",
+          "Different algorithms trade off speed, memory, and simplicity."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "Simple sorts like Bubble Sort scan the array repeatedly, swapping adjacent items if they are out of order, which runs in O(N²) time. Advanced sorts like Merge Sort use Divide-and-Conquer to split arrays in half recursively, sort the sub-arrays, and merge them in O(N log N) time.",
+        "simplified": "Bubble sort bubbles the largest number to the end by swapping. Merge sort splits the list until each has 1 item, then merges pairs in sorted order step-by-step.",
+        "visual": "   Bubble Sort swap: [5, 2] -> [2, 5]\n   Merge Sort split: [5, 2, 9, 1] -> [5, 2] and [9, 1] -> [5],[2],[9],[1]\n                     Merge sorted: [2, 5] and [1, 9] -> [1, 2, 5, 9]",
+        "bullet_points": [
+          "Bubble Sort: O(N²) time complexity, O(1) auxiliary space.",
+          "Merge Sort: O(N log N) time complexity, O(N) auxiliary space.",
+          "Divide-and-Conquer splits large problems into trivial subproblems."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "E-commerce websites use sorting algorithms to filter search results by 'Price: Low to High' instantly. Databases use index sorting to speed up querying records across millions of rows.",
+        "simplified": "Imagine sorting files alphabetically. Instead of scanning all cabinets, a fast search splits files into batches, alphabetical piles, and indexes them.",
+        "visual": "   [E-commerce products] ──> Sort by price ──> [$10, $25, $50, $120]",
+        "bullet_points": [
+          "Price and ratings filters run on sorting algorithms.",
+          "Operating systems use hybrids like Timsort (Merge + Insertion).",
+          "Vital for database indexing and clustering."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The efficiency rule is Big O complexity. O(N²) algorithms scale poorly. For large datasets, O(N log N) algorithms are required. Another key concept is stability: a stable sort preserves the original order of items with equal keys.",
+        "simplified": "Stable sort means: if you have two cards of '5', the one that was first in the unsorted pile stays first in the sorted pile.",
+        "visual": "   Algorithm    │ Time Complexity (Avg) │ Space Complexity │ Stable?\n   ─────────────┼───────────────────────┼──────────────────┼────────\n   Bubble Sort  │        O(N²)          │       O(1)       │  Yes   \n   Merge Sort   │      O(N log N)       │       O(N)       │  Yes   \n   Quick Sort   │      O(N log N)       │     O(log N)     │  No    ",
+        "bullet_points": [
+          "Bubble/Insertion/Selection are simple but slow (O(N²)).",
+          "Merge/Quick/Heap are complex but fast (O(N log N)).",
+          "Stable sorts protect secondary sorting records."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To summarize, sorting algorithms organize arrays to optimize data retrieval. While simple O(N²) swaps are useful for small lists, divide-and-conquer O(N log N) approaches like Merge Sort are essential for large-scale production datasets.",
+        "simplified": "Sorting organizes data. Use simple algorithms (Bubble) for tiny lists, and fast recursive algorithms (Merge/Quick) for big systems to keep things running fast!",
+        "visual": "   Unsorted Array ➔ Divide & Conquer ➔ O(N log N) sorted output 🏆",
+        "bullet_points": [
+          "Crucial helper for efficient binary searching.",
+          "Merge sort trades memory (space) for speed.",
+          "Choosing the right sort depends on data size and memory limits."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the average time complexity of Merge Sort?",
+        "choices": [
+          "O(1)",
+          "O(N)",
+          "O(N log N)",
+          "O(N²)"
+        ],
+        "answer": 2,
+        "explanation": "Merge Sort recursively splits the array in O(log N) levels, merging N elements per level, yielding O(N log N) time complexity.",
+        "hint": "It uses divide-and-conquer, which performs much faster than double-loop bubble swapping."
+      },
+      {
+        "type": "tf",
+        "question": "Bubble sort requires O(N) additional memory helper space to perform its sorting swaps.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "False. Bubble sort swaps elements in-place, meaning its auxiliary space complexity is O(1) (constant space).",
+        "hint": "In-place algorithms modify the original input array directly without allocating secondary arrays."
+      },
+      {
+        "type": "fitb",
+        "question": "A sorting algorithm is called __________ if it preserves the relative order of elements that have equal sorting keys.",
+        "answer": "stable",
+        "explanation": "Stable sorting maintains the relative order of identical elements as they appeared in the input.",
+        "hint": "Opposite of unstable, meaning steady and unmoving."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "bubble",
+          "quick",
+          "versus"
+        ],
+        "answer": "Bubble sort is O(N²) and swaps adjacent elements in-place. Quick sort is O(N log N) average and partitions elements around a pivot. Quick sort is dramatically faster."
+      },
+      {
+        "keywords": [
+          "merge",
+          "quick",
+          "which is better"
+        ],
+        "answer": "Quick sort is usually faster in practice and uses less memory, but Merge sort is stable and guarantees O(N log N) worst-case performance (Quick sort worst case is O(N²))."
+      },
+      {
+        "keywords": [
+          "space",
+          "memory"
+        ],
+        "answer": "Merge sort requires O(N) auxiliary memory because it copies elements into helper arrays during the merge step."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_3",
+    "name": "Logistic Regression",
+    "intro": "Hey! Today we are learning about Logistic Regression — the cornerstone of machine classification. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Logistic Regression is a supervised learning algorithm used for classification. Despite 'regression' in its name, it predicts binary outcomes (0 or 1, Yes or No, Spam or Not Spam) by mapping feature values to probabilities between 0 and 1.",
+        "simplified": "Think of it like a threshold slider. Instead of predicting a house's exact price, it predicts whether a buyer will buy it (Yes/No) based on price.",
+        "visual": "   P(y=1) |        /-----\n          |       /   \n          |  ____/   <-- Sigmoid curve S-shape\n          | / \n          +-----------------\n                 Input Z",
+        "bullet_points": [
+          "Used for binary classification tasks.",
+          "Outputs probabilities between 0 and 1.",
+          "Uses a decision threshold (typically 0.5) to assign final classes."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It takes input features, multiplies them by weights, adds bias, and passes the result through the Sigmoid function: S(z) = 1 / (1 + e^-z). This transforms any value from negative to positive infinity into a probability space [0, 1].",
+        "simplified": "It calculates a score, then squashes that score using the Sigmoid formula. An infinite score becomes 1.0; a negative infinite score becomes 0.0; a score of 0 becomes exactly 0.5.",
+        "visual": "Input features X ──> Multiply by w + b (z) ──> Sigmoid S(z) ──> Probability P ──> Threshold (0.5) ──> Class (0 or 1)",
+        "bullet_points": [
+          "Linear model foundation: z = wx + b.",
+          "Sigmoid activation squeezes outputs.",
+          "Calculates probability of belonging to class 1."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "Banks use logistic regression to predict credit card default risks. By analyzing features like income, debt ratio, and credit score, the model outputs the probability of a client defaulting on payment.",
+        "simplified": "A hospital uses it to predict if a patient has diabetes based on blood sugar levels. A score over 0.7 probability means the test flags positive.",
+        "visual": "Patient sugar levels ──> [Logistic Regression] ──> Prob = 0.85 ➔ Flagged Positive! 🚨",
+        "bullet_points": [
+          "Predicts customer churn in subscription models.",
+          "Spam filters check word frequencies to flag spam.",
+          "Predicts tumor malignancy (benign vs malignant)."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The Sigmoid formula is: S(z) = 1 / (1 + e^-z), where z = w1*x1 + w2*x2 + ... + b. The loss function used for optimization is Binary Cross-Entropy (also known as Log Loss), which penalizes confident wrong predictions.",
+        "simplified": "The rule is Log Loss: If you predict 99% probability that it's spam, but it's not, the model gets heavily penalized so it learns from its confidence mistakes.",
+        "visual": "Sigmoid: P = 1 / (1 + e^-z)\nLog Loss: L = -[ y*log(p) + (1-y)*log(1-p) ]",
+        "bullet_points": [
+          "Sigmoid guarantees outputs are bounded between 0 and 1.",
+          "Log Loss function is optimized using gradient descent.",
+          "Smooth derivative allows backpropagation adjustments."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "In summary, Logistic Regression is a classification algorithm that models category probabilities using the Sigmoid function. By minimizing Log Loss, it establishes a decision boundary to classify new data points.",
+        "simplified": "Logistic regression is just a linear equation put through a Sigmoid squasher to output a 0-to-1 probability score for sorting items into two groups!",
+        "visual": "Logistic Regression = [Linear Model] + [Sigmoid squash] ➔ Probability ➔ Binary Class 🎯",
+        "bullet_points": [
+          "Highly interpretable classification baseline.",
+          "Decision boundary is linear in feature space.",
+          "Vulnerable to multicollinearity and outliers."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "Which function does Logistic Regression use to compress predictions between 0 and 1?",
+        "choices": [
+          "Linear function",
+          "Sigmoid function",
+          "ReLu function",
+          "Step function"
+        ],
+        "answer": 1,
+        "explanation": "The Sigmoid function squashes numerical inputs to values between 0 and 1, representing probabilities.",
+        "hint": "It has a distinct 'S' shaped curve."
+      },
+      {
+        "type": "tf",
+        "question": "Logistic regression is primarily used to predict continuous numerical values like stock prices.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "False. Logistic regression is used for classification (binary outcomes), not predicting continuous quantities.",
+        "hint": "Think about regression vs classification."
+      },
+      {
+        "type": "fitb",
+        "question": "The loss function minimized in training binary logistic regression models is called cross-__________ loss.",
+        "answer": "entropy",
+        "explanation": "Cross-entropy loss (or Log Loss) measures classification performance whose output is a probability value.",
+        "hint": "It relates to information theory and starts with 'e'."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "sigmoid",
+          "formula"
+        ],
+        "answer": "The Sigmoid function is S(z) = 1 / (1 + e^-z). It converts any number into a probability between 0 and 1."
+      },
+      {
+        "keywords": [
+          "loss",
+          "cost"
+        ],
+        "answer": "We use Binary Cross-Entropy loss. It calculates the error of predicting probability p when the true label is y."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_4",
+    "name": "Decision Trees & Random Forest",
+    "intro": "Welcome! Today we cover Decision Trees and Random Forests — how computers make choices step by step. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "A Decision Tree is a flowchart-like structure where internal nodes represent tests on attributes, branches represent test outcomes, and leaf nodes represent final class labels. A Random Forest combines multiple decision trees (ensemble learning) to achieve higher accuracy.",
+        "simplified": "Think of playing 20 Questions. You ask: 'Is it an animal?' -> Yes. 'Can it fly?' -> No. You follow a tree of questions until you reach the final guess (leaf).",
+        "visual": "          [Age > 30?]\n          /        \\\n      [Yes]        [No]\n      /                \\\n [Likes Tech?]       [High Income?]",
+        "bullet_points": [
+          "Flowchart-like structure for classification and regression.",
+          "Splits dataset into subsets based on features.",
+          "Highly visual and easy to interpret."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "A Decision Tree splits data by choosing feature boundaries that maximize Information Gain (or minimize Gini Impurity). A Random Forest constructs many trees using bootstrap aggregating (bagging) and votes for the majority class.",
+        "simplified": "A single tree might be biased. Random Forest is like asking 100 experts (trees) to vote. Their combined vote is much more reliable!",
+        "visual": "Data Split ➔ Gini Impurity checks ➔ Select Best Split ➔ Repeat recursively\nRandom Forest = Tree 1 + Tree 2 + ... + Tree N ──> Majority Vote ➔ Final Prediction",
+        "bullet_points": [
+          "Uses Entropy and Gini to find best feature splits.",
+          "Random Forest averages predictions to reduce overfitting.",
+          "Bagging trains trees on random subsets of data."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "E-commerce sites use decision trees to approve or reject instant loan requests. By evaluating parameters like age, income, and debt, the tree reaches a decision in milliseconds.",
+        "simplified": "A spam detector uses decision trees to check: 1) Does email contain 'win'? 2) Is sender in contacts? 3) Is link clickable? Then classifies.",
+        "visual": "Email Ingest ──> Contains 'win'? (Yes) ──> Clickable Link? (Yes) ➔ Spam! 🚨",
+        "bullet_points": [
+          "Used in medical diagnostics to classify symptoms.",
+          "Recommends products based on user browsing sequences.",
+          "Assists in credit scoring assessment."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "Entropy measures disorder: H(X) = -∑ P(xi)*log2(P(xi)). Information Gain is Entropy(parent) - Entropy(children). Gini Impurity is G = 1 - ∑ P(class_i)^2.",
+        "simplified": "Entropy is a measure of how messy a group is. If a box has 5 red and 5 blue balls, entropy is high (1.0). If it has 10 red balls, entropy is 0. Trees want 0 entropy!",
+        "visual": "Gini Impurity: G = 1 - ∑ p_i²\nInformation Gain = Entropy(Parent) - ∑ [Weight * Entropy(Child)]",
+        "bullet_points": [
+          "Maximizing Information Gain creates pure leaf nodes.",
+          "Decision trees grow recursively until stopping criteria are met.",
+          "Random Forest selects random features at each split to ensure diversity."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "In summary, Decision Trees split data on features to form logical paths. Random Forest groups these trees to vote, providing robust predictions while mitigating individual tree overfitting.",
+        "simplified": "Decision Tree: flowchart. Random Forest: voting committee of flowcharts. Together they make super accurate classifiers!",
+        "visual": "Tree: recursively splits features. Forest: groups trees, aggregates votes, outputs label! 🌲🌲🌲",
+        "bullet_points": [
+          "Very robust to outliers and missing values.",
+          "Handles both category and numerical features.",
+          "Random Forest is a highly powerful ensemble algorithm."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is a major advantage of a Random Forest over a single Decision Tree?",
+        "choices": [
+          "It is easier to visualize",
+          "It reduces overfitting by averaging trees",
+          "It uses less memory",
+          "It trains faster"
+        ],
+        "answer": 1,
+        "explanation": "Random Forests reduce the variance (overfitting) of individual decision trees by training on subsets and voting.",
+        "hint": "Think about the power of a group versus a single individual."
+      },
+      {
+        "type": "tf",
+        "question": "A Gini Impurity score of 0 indicates that a node contains a perfectly mixed group of multiple classes.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 1,
+        "explanation": "False. A Gini Impurity of 0 means the node is completely pure (only one class is present).",
+        "hint": "0 impurity means there is zero messiness."
+      },
+      {
+        "type": "fitb",
+        "question": "The process of grouping multiple weak models to make a strong prediction is called __________ learning.",
+        "answer": "ensemble",
+        "explanation": "Ensemble learning combines multiple algorithms (like voting decision trees) to make better predictions.",
+        "hint": "Like a musical group playing together."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "entropy",
+          "gini"
+        ],
+        "answer": "Both measure node purity. Gini is computationally faster as it doesn't involve logarithms, whereas Entropy is based on information theory."
+      },
+      {
+        "keywords": [
+          "overfitting",
+          "tree"
+        ],
+        "answer": "Individual trees overfit because they grow deep and memorize training details. Random Forests prevent this by bootstrapping data."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_6",
+    "intro": "Welcome to our session on SVM — Concept and Kernel Trick! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "SVM — Concept and Kernel Trick is a critical concept in ML. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of SVM — Concept and Kernel Trick like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( SVM — Concept and Kernel Trick Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [SVM — Concept and Kernel Trick Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, SVM — Concept and Kernel Trick provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing SVM — Concept and Kernel Trick?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "SVM — Concept and Kernel Trick optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of SVM — Concept and Kernel Trick.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in SVM — Concept and Kernel Trick is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For SVM — Concept and Kernel Trick, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of SVM — Concept and Kernel Trick include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_7",
+    "intro": "Welcome to our session on K-Means Clustering! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "K-Means Clustering is a critical concept in ML. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of K-Means Clustering like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( K-Means Clustering Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [K-Means Clustering Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, K-Means Clustering provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing K-Means Clustering?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "K-Means Clustering optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of K-Means Clustering.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in K-Means Clustering is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For K-Means Clustering, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of K-Means Clustering include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_8",
+    "intro": "Welcome to our session on Neural Networks Basics! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Neural Networks Basics is a critical concept in ML. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Neural Networks Basics like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Neural Networks Basics Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Neural Networks Basics Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Neural Networks Basics provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Neural Networks Basics?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Neural Networks Basics optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Neural Networks Basics.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Neural Networks Basics is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Neural Networks Basics, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Neural Networks Basics include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_9",
+    "intro": "Welcome to our session on Overfitting vs Underfitting! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Overfitting vs Underfitting is a critical concept in ML. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Overfitting vs Underfitting like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Overfitting vs Underfitting Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Overfitting vs Underfitting Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Overfitting vs Underfitting provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Overfitting vs Underfitting?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Overfitting vs Underfitting optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Overfitting vs Underfitting.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Overfitting vs Underfitting is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Overfitting vs Underfitting, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Overfitting vs Underfitting include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ml_10",
+    "intro": "Welcome to our session on Evaluation Metrics! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Evaluation Metrics is a critical concept in ML. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Evaluation Metrics like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Evaluation Metrics Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Evaluation Metrics Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Evaluation Metrics provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Evaluation Metrics?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Evaluation Metrics optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Evaluation Metrics.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Evaluation Metrics is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Evaluation Metrics, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Evaluation Metrics include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_1",
+    "intro": "Welcome to our session on What is AI? AI vs ML vs DL! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "What is AI? AI vs ML vs DL is a critical concept in AI. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of What is AI? AI vs ML vs DL like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( What is AI? AI vs ML vs DL Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [What is AI? AI vs ML vs DL Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, What is AI? AI vs ML vs DL provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing What is AI? AI vs ML vs DL?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "What is AI? AI vs ML vs DL optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of What is AI? AI vs ML vs DL.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in What is AI? AI vs ML vs DL is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For What is AI? AI vs ML vs DL, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of What is AI? AI vs ML vs DL include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_2",
+    "intro": "Welcome to our session on Search Algorithms (BFS, DFS)! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Search Algorithms (BFS, DFS) is a critical concept in AI. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Search Algorithms (BFS, DFS) like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Search Algorithms (BFS, DFS) Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Search Algorithms (BFS, DFS) Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Search Algorithms (BFS, DFS) provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Search Algorithms (BFS, DFS)?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Search Algorithms (BFS, DFS) optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Search Algorithms (BFS, DFS).",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Search Algorithms (BFS, DFS) is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Search Algorithms (BFS, DFS), the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Search Algorithms (BFS, DFS) include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_4",
+    "intro": "Welcome to our session on Knowledge Representation! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Knowledge Representation is a critical concept in AI. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Knowledge Representation like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Knowledge Representation Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Knowledge Representation Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Knowledge Representation provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Knowledge Representation?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Knowledge Representation optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Knowledge Representation.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Knowledge Representation is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Knowledge Representation, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Knowledge Representation include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_5",
+    "intro": "Welcome to our session on Natural Language Processing Basics! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Natural Language Processing Basics is a critical concept in AI. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Natural Language Processing Basics like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Natural Language Processing Basics Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Natural Language Processing Basics Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Natural Language Processing Basics provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Natural Language Processing Basics?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Natural Language Processing Basics optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Natural Language Processing Basics.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Natural Language Processing Basics is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Natural Language Processing Basics, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Natural Language Processing Basics include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_6",
+    "intro": "Welcome to our session on Generative AI Concepts! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Generative AI Concepts is a critical concept in AI. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Generative AI Concepts like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Generative AI Concepts Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Generative AI Concepts Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Generative AI Concepts provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Generative AI Concepts?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Generative AI Concepts optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Generative AI Concepts.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Generative AI Concepts is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Generative AI Concepts, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Generative AI Concepts include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_7",
+    "intro": "Welcome to our session on Prompt Engineering Fundamentals! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Prompt Engineering Fundamentals is a critical concept in AI. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Prompt Engineering Fundamentals like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Prompt Engineering Fundamentals Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Prompt Engineering Fundamentals Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Prompt Engineering Fundamentals provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Prompt Engineering Fundamentals?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Prompt Engineering Fundamentals optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Prompt Engineering Fundamentals.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Prompt Engineering Fundamentals is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Prompt Engineering Fundamentals, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Prompt Engineering Fundamentals include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_8",
+    "intro": "Welcome to our session on RAG — Retrieval Augmented Generation! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "RAG — Retrieval Augmented Generation is a critical concept in AI. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of RAG — Retrieval Augmented Generation like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( RAG — Retrieval Augmented Generation Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [RAG — Retrieval Augmented Generation Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, RAG — Retrieval Augmented Generation provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing RAG — Retrieval Augmented Generation?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "RAG — Retrieval Augmented Generation optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of RAG — Retrieval Augmented Generation.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in RAG — Retrieval Augmented Generation is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For RAG — Retrieval Augmented Generation, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of RAG — Retrieval Augmented Generation include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "ai_9",
+    "intro": "Welcome to our session on AI Ethics and Bias! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "AI Ethics and Bias is a critical concept in AI. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of AI Ethics and Bias like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( AI Ethics and Bias Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [AI Ethics and Bias Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, AI Ethics and Bias provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing AI Ethics and Bias?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "AI Ethics and Bias optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of AI Ethics and Bias.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in AI Ethics and Bias is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For AI Ethics and Bias, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of AI Ethics and Bias include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_1",
+    "intro": "Welcome to our session on Arrays and Strings! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Arrays and Strings is a critical concept in DSA. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Arrays and Strings like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Arrays and Strings Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Arrays and Strings Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Arrays and Strings provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Arrays and Strings?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Arrays and Strings optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Arrays and Strings.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Arrays and Strings is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Arrays and Strings, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Arrays and Strings include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_3",
+    "intro": "Welcome to our session on Stacks and Queues! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Stacks and Queues is a critical concept in DSA. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Stacks and Queues like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Stacks and Queues Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Stacks and Queues Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Stacks and Queues provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Stacks and Queues?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Stacks and Queues optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Stacks and Queues.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Stacks and Queues is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Stacks and Queues, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Stacks and Queues include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_4",
+    "intro": "Welcome to our session on Trees and Binary Trees! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Trees and Binary Trees is a critical concept in DSA. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Trees and Binary Trees like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Trees and Binary Trees Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Trees and Binary Trees Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Trees and Binary Trees provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Trees and Binary Trees?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Trees and Binary Trees optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Trees and Binary Trees.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Trees and Binary Trees is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Trees and Binary Trees, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Trees and Binary Trees include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_5",
+    "intro": "Welcome to our session on Graphs! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Graphs is a critical concept in DSA. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Graphs like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Graphs Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Graphs Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Graphs provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Graphs?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Graphs optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Graphs.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Graphs is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Graphs, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Graphs include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_6",
+    "intro": "Welcome to our session on Hashing! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Hashing is a critical concept in DSA. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Hashing like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Hashing Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Hashing Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Hashing provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Hashing?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Hashing optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Hashing.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Hashing is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Hashing, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Hashing include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_8",
+    "intro": "Welcome to our session on Searching Algorithms! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Searching Algorithms is a critical concept in DSA. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Searching Algorithms like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Searching Algorithms Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Searching Algorithms Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Searching Algorithms provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Searching Algorithms?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Searching Algorithms optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Searching Algorithms.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Searching Algorithms is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Searching Algorithms, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Searching Algorithms include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_9",
+    "intro": "Welcome to our session on Dynamic Programming Basics! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Dynamic Programming Basics is a critical concept in DSA. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Dynamic Programming Basics like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Dynamic Programming Basics Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Dynamic Programming Basics Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Dynamic Programming Basics provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Dynamic Programming Basics?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Dynamic Programming Basics optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Dynamic Programming Basics.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Dynamic Programming Basics is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Dynamic Programming Basics, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Dynamic Programming Basics include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  },
+  {
+    "topicId": "dsa_10",
+    "intro": "Welcome to our session on Time and Space Complexity! Let's dive in and break this topic down together. Ready?",
+    "chunks": [
+      {
+        "id": "chunk_1",
+        "title": "What is it?",
+        "primary": "Time and Space Complexity is a critical concept in DSA. It is structured to resolve data mapping bottlenecks and configure logic boundaries efficiently.",
+        "simplified": "Think of Time and Space Complexity like a smart sorter or navigator that figures out structural coordinates so you don't have to code it by hand.",
+        "visual": "[Features Input] ───( Time and Space Complexity Engine )───> [Optimized Output]",
+        "bullet_points": [
+          "Core concept in advanced modern technical stacks.",
+          "Helps categorize parameters or find paths.",
+          "Improves calculation efficiency on large sets."
+        ]
+      },
+      {
+        "id": "chunk_2",
+        "title": "How does it work?",
+        "primary": "It functions by reading the input datasets, standardizing attributes, and executing iterations. The mathematical parameters are shifted step-by-step to reach the minimum target cost.",
+        "simplified": "It's like tuning an instrument: you play a note, see how far off it is from the perfect pitch, and tighten the string until it sounds right.",
+        "visual": "Input Raw data ──> Calibrate parameters ──> Test output ──> Repeat optimization",
+        "bullet_points": [
+          "Evaluates structural characteristics.",
+          "Minimizes error deviation via adjustment cycles.",
+          "Resolves constraints sequentially."
+        ]
+      },
+      {
+        "id": "chunk_3",
+        "title": "Real world example",
+        "primary": "In production pipelines, this is deployed to filter user listings, predict price valuations, classify emails, or routing logistics pathways efficiently.",
+        "simplified": "Like a smart mapping app suggesting the fastest detour routes instantly when there is a traffic jam on your main highway.",
+        "visual": "Unoptimized set ──> [Time and Space Complexity Calibration] ──> Best optimized path 🚀",
+        "bullet_points": [
+          "Powers digital recommendations.",
+          "Assists in real-time prediction feeds.",
+          "Speeds up sorting large databases."
+        ]
+      },
+      {
+        "id": "chunk_4",
+        "title": "Key formula or rule",
+        "primary": "The underlying mathematics focuses on maximizing similarity bounds or minimizing delta calculations. Algorithms adjust coefficients iteratively based on derivatives or step checks.",
+        "simplified": "The rule: compute the difference between what we got and what we wanted, and nudge our values in the direction that closes the gap.",
+        "visual": "Cost = | target_actual - predicted_value | ──> Target: Minimize to 0",
+        "bullet_points": [
+          "Calculates mathematical loss deviations.",
+          "Nudges weights using optimization scales.",
+          "Standardizes inputs to prevent boundary bias."
+        ]
+      },
+      {
+        "id": "chunk_5",
+        "title": "Quick summary",
+        "primary": "To conclude, Time and Space Complexity provides a clear structural methodology to map features, evaluate margins, and predict outputs accurately for new datasets.",
+        "simplified": "In a nutshell: Feed data to a mathematical model, adjust coefficients using checks, and use the calibrated model to predict the future!",
+        "visual": "Input coordinates ➔ Adjust parameters ➔ Predict optimal outcomes 🎯",
+        "bullet_points": [
+          "Dramatically improves predictive accuracy.",
+          "Saves manual conditional code blocks.",
+          "Fundamental module in standard tech suites."
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "type": "mcq",
+        "question": "What is the primary goal of implementing Time and Space Complexity?",
+        "choices": [
+          "To format visual CSS displays",
+          "To automate calculations and predict target variables",
+          "To completely delete data records",
+          "To slow down processing loops"
+        ],
+        "answer": 1,
+        "explanation": "Time and Space Complexity optimizes input parameters to automate prediction logic.",
+        "hint": "Think about the purpose of ML models and DSA algorithms."
+      },
+      {
+        "type": "tf",
+        "question": "Applying feature normalization speeds up the convergence of Time and Space Complexity.",
+        "choices": [
+          "True",
+          "False"
+        ],
+        "answer": 0,
+        "explanation": "True. Standardizing coordinates balances feature contributions, accelerating calculations.",
+        "hint": "Standardized data makes mathematical equations run more uniformly."
+      },
+      {
+        "type": "fitb",
+        "question": "The mathematical function we optimize to minimize errors in Time and Space Complexity is called the __________ function.",
+        "answer": "loss",
+        "explanation": "The loss (or cost) function computes the prediction deviations we seek to minimize.",
+        "hint": "The opposite of gain or profit."
+      }
+    ],
+    "faqs": [
+      {
+        "keywords": [
+          "formula",
+          "math"
+        ],
+        "answer": "For Time and Space Complexity, the math balances coefficients to reduce distance/loss errors. Optimization updates the parameters iteratively."
+      },
+      {
+        "keywords": [
+          "example",
+          "real world"
+        ],
+        "answer": "Examples of Time and Space Complexity include classifying user states, predicting real estate values, or finding pathways in navigation programs."
+      }
+    ]
+  }
+]

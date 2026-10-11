@@ -1,0 +1,234 @@
+[
+  {
+    "id": "ml_1",
+    "category": "ml",
+    "name": "What is ML? Types of ML",
+    "description": "Learn the definition of Machine Learning and understand Supervised, Unsupervised, and Reinforcement learning paradigms.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "ml_2",
+    "category": "ml",
+    "name": "Linear Regression — Concept, Formula, Use Case",
+    "description": "Understand the most fundamental regression algorithm, the line equation y = mx + c, and gradient descent optimization.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "ml_3",
+    "category": "ml",
+    "name": "Logistic Regression",
+    "description": "Transition from regression to classification using the Sigmoid activation function to predict probability scores.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "ml_4",
+    "category": "ml",
+    "name": "Decision Trees & Random Forest",
+    "description": "Learn how trees split data using Entropy and Gini impurity, and how Random Forests average multiple trees.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ml_5",
+    "category": "ml",
+    "name": "KNN — Concept and Distance Metrics",
+    "description": "Master instance-based classification and distance metrics like Euclidean, Manhattan, and Minkowski distances.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "ml_6",
+    "category": "ml",
+    "name": "SVM — Concept and Kernel Trick",
+    "description": "Explore support vectors, hyperplanes, margins, and mapping non-linear data using kernel functions.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ml_7",
+    "category": "ml",
+    "name": "K-Means Clustering",
+    "description": "Dive into unsupervised learning, cluster centroids, inertia, and the elbow method to group unstructured data.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ml_8",
+    "category": "ml",
+    "name": "Neural Networks Basics",
+    "description": "Understand artificial neurons, layers, forward propagation, weights, biases, and backpropagation.",
+    "level": "Advanced",
+    "xpReward": 70
+  },
+  {
+    "id": "ml_9",
+    "category": "ml",
+    "name": "Overfitting vs Underfitting",
+    "description": "Analyze bias-variance trade-offs and learn regularization methods (L1/L2) to improve model generalization.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ml_10",
+    "category": "ml",
+    "name": "Evaluation Metrics",
+    "description": "Learn how to measure performance using Confusion Matrix, Accuracy, Precision, Recall, F1-Score, and ROC-AUC.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ai_1",
+    "category": "ai",
+    "name": "What is AI? AI vs ML vs DL",
+    "description": "Distinguish between Artificial Intelligence, Machine Learning, and Deep Learning fields and history.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "ai_2",
+    "category": "ai",
+    "name": "Search Algorithms (BFS, DFS)",
+    "description": "Learn how AI agents traverse path spaces using Breadth-First and Depth-First searching techniques.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "ai_3",
+    "category": "ai",
+    "name": "Heuristic Search (A* Algorithm)",
+    "description": "Optimize search paths using heuristic cost functions to estimate remaining distance to target.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ai_4",
+    "category": "ai",
+    "name": "Knowledge Representation",
+    "description": "Represent facts and logic patterns using Semantic Networks, Propositional Logic, and Ontologies.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ai_5",
+    "category": "ai",
+    "name": "Natural Language Processing Basics",
+    "description": "Learn text tokenization, bag-of-words, TF-IDF representations, and parts-of-speech parsing.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ai_6",
+    "category": "ai",
+    "name": "Generative AI Concepts",
+    "description": "Explore the revolution of GANs, VAEs, and modern Transformer-based Large Language Models.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "ai_7",
+    "category": "ai",
+    "name": "Prompt Engineering Fundamentals",
+    "description": "Master structured prompting techniques including Few-Shot, Chain-of-Thought, and Role Prompting.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "ai_8",
+    "category": "ai",
+    "name": "RAG — Retrieval Augmented Generation",
+    "description": "Connect LLMs to external vector databases to retrieve relevant context before generation.",
+    "level": "Advanced",
+    "xpReward": 70
+  },
+  {
+    "id": "ai_9",
+    "category": "ai",
+    "name": "AI Ethics and Bias",
+    "description": "Address critical questions about model fairness, representation, training data bias, and safety.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "dsa_1",
+    "category": "dsa",
+    "name": "Arrays and Strings",
+    "description": "Master memory contiguity, indexing, two-pointer techniques, and sliding window manipulations.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "dsa_2",
+    "category": "dsa",
+    "name": "Linked Lists",
+    "description": "Implement pointers, node structures, singly/doubly linked lists, and traversal algorithms.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "dsa_3",
+    "category": "dsa",
+    "name": "Stacks and Queues",
+    "description": "Explore Last-In-First-Out (LIFO) and First-In-First-Out (FIFO) linear data structures and applications.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "dsa_4",
+    "category": "dsa",
+    "name": "Trees and Binary Trees",
+    "description": "Master binary trees, tree traversals (In-order, Pre-order, Post-order), and BST operations.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "dsa_5",
+    "category": "dsa",
+    "name": "Graphs",
+    "description": "Learn to represent connections with Adjacency Matrices and Lists, and traverse using BFS/DFS.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "dsa_6",
+    "category": "dsa",
+    "name": "Hashing",
+    "description": "Understand hash tables, key-value mappings, hash functions, and collision resolution techniques.",
+    "level": "Intermediate",
+    "xpReward": 60
+  },
+  {
+    "id": "dsa_7",
+    "category": "dsa",
+    "name": "Sorting Algorithms",
+    "description": "Study sorting logic: Bubble, Insertion, Selection, Merge Sort, and Quick Sort complexities.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "dsa_8",
+    "category": "dsa",
+    "name": "Searching Algorithms",
+    "description": "Compare Linear Search and Binary Search in sorted arrays, understanding the divide-and-conquer approach.",
+    "level": "Beginner",
+    "xpReward": 50
+  },
+  {
+    "id": "dsa_9",
+    "category": "dsa",
+    "name": "Dynamic Programming Basics",
+    "description": "Learn to optimize recursive problems through memoization, tabulation, and identifying overlapping subproblems.",
+    "level": "Advanced",
+    "xpReward": 70
+  },
+  {
+    "id": "dsa_10",
+    "category": "dsa",
+    "name": "Time and Space Complexity",
+    "description": "Use Big O notation to analyze algorithms and evaluate execution speeds and memory footprints.",
+    "level": "Beginner",
+    "xpReward": 50
+  }
+]

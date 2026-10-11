@@ -1,0 +1,74 @@
+# Global HAFT-MFN configuration
+model:
+  d_model: 768
+  n_heads: 8
+  ffn_dim: 2048
+  dropout: 0.1
+  activation: gelu
+  n_global_layers: 2
+  contrastive_temperature: 0.07
+
+encoders:
+  text:
+    pretrained_name: roberta-base
+    max_length: 64
+    freeze: false
+    use_pretrained: true
+    hidden_dim: 768
+  image:
+    resnet: resnet50
+    vit: vit_b_16
+    image_size: 224
+    use_pretrained: true
+  audio:
+    wav2vec_name: facebook/wav2vec2-base
+    sample_rate: 16000
+    n_mfcc: 40
+    use_pretrained: true
+  video:
+    n_frames: 8
+    frame_size: 112
+    use_pretrained: true
+
+fusion:
+  pairs:
+    - [text, image]
+    - [text, audio]
+    - [text, video]
+    - [image, audio]
+    - [image, video]
+    - [audio, video]
+  trimodal_groups:
+    - [text, image, audio]
+    - [text, image, video]
+    - [text, audio, video]
+    - [image, audio, video]
+
+task:
+  num_classes: 7      # sentiment 7-class default
+  regression_dim: 2   # valence, arousal
+  loss_weights:
+    classification: 1.0
+    regression: 0.5
+    contrastive: 0.1
+
+training:
+  epochs: 50
+  batch_size: 32
+  grad_accum: 2
+  lr_pretrained: 1.0e-5
+  lr_new: 1.0e-4
+  weight_decay: 0.01
+  warmup_epochs: 5
+  scheduler: cosine
+  mixed_precision: true
+  seed: 42
+  num_workers: 0
+  checkpoint_dir: checkpoints
+  log_every: 10
+
+data:
+  mode: mock        # mock | demo | full
+  dataset: mock     # mock | cmu_mosei | meld | vggsound | iemocap
+  root: ./data
+  demo_samples: 16

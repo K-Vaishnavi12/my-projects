@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spatial DSA Tutor - Immersive Learning Lab</title>
+    <!-- Google Fonts: Outfit (Futuristic headings), Inter (UI elements), JetBrains Mono (Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- MediaPipe CDNs for webcam hand gesture tracking -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- 3D Canvas Background Container -->
+    <div id="canvas-container"></div>
+    <div id="css-labels-container"></div>
+
+    <!-- Fullscreen Dashboard Landing Overlay -->
+    <div id="dashboard-overlay">
+      <div class="dashboard-container">
+        <div class="dashboard-header animate-fade-in">
+          <span class="logo-icon-lg">▲</span>
+          <h1>SPATIAL DSA TUTOR</h1>
+          <p>Select a learning lab module to begin your immersive 3D/XR data structures training.</p>
+        </div>
+        
+        <div class="dashboard-grid">
+          <div class="topic-card" data-topic="stack">
+            <div class="card-glow"></div>
+            <div class="card-icon">🥞</div>
+            <h3>STACK LAB</h3>
+            <p>LIFO (Last-In First-Out) operations visualized as vertically suspended blocks.</p>
+            <span class="card-action">ENTER LAB</span>
+          </div>
+
+          <div class="topic-card" data-topic="queue">
+            <div class="card-glow"></div>
+            <div class="card-icon">🚊</div>
+            <h3>QUEUE LAB</h3>
+            <p>FIFO (First-In First-Out) pipelines rendered as connected horizontal blocks.</p>
+            <span class="card-action">ENTER LAB</span>
+          </div>
+
+          <div class="topic-card" data-topic="linkedlist">
+            <div class="card-glow"></div>
+            <div class="card-icon">🔗</div>
+            <h3>LINKED LIST</h3>
+            <p>Nodes and pointers drifting in zero-gravity space. Insert and adjust links.</p>
+            <span class="card-action">ENTER LAB</span>
+          </div>
+
+          <div class="topic-card" data-topic="bst">
+            <div class="card-glow"></div>
+            <div class="card-icon">🌳</div>
+            <h3>BINARY TREE</h3>
+            <p>Hierarchical binary search tree structures with dynamic child placements.</p>
+            <span class="card-action">ENTER LAB</span>
+          </div>
+
+          <div class="topic-card" data-topic="graph">
+            <div class="card-glow"></div>
+            <div class="card-icon">🕸️</div>
+            <h3>GRAPH SEARCH</h3>
+            <p>Breadth-First and Depth-First Search animated across a 3D network mesh.</p>
+            <span class="card-action">ENTER LAB</span>
+          </div>
+
+          <div class="topic-card" data-topic="sorting">
+            <div class="card-glow"></div>
+            <div class="card-icon">📊</div>
+            <h3>SORTING LAB</h3>
+            <p>Bubble, Quick, and Merge algorithms sorting height-proportional columns.</p>
+            <span class="card-action">ENTER LAB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UI Hud Layer -->
+    <div id="hud-overlay" class="hidden">
+      <!-- Top Status & VR Panel -->
+      <header class="glass-panel" id="top-bar">
+        <div class="logo">
+          <span class="logo-icon">▲</span>
+          <div class="logo-text">
+            <h1>SPATIAL DSA TUTOR</h1>
+            <span class="sub-logo">ZERO-G LEARNING LAB v1.0</span>
+          </div>
+        </div>
+        <div class="top-controls">
+          <button id="btn-focus" class="action-btn btn-secondary">
+            <span>FOCUS MODE: OFF</span>
+          </button>
+          <button id="btn-home" class="action-btn btn-secondary">
+            <span>DASHBOARD</span>
+          </button>
+          <button id="btn-xr" class="action-btn glow-btn-purple hidden">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM3 6h7v12H3V6zm18 12h-7V6h7v12zm-3-8c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1zm-10 0c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1z"/></svg>
+            <span>ENTER IMMERSIVE MODE</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Sidebar: Lesson Deck -->
+      <aside class="glass-panel" id="lesson-deck">
+        <div class="panel-header">
+          <h2>TOPICS</h2>
+          <span class="tag">SELECT LESSON</span>
+        </div>
+        <nav class="lesson-list">
+          <button class="lesson-item active" data-topic="stack">
+            <span class="num">01</span>
+            <span class="name">Stack</span>
+          </button>
+          <button class="lesson-item" data-topic="queue">
+            <span class="num">02</span>
+            <span class="name">Queue</span>
+          </button>
+          <button class="lesson-item" data-topic="linkedlist">
+            <span class="num">03</span>
+            <span class="name">Linked List</span>
+          </button>
+          <button class="lesson-item" data-topic="bst">
+            <span class="num">04</span>
+            <span class="name">BST (Binary Search Tree)</span>
+          </button>
+          <button class="lesson-item" data-topic="graph">
+            <span class="num">05</span>
+            <span class="name">Graph Traversals</span>
+          </button>
+          <button class="lesson-item" data-topic="sorting">
+            <span class="num">06</span>
+            <span class="name">Sorting Algorithms</span>
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Middle/Right: Explanation HUD -->
+      <section class="glass-panel" id="explanation-hud">
+        <div class="panel-header">
+          <h2 id="hud-topic-title">STACK</h2>
+          <span class="tag tag-cyan" id="hud-complexity">O(1) PUSH / POP</span>
+        </div>
+        <div class="hud-body">
+          <div id="hud-explanation-text">
+            A stack is a linear data structure that follows the Last-In, First-Out (LIFO) principle. You can think of it like a floating capsule stack where items are placed on top and retrieved from the top.
+          </div>
+          
+          <div class="pseudocode-container">
+            <div class="code-header">PSEUDOCODE</div>
+            <pre><code id="pseudocode-box">// Pseudocode will compile here</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Input Terminal -->
+      <section class="glass-panel" id="terminal-deck">
+        <div class="panel-header">
+          <h2>INTERACTIVE COMMANDS</h2>
+          <span class="tag">CONTROL ENGINE</span>
+        </div>
+        <div class="terminal-body">
+          <!-- Stack Controls -->
+          <div class="ctrl-group active" data-topic="stack">
+            <input type="text" id="stack-input" placeholder="Value (e.g., 42)" maxlength="4" />
+            <button class="action-btn glow-btn-cyan" id="stack-push">Push</button>
+            <button class="action-btn btn-secondary" id="stack-pop">Pop</button>
+            <button class="action-btn btn-secondary" id="stack-clear">Clear</button>
+          </div>
+
+          <!-- Queue Controls -->
+          <div class="ctrl-group" data-topic="queue">
+            <input type="text" id="queue-input" placeholder="Value" maxlength="4" />
+            <button class="action-btn glow-btn-cyan" id="queue-enqueue">Enqueue</button>
+            <button class="action-btn btn-secondary" id="queue-dequeue">Dequeue</button>
+            <button class="action-btn btn-secondary" id="queue-clear">Clear</button>
+          </div>
+
+          <!-- LinkedList Controls -->
+          <div class="ctrl-group" data-topic="linkedlist">
+            <input type="text" id="ll-input" placeholder="Value" maxlength="4" />
+            <input type="number" id="ll-index" placeholder="Index (optional)" min="0" max="10" />
+            <button class="action-btn glow-btn-cyan" id="ll-insert">Insert</button>
+            <button class="action-btn btn-secondary" id="ll-delete">Delete At Index</button>
+            <button class="action-btn btn-secondary" id="ll-clear">Clear</button>
+          </div>
+
+          <!-- BST Controls -->
+          <div class="ctrl-group" data-topic="bst">
+            <input type="number" id="bst-input" placeholder="Value (0-99)" min="0" max="99" />
+            <button class="action-btn glow-btn-cyan" id="bst-insert">Insert</button>
+            <button class="action-btn btn-secondary" id="bst-search">Search</button>
+            <button class="action-btn btn-secondary" id="bst-clear">Clear</button>
+            <div class="bst-traversal-btns">
+              <button class="action-btn btn-small" id="bst-inorder">Inorder</button>
+              <button class="action-btn btn-small" id="bst-preorder">Preorder</button>
+              <button class="action-btn btn-small" id="bst-postorder">Postorder</button>
+            </div>
+          </div>
+
+          <!-- Graph Controls -->
+          <div class="ctrl-group" data-topic="graph">
+            <button class="action-btn glow-btn-cyan" id="graph-bfs">Run BFS</button>
+            <button class="action-btn glow-btn-purple" id="graph-dfs">Run DFS</button>
+            <button class="action-btn btn-secondary" id="graph-random">New Random Graph</button>
+          </div>
+
+          <!-- Sorting Controls -->
+          <div class="ctrl-group" data-topic="sorting">
+            <select id="sort-algorithm" class="hud-select">
+              <option value="bubble">Bubble Sort</option>
+              <option value="quick">Quick Sort</option>
+              <option value="merge">Merge Sort</option>
+            </select>
+            <button class="action-btn glow-btn-cyan" id="sort-run">Sort</button>
+            <button class="action-btn btn-secondary" id="sort-shuffle">Shuffle Array</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Control Deck (Playback HUD & Vibe Command Terminal) -->
+      <footer class="glass-panel" id="control-deck">
+          <!-- Step Control Buttons (hidden visually but kept in DOM for backwards compatibility) -->
+          <div class="playback-controls hidden">
+            <button class="control-btn" id="btn-prev" title="Step Backward">
+              <svg class="icon" viewBox="0 0 24 24"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="4" x2="5" y2="20"/></svg>
+            </button>
+            <button class="control-btn glow-btn-purple" id="btn-play" title="Play / Pause">
+              <!-- Play Icon initially -->
+              <svg class="icon" id="icon-play" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <!-- Pause Icon (hidden by default) -->
+              <svg class="icon hidden" id="icon-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            </button>
+            <button class="control-btn" id="btn-next" title="Step Forward">
+              <svg class="icon" viewBox="0 0 24 24"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="4" x2="19" y2="20"/></svg>
+            </button>
+          </div>
+
+          <!-- Timeline scrubber slider -->
+          <div class="timeline-container">
+            <input type="range" id="timeline-slider" min="0" max="0" value="0" step="1" />
+            <span class="timeline-label"><span id="current-step-label">0</span> / <span id="total-steps-label">0</span></span>
+          </div>
+
+          <!-- Speed controller -->
+          <div class="speed-container">
+            <span class="speed-label">SPEED:</span>
+            <input type="range" id="speed-slider" min="0.2" max="2.0" value="1.0" step="0.1" />
+            <span class="speed-val"><span id="speed-label">1.0</span>x</span>
+          </div>
+        </div>
+
+        <!-- Sleek futuristic command bar -->
+        <div class="deck-row command-row">
+          <div class="command-container">
+            <span class="cmd-prompt">&gt;_</span>
+            <input type="text" id="command-bar" placeholder="Enter command (e.g., 'push 12', 'create tree with 12 8 20', 'show inorder', 'sort bubble')" />
+            <button id="btn-cmd-enter" class="action-btn glow-btn-cyan btn-small">EXECUTE</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Webcam Preview Window (Displays mirrored feed and joint skeleton overlay) -->
+    <div id="webcam-deck" class="glass-panel hidden">
+      <div class="webcam-header">
+        <span class="webcam-dot"></span>
+        <span class="webcam-title">SPATIAL TRACKING FEED</span>
+      </div>
+      <div class="webcam-preview-container">
+        <video id="webcam-feed" autoplay playsinline></video>
+        <canvas id="webcam-overlay"></canvas>
+      </div>
+      <div class="webcam-footer">Webcam hand tracking active</div>
+    </div>
+
+    <!-- Hand HUD Overlay (Shows gesture guide for desktop) -->
+    <div id="gesture-guide" class="glass-panel text-glow hidden">
+      <div class="guide-title">DESKTOP GESTURE SIMULATOR</div>
+      <div class="guide-item"><kbd>Left-Click</kbd> + <kbd>Drag</kbd> : Rotate Classroom View</div>
+      <div class="guide-item"><kbd>Space</kbd> + <kbd>Move Mouse</kbd> : Move Right Hand</div>
+      <div class="guide-item"><kbd>Space</kbd> + <kbd>Left-Click</kbd> : Grab Node (Pinch)</div>
+      <div class="guide-item"><kbd>Shift</kbd> + <kbd>Space</kbd> + <kbd>Move Mouse</kbd> : Spawn Left Hand (Scaling/Rotation Mode)</div>
+      <div class="guide-item"><kbd>Scroll Wheel</kbd> : Push/Pull Hand depth</div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

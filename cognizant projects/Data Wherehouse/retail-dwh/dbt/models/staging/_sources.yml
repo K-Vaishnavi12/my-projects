@@ -1,0 +1,46 @@
+version: 2
+
+sources:
+  - name: staging
+    schema: staging
+    tables:
+      - name: superstore_raw
+
+  - name: core
+    schema: core
+    tables:
+      - name: fact_sales
+      - name: dim_customer
+      - name: dim_product
+      - name: dim_date
+      - name: dim_store
+
+models:
+  - name: stg_superstore
+    description: "Typed, cleaned view over staging.superstore_raw"
+    columns:
+      - name: order_id
+        tests: [not_null]
+      - name: customer_id
+        tests: [not_null]
+      - name: product_id
+        tests: [not_null]
+      - name: quantity
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+
+  - name: mart_sales_daily
+    description: "Daily sales KPIs by region"
+    columns:
+      - name: order_date
+        tests: [not_null]
+      - name: revenue
+        tests: [not_null]
+
+  - name: mart_rfm
+    description: "RFM segmentation per customer"
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]

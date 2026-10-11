@@ -1,0 +1,7 @@
+{
+  "defaultModel": "llama3:latest",
+  "activePrompt": "default",
+  "temperature": 0.5,
+  "maxTokens": 3328,
+  "logLevel": "info"
+}

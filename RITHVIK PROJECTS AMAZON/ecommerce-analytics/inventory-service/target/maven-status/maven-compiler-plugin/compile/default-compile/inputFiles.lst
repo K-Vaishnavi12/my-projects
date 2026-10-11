@@ -1,0 +1,6 @@
+/app/src/main/java/com/amazon/clone/inventory/controller/InventoryController.java
+/app/src/main/java/com/amazon/clone/inventory/consumer/OrderCreatedConsumer.java
+/app/src/main/java/com/amazon/clone/inventory/event/InventoryEvent.java
+/app/src/main/java/com/amazon/clone/inventory/event/OrderCreatedEvent.java
+/app/src/main/java/com/amazon/clone/inventory/InventoryServiceApplication.java
+/app/src/main/java/com/amazon/clone/inventory/service/InventoryService.java

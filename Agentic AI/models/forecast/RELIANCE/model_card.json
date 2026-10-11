@@ -1,0 +1,44 @@
+{
+  "symbol": "RELIANCE",
+  "best_model": "lstm",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "RELIANCE",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 13.253067877648084,
+        "rmse": 18.049009451076138,
+        "mape_pct": 0.9340370769821608,
+        "directional_accuracy": 0.4534412955465587,
+        "n_samples": 248
+      },
+      "fit_seconds": 58.71
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 13.177058960733461,
+        "rmse": 17.991809994061914,
+        "mape_pct": 0.9287656738721072,
+        "directional_accuracy": 0.44534412955465585,
+        "n_samples": 248
+      },
+      "fit_seconds": 13.84
+    },
+    "best_model": "lstm"
+  },
+  "trained_at": "2026-06-11T15:42:09.011871+00:00"
+}

@@ -1,0 +1,44 @@
+{
+  "symbol": "ICICIBANK",
+  "best_model": "arima",
+  "config": {
+    "lookback": 60,
+    "horizon": 5,
+    "arima_order": [
+      5,
+      1,
+      0
+    ],
+    "hidden_size": 64,
+    "num_layers": 2,
+    "epochs": 30
+  },
+  "results": {
+    "symbol": "ICICIBANK",
+    "n_train": 891,
+    "n_val": 99,
+    "n_test": 248,
+    "arima": {
+      "metrics": {
+        "mae": 11.711196299252217,
+        "rmse": 15.466077097735726,
+        "mape_pct": 0.8669537200116787,
+        "directional_accuracy": 0.5101214574898786,
+        "n_samples": 248
+      },
+      "fit_seconds": 47.73
+    },
+    "lstm": {
+      "metrics": {
+        "mae": 11.75449595613744,
+        "rmse": 15.47277772879196,
+        "mape_pct": 0.8703070799582416,
+        "directional_accuracy": 0.5060728744939271,
+        "n_samples": 248
+      },
+      "fit_seconds": 33.44
+    },
+    "best_model": "arima"
+  },
+  "trained_at": "2026-06-11T15:36:50.250427+00:00"
+}
